@@ -298,7 +298,7 @@ Material:
     - _Shrink_Size: -0.1
     - _SingleMaterial: 0
     - _SingleMaterialID: -1
-    - _Smoothness: 0.325
+    - _Smoothness: 0.551
     - _SmoothnessTextureChannel: 0
     - _SpecularColor: 0
     - _SpecularEdgeSoftness: 0
