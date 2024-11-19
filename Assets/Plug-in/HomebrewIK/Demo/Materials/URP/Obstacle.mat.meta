@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1418117c208b8a94e81ce2424b7c8d49
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Materials/URP/Obstacle.mat
+  uploadId: 576273

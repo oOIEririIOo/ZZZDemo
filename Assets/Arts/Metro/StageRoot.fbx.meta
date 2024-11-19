@@ -1,0 +1,827 @@
+fileFormatVersion: 2
+guid: a072cded984baea43926383afd29050e
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Construction_CurtainWall_01_01
+    second: {fileID: 2100000, guid: 176229b797b2c5844a4cd61adc25fa54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Construction_Ruins_01_01
+    second: {fileID: 2100000, guid: bc0fe517e10ac324ebc9e6ef4ef2c59e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Decal_Sign_01_01
+    second: {fileID: 2100000, guid: 89aea35d2e87c4e4394171fa2e4a5e2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Decal_TrafficSign_01_01
+    second: {fileID: 2100000, guid: 8cdb34d4449e0234a971a9f5e7d14e52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Door_IronWire_01_01
+    second: {fileID: 2100000, guid: 77f157d4a9d22d74fbe5fac9239ee452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_AirCon_01_01
+    second: {fileID: 2100000, guid: d398552d2dd777644a64998e91fcbe31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Android_01_02
+    second: {fileID: 2100000, guid: 5d2065ca3ff32c54a925ab619cbf9d9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Android_06_01
+    second: {fileID: 2100000, guid: 638875390309dc047bcb777caefdf44c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Billboard_01_01
+    second: {fileID: 2100000, guid: 52cad97c48b1c1341bfc0870dfcec954, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Billboard_01_02
+    second: {fileID: 2100000, guid: 1b3e379c49cf2724683aea69e432cf23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Billboard_01_03
+    second: {fileID: 2100000, guid: 2c0ddd5a366705f4fad8450557af495b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Billboard_31_01
+    second: {fileID: 2100000, guid: 8fb7ed0394f246940b8d7bb309548c89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Bucket_01_01
+    second: {fileID: 2100000, guid: 74c40f73458fb884db5d67b0e3fa12b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Carton_01_01
+    second: {fileID: 2100000, guid: 9783fb74f8ab4dc4c95544e78acfd42d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Cloth_01_01
+    second: {fileID: 2100000, guid: af393046142ffe541b3520bd4e177896, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_ElectricBox_01_01
+    second: {fileID: 2100000, guid: 2a270b758ed82fb488ade4fd9a1959b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Ether_01_01
+    second: {fileID: 2100000, guid: cf0b08097e146f94fa0569206547a8f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Ether_02_01
+    second: {fileID: 2100000, guid: fff2c00ab623ba5479b04a83e82fc430, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Hydrant_01_01
+    second: {fileID: 2100000, guid: 246e329e82ffe254085a1eaf6ea5c665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_Phone_01_01
+    second: {fileID: 2100000, guid: fd0c5c28d81e8b04cb8f0e47045d6b4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_StreetLamp_01_01
+    second: {fileID: 2100000, guid: 34744614a7c15a34b9c20206a479fb5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_TrafficSigns_01_01
+    second: {fileID: 2100000, guid: 798555866a319aa45b0525db05ae17a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_VendingMachine_01_01
+    second: {fileID: 2100000, guid: 3840879a2d378994799f09722f81b6d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_WirePole_01_01
+    second: {fileID: 2100000, guid: 81f150fedc08fb04282123957bcdab21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_Prop_WirePole_03_01
+    second: {fileID: 2100000, guid: 448f77e706e70fa4b93663182934c3e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Common_prop_Cart_01_01
+    second: {fileID: 2100000, guid: 6c5edea7d2bbd1c40a660ae0a33adbf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_01_01
+    second: {fileID: 2100000, guid: 2157dfdae93e74348876798d54b497dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_02_01
+    second: {fileID: 2100000, guid: 05b101dbdf084dd40b025114417c38b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_03_01
+    second: {fileID: 2100000, guid: 20cd0e0b3e3cc79438a1631389a1042e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_04_01
+    second: {fileID: 2100000, guid: fb8f242920c007c4f92cfe9b44ed2af9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_05_01
+    second: {fileID: 2100000, guid: 9cd1518df2e100940af2320aa56b9b6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Building_BackGround_06_01
+    second: {fileID: 2100000, guid: 8f74e7fdd27ade84b94ec49e67229b87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Prop_CementPipe_01_01
+    second: {fileID: 2100000, guid: ec9859b3c940a9948ae5dd44294a2a76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Prop_Slab_01_01
+    second: {fileID: 2100000, guid: 80fcaf3b9321237429efa438678559f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Vehicle_CementMixer_01_01
+    second: {fileID: 2100000, guid: 7afdeef1b07df974789a339b31bd8f9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Vehicle_CementMixer_01_02
+    second: {fileID: 2100000, guid: 5055af6dccf4b3d48b46554e806de455, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Vehicle_CementMixer_01_03
+    second: {fileID: 2100000, guid: 994879ee46e320b47a96a11af8ce5ec3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConstructionSite_Wall_SteelStructure_01_01
+    second: {fileID: 2100000, guid: 035c00fe0bd2032409f79dd5bd73e124, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eff_Scene_Common_CrashHuge_01
+    second: {fileID: 2100000, guid: faa65fa6ac8a7f9499cddffc229f753a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eff_Scene_Common_CrashMedium_01
+    second: {fileID: 2100000, guid: cb167599cd5320d42b1f020582c4ea20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eff_Scene_Common_CrashTiny_01
+    second: {fileID: 2100000, guid: 03f90992d46e99b4ab53b711651a6837, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eff_Scene_Comom_GeoSphere_01
+    second: {fileID: 2100000, guid: 58244852022605e47bc6cc628dedbaaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lit
+    second: {fileID: 2100000, guid: a90b022278efb05488008020d4e5cb41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainCity_Decal_Graffiti_01_01
+    second: {fileID: 2100000, guid: 3be71f1c105008d41b9acecebaec4e07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainCity_Ground_Brick_01_02
+    second: {fileID: 2100000, guid: f75cf8d25af73f947b39b68c647749ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainCity_Ground_Messy_01_01
+    second: {fileID: 2100000, guid: 5703d26c8aa83f348994c32160733366, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainCity_Wall_IronFence_01_01
+    second: {fileID: 2100000, guid: bddedf67d4ac89f4db33ac21da93defb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_01_01
+    second: {fileID: 2100000, guid: 26adc738aaf1de8498982f0dc2435cd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_02_01
+    second: {fileID: 2100000, guid: c549af812359dab46b6cd660ee791981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_03_01
+    second: {fileID: 2100000, guid: 1223bc3eb0233174e8b316292710ae01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_04_01
+    second: {fileID: 2100000, guid: d0e85023ea442cb44a96d9c042d4cf39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_05_01
+    second: {fileID: 2100000, guid: d7c796702f438a741ba54ab82e4aa54f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_BackGround_07_01
+    second: {fileID: 2100000, guid: 16125f919ff01004db5b3fda5d623306, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_01_01
+    second: {fileID: 2100000, guid: 1610fd6de077e71429a16666b9c2dea7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_02_01
+    second: {fileID: 2100000, guid: df712cc54f5842c419c1acc33368bec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_03_01
+    second: {fileID: 2100000, guid: 075ea2dad0b445441ba819ca1f99de7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_04_01
+    second: {fileID: 2100000, guid: 64b6a3a7f1514f242b5453c08be486a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_05_01
+    second: {fileID: 2100000, guid: 94dd563da09da6e47b30545af6742110, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_06_01
+    second: {fileID: 2100000, guid: e3f3b0649a3674945bee8f7a7ad20023, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_07_01
+    second: {fileID: 2100000, guid: b5b4e4a3b7b396647b2d58e8a205444b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_08_01
+    second: {fileID: 2100000, guid: aae4ba9f948e3b44fbb87462ddc058f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_09_01
+    second: {fileID: 2100000, guid: 69d15f435f4c00245996b043236a37a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Card_18_01
+    second: {fileID: 2100000, guid: 28e8288de2eb66943a78f8760b31bb58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_01
+    second: {fileID: 2100000, guid: 0787d9507f3d53a4d8c13fb8964cc204, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_02
+    second: {fileID: 2100000, guid: c9f37080e326d7848a2db9e25478de1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_03
+    second: {fileID: 2100000, guid: 4263d66d842b5e146a541f6440327421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_04
+    second: {fileID: 2100000, guid: b0d408dbd466c87418c8d6a82814bad2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_05
+    second: {fileID: 2100000, guid: 9b66ec9866783a64db960681a4ed4bdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_WaitingHall_01_06
+    second: {fileID: 2100000, guid: e611eacc67a8d294cae2014d962c0e61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Watchhouse_01_01
+    second: {fileID: 2100000, guid: 10a331496153c7346998902ef0dcb24a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Building_Watchhouse_03_01
+    second: {fileID: 2100000, guid: f936529a33b397049a4404bcc1545148, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_01_02
+    second: {fileID: 2100000, guid: 6ad48b4db22c67d4aa3a4004dd8bf0ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_01_03
+    second: {fileID: 2100000, guid: 683920db0e0b81d4c82b5e8c9e528838, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_SteelFrame_01_01
+    second: {fileID: 2100000, guid: e51697c693c78c944aaf26d6a6ab23ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_SteelFrame_01_02
+    second: {fileID: 2100000, guid: f2ad7df2cfe7d58499c89c5b41635094, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_SteelFrame_01_03
+    second: {fileID: 2100000, guid: 3aa998859cc87e44f853c498f3dd9062, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ceiling_SteelFrame_01_04
+    second: {fileID: 2100000, guid: 22cf243ce69776542ad9fa34084ad883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Construction_ConcreteWall_01_01
+    second: {fileID: 2100000, guid: 5c5af99418d1dd74196dbe2945e0a806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Construction_Floor_01_01
+    second: {fileID: 2100000, guid: 21ae75831d878fc4594f266639abb9e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Decal_Graffiti_01_01
+    second: {fileID: 2100000, guid: 309c0cebf2f885a43bc4ddfff8fd3063, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Decal_Ground_01_01
+    second: {fileID: 2100000, guid: ef906e91168d03b469f561e6668922ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Decal_Wall_01_01
+    second: {fileID: 2100000, guid: aff158954fc2cf745862a9dd2482013b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Door_Indoor_03_01
+    second: {fileID: 2100000, guid: 67897858b4f2bbc408cee89cbd61c5de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_BallastBase_01_01
+    second: {fileID: 2100000, guid: dd7f6426743e5d44c9ef5029272160e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_PassgaeWay_01_01
+    second: {fileID: 2100000, guid: 58d240f5b77b5b146a8ca41015046490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_PassgaeWay_02_01
+    second: {fileID: 2100000, guid: b6c9eb5c033f13a4b9caf5c093e8a550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_PlatformOutside_01_01
+    second: {fileID: 2100000, guid: 0c15088a1d0ebf840b3aca85806415c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Platform_01_01
+    second: {fileID: 2100000, guid: d3e12e4753ad9234bbe3736c1a2f92b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Platform_02_01
+    second: {fileID: 2100000, guid: cace11905511cc84bbc93a9e3900b1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Platform_03_01
+    second: {fileID: 2100000, guid: 2f135587f0760f649a5986ac57bf6b23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Platform_06_01
+    second: {fileID: 2100000, guid: 039aec8a16dd449438219f713da5ab49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Rail_01_01
+    second: {fileID: 2100000, guid: 44aa1ec0f60141a47a5a6f70a9c29efd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_RailwaySleepers_01_01
+    second: {fileID: 2100000, guid: f94a41cd134908b4787e743d9009842d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Sidewalk_01_01
+    second: {fileID: 2100000, guid: 8e7ada63cf6e87b42b8324f19ed2365c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_TileGreen_01_01
+    second: {fileID: 2100000, guid: 35cc46612583e884ea9efb7ea1743285, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Trainstation_01_01
+    second: {fileID: 2100000, guid: 8d679935d4aca1949a8af7a38bedf62a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Variant_01_01
+    second: {fileID: 2100000, guid: 08bc79ea1fe7e2c448db471cc0570d3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Variant_01_02
+    second: {fileID: 2100000, guid: a7ce5926cd21ce648b29b0543941c53c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Ground_Variant_03_01
+    second: {fileID: 2100000, guid: 870be3470ccd9c34d8d18c002c9b91a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Billboard_01_01
+    second: {fileID: 2100000, guid: 9dbd7bb2e933cc04fa9195b699bf209a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Billboard_01_03
+    second: {fileID: 2100000, guid: 9d5f575f8ca4fcc40a00c97c245205de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Cable_03_01
+    second: {fileID: 2100000, guid: 693a67240e9f6e5438a3914dc8c7d8c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_CeilingLamp_01_01
+    second: {fileID: 2100000, guid: 5cef14d7f40966440bdad3c24bad55a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Chair_02_01
+    second: {fileID: 2100000, guid: 78ae42162966a6343a35d6a21f26da82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Checkin_01_01
+    second: {fileID: 2100000, guid: 2be9c879ba4d20844a39f21cfbf2f636, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_ElectricBox_02_01
+    second: {fileID: 2100000, guid: e15d0dd1c713b78409bb49e2376d34d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_ElectricRailing_01_01
+    second: {fileID: 2100000, guid: 9ebcd1bfb0d5c014a812c062dee34090, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_FenceBracket_01_01
+    second: {fileID: 2100000, guid: 0e8d343f964cee643accc951a2252867, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_FenceBracket_01_02
+    second: {fileID: 2100000, guid: 5b73099476610af438d2fae85b836749, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Fence_03_01
+    second: {fileID: 2100000, guid: 8bb4758df3c8bf34f94ef8bbbf4d18b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_GroupBrick_01_01
+    second: {fileID: 2100000, guid: c491ed4b1193c8d469fb130dc1281485, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_MetalBoard_01_01
+    second: {fileID: 2100000, guid: ab0177fbf64d3bb4c9626824fb7cbffd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_MetalBoard_03_01
+    second: {fileID: 2100000, guid: 45b8f35821fbc7849b767c5c4543e482, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_MetalBoard_04_01
+    second: {fileID: 2100000, guid: 162fbeaed2cd37641a5ec2fe1a0a67e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Pipeline_01_01
+    second: {fileID: 2100000, guid: 604abd86fed57a54e8b67caf3a01bb4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_Rail_01_01
+    second: {fileID: 2100000, guid: 97dd30d496333864e8214ba14e7b0447, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_SignalLamp_01_01
+    second: {fileID: 2100000, guid: 11894f33f2441564a963c8b96b503519, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_StairFence_01_01
+    second: {fileID: 2100000, guid: 1a12609ed44537b4e95acb1292ca65ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Prop_TelephonePole_04_01
+    second: {fileID: 2100000, guid: e3e561997c954774780ffe1d8f78f477, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_ElectricBox_01_01
+    second: {fileID: 2100000, guid: e5990d45f19049646b5cae70d9331a5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_ElectricBox_03_01
+    second: {fileID: 2100000, guid: b2ca2e3e43f57dc4e8c30d9b05488777, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_Partition_01_01
+    second: {fileID: 2100000, guid: 32b1af0af79a02b4ebcd676b277dff31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_RoadBlock_01_01
+    second: {fileID: 2100000, guid: 4a120cc28c02b9c4aab0e2c9cac93aae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_RoadBlock_03_01
+    second: {fileID: 2100000, guid: 3e09099ec1272a340963cfaa9e779af8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Props_TelephonePole_01_01
+    second: {fileID: 2100000, guid: cb326dc023cc91349ad2987e854a63a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Roofing_Platform_01_01
+    second: {fileID: 2100000, guid: b9453f34ffc13654d8d4827959da6744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Roofing_Platform_01_02
+    second: {fileID: 2100000, guid: fb98e6fac0dec154ba1a60cb00b41e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Roofing_Platform_01_03
+    second: {fileID: 2100000, guid: d01c5b4fef03c0b48b976497e95e8007, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Stair_Indoor_01_01
+    second: {fileID: 2100000, guid: d77eff7f5efbf1c4ea808db04de418e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Stair_Metal_01_01
+    second: {fileID: 2100000, guid: e0accb8f644f85f4cbc1744d771186df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_CargoTrain_04_01
+    second: {fileID: 2100000, guid: ff54f0beec502764287b1f6fef26ab7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_CargoTrain_04_02
+    second: {fileID: 2100000, guid: f2738b055a34d91439ec2bbd8dc6fe46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_TrainDamage_01_01
+    second: {fileID: 2100000, guid: d7e047137249d0b4a900e05405f4f4a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_TrainDamage_03_01
+    second: {fileID: 2100000, guid: 22027f442c5bd9b46badaaa9ddc85837, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_01_01
+    second: {fileID: 2100000, guid: 56fb2b964a765ff4a99ab7f6a6aa94b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_01_02
+    second: {fileID: 2100000, guid: 47d44aa8d91c98a45bebcf262d497a8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_08_01
+    second: {fileID: 2100000, guid: 050052c2beb22b84cbdf9ad9805487b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_09_01
+    second: {fileID: 2100000, guid: dd2d6839b080448489d9bae06e3cc945, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_10_01
+    second: {fileID: 2100000, guid: 36731c946449e9249865fe5f0a36a908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_10_02
+    second: {fileID: 2100000, guid: 7277b82aa1488e54d84f33fdd52a4043, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Vehicle_Train_10_03
+    second: {fileID: 2100000, guid: a9a82ff8500bde8468505a57e4ed7f7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Wall_Platform_02_01
+    second: {fileID: 2100000, guid: e7ae0cd11c1f8a943ad144fe5146bd7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Wall_Platform_02_02
+    second: {fileID: 2100000, guid: e818d2cd6c1601241b2fcfee40fdd554, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetroArea_Wall_Temporary_01_01
+    second: {fileID: 2100000, guid: f71c24d4c06278f418a95d1174690281, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

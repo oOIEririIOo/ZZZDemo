@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5f319d4ec094d948908dbce5664c, type: 3}
+  m_Name: NPC Complete
+  m_EditorClassIdentifier: 
+  talkerName: NPC
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 0}
+    text: "\u770B\u6765\u4F60\u5DF2\u7ECF\u627E\u5230\u4E86\uFF01\u8BF7\u6536\u4E0B\u6211\u7684\u62A5\u916C\uFF01"
+    quest: {fileID: 11400000, guid: 9f2bae04826acde4fb6bba090ad179f1, type: 2}
+    options:
+    - text: "\u8C22\u8C22"
+      targetID: 
+      taskQuest: 1

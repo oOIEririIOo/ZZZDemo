@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7fe2053df756b438912225f206c60a, type: 3}
+  m_Name: NPC Quest2
+  m_EditorClassIdentifier: 
+  questName: "\u4EA4\u4ED8\u836F\u74F6"
+  description: "\u4F60\u9700\u8981\u4EA4\u4ED8\u4E09\u4E2A\u836F\u74F6\uFF01"
+  isStarted: 0
+  isComplete: 0
+  isFinished: 0
+  questRequires:
+  - name: Health Bottle
+    requireAmount: 3
+    currentAmount: 0
+  rewards:
+  - itemData: {fileID: 11400000, guid: a1fcd2d7eeebe63489029cc1653f6f60, type: 2}
+    amount: 500
+  - itemData: {fileID: 11400000, guid: 924f87874b2fd574fb3e22c336e286a0, type: 2}
+    amount: -3

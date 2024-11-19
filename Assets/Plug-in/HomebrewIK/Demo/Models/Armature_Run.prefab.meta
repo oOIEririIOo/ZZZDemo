@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fef1174aafd4466448dfdad0d53ef36c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Models/Armature_Run.prefab
+  uploadId: 576273

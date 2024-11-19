@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 766fd3ff04aab4745a764d33daac86fa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Materials/Built-in/M_Armature_Arms.mat
+  uploadId: 576273

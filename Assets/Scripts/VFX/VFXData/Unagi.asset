@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d33de1609bf4d8448cd2ddb76bcf1ac, type: 3}
+  m_Name: Unagi
+  m_EditorClassIdentifier: 
+  vFXItemInfos:
+  - vfxName: Unagi_Normal_01
+    prefab: {fileID: 6288007911518815871, guid: beb20e66e2f9cf04abbbff57ad8869de, type: 3}
+    reloadCount: 3
+  - vfxName: Unagi_Normal_02
+    prefab: {fileID: 5383477869963461410, guid: cc470670654eb3c4a9f536be5745a069, type: 3}
+    reloadCount: 3

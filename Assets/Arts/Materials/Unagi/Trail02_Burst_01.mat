@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Trail02_Burst_01
+  m_Shader: {fileID: 4800000, guid: 1f941f528c51ecd40b3ad6cf305d4f85, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _SOFTPARTICAL_ON
+  - _USEDISSOLVE_ON
+  m_InvalidKeywords:
+  - _DISSOLVELU2_ON
+  - _MIXALPHA_ON
+  - _TOGGLESWITCH5_ON
+  - _ZWRTTEMODE2_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: b3a387b10d42ed847ba7a465f139449f, type: 3}
+        m_Scale: {x: -1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: be13f0475c8fe4540b608749a88a21b1, type: 3}
+        m_Scale: {x: 1.3, y: 1.3}
+        m_Offset: {x: 1, y: 1}
+    - _Distortion1Tex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Distortion2Tex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _tex4coord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _tex4coord3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Distortion2U: 0
+    - _AddOneBlendOneMinusSrcAlpha: 10
+    - _AddOneBlendSrcAlpha: 5
+    - _CullMode: 0
+    - _CullMode2: 0
+    - _Depth: 0
+    - _DissolveEdg: 0.642
+    - _DissolveHardness: 0.874
+    - _DissolveInt: 0
+    - _DissolvelU2: 1
+    - _Distortion1: 0
+    - _Distortion1U: 0
+    - _Distortion1V: 0
+    - _Distortion2: 0
+    - _Distortion2V: 0
+    - _DstBlend: 1
+    - _Float1: 0
+    - _Float10: 1
+    - _Float11: 0
+    - _Float12: 0
+    - _Float15: 0
+    - _Float16: 0
+    - _Float17: 0
+    - _Float18: 0
+    - _Float19: 0
+    - _Float2: 0
+    - _Float20: 0
+    - _Float23: 1
+    - _Float24: 0
+    - _Float25: 1
+    - _Float26: 0
+    - _Float27: 0
+    - _Float28: 0
+    - _Float29: 0
+    - _Float5: 0.4784614
+    - _Float6: 0.15
+    - _Float7: 0
+    - _Float9: 0.5
+    - _Main1Desaturate1: 0
+    - _Mask1Rotation1: 0
+    - _Mask1U1: 0
+    - _Mask1V1: 0
+    - _MaskChannel: 0
+    - _MaskScale: 1
+    - _MixAlpha: 1
+    - _NoiseScale: 1.98
+    - _NoiseU2: 0
+    - _Offset_Z: 0
+    - _SoftDistance: 0.5
+    - _SrcBlend: 1
+    - _TillingBase: 0
+    - _ToggleSwitch0: 0
+    - _ToggleSwitch1: 0
+    - _ToggleSwitch3: 0
+    - _ToggleSwitch4: 0
+    - _ToggleSwitch5: 1
+    - _ToggleSwitch6: 0
+    - _ZTestMode: 4
+    - _ZWriteMode: 0
+    - _ZwrtteMode2: 1
+    - __dirty: 1
+    m_Colors:
+    - _BaseColor: {r: 3.4648304, g: 2.6939964, b: 2.271752, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainMaskFlow: {r: 0, g: 0, b: 0, a: 0}
+    - _NoiseDissFlow: {r: 0, g: 0, b: 2, a: 2}
+  m_BuildTextureStacks: []
+--- !u!114 &1819479042628787383
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

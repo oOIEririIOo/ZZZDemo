@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_Name: Eff_Unagi_Attack_Rush_Trail_01
+  serializedVersion: 6
+  m_Legacy: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 2.4702299, y: 163.93701, z: -321.11588}
+        inSlope: {x: 0, y: 0, z: -802.63306}
+        outSlope: {x: 0, y: 0, z: -802.63306}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.77312064}
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: 2.2887309, y: 164.85883, z: -347.16876}
+        inSlope: {x: -16.33491, y: 82.964165, z: -2131.5693}
+        outSlope: {x: -16.33491, y: 82.964165, z: -2131.5693}
+        weightedMode: 3
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.4101003}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.35655898}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 2.1072319, y: 165.78065, z: -418.42798}
+        inSlope: {x: 0, y: 0, z: -5961.673}
+        outSlope: {x: 0, y: 0, z: -5961.673}
+        weightedMode: 3
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.30470428}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.40688294}
+      - serializedVersion: 3
+        time: 0.05
+        value: {x: 2.1072319, y: 165.78065, z: -517.6}
+        inSlope: {x: 0, y: 0, z: -3601.46}
+        outSlope: {x: 0, y: 0, z: -3601.46}
+        weightedMode: 3
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.24691811}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.36603218}
+      - serializedVersion: 3
+        time: 0.06666667
+        value: {x: 2.1072319, y: 165.78065, z: -562.7475}
+        inSlope: {x: 0, y: 0, z: -1774.9847}
+        outSlope: {x: 0, y: 0, z: -1774.9847}
+        weightedMode: 3
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.30735}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.34394702}
+      - serializedVersion: 3
+        time: 0.1
+        value: {x: 2.1072319, y: 165.78065, z: -581.23}
+        inSlope: {x: 0, y: 0, z: -232.17198}
+        outSlope: {x: 0, y: 0, z: -232.17198}
+        weightedMode: 3
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.36036527}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.3547538}
+      - serializedVersion: 3
+        time: 0.21666667
+        value: {x: 2.1072319, y: 165.78065, z: -614.2619}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Trail_Main_Cor3 (1)/Trail_Main_Glow (2)
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.136, y: 0.07, z: 0.534}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Trail_Main_Cor3 (1)/Trail_Main_Glow (2)
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 3
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_Events: []

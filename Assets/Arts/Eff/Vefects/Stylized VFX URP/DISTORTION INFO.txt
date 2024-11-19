@@ -1,0 +1,9 @@
+Remember to activate "Depth Texture" and "Opaque Texture" on the Universal Render Pipeline Asset for the distortion to work.
+
+You can find it on Edit > Project Settings > Quality > Rendering > Render Pipeline Asset.
+
+In our case, it's named "URP-HighFidelity-Renderer.asset"
+
+A gray mesh will appear if you don't activate the Depth and Opaque Texture options.
+
+Feel free to remove distortion on the VFX Graph assets if you wish.

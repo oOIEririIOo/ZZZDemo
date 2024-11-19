@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7028e2d84ad5e3f438ad3f7a894f832c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Animations/Carousel.anim
+  uploadId: 576273

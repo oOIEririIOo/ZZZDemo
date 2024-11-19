@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6316181730411583036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6651064076109422600}
+  - component: {fileID: 4125067046079500530}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6651064076109422600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316181730411583036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4125067046079500530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316181730411583036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9973817e9a1edc84cb0e672e08586b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: bac6b90d71cbb3c4883b773b065f2586, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 1
+    loop: 1
+  - clip: {fileID: 8300000, guid: a7d39bb78dd35ed438aa29d107294902, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 2e3cdcff2932f5845bbf2354c0b92df9, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 1b292d51434f0624482dfefda493f788, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 4fe7ab52a66467542b7c634975304f46, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: f5d8190fa161b3b44b4352b45d8c98be, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 92aeb020e3e21f543ab49818e260662b, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 27ad4ce011075324a978a707035850f8, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: ca388eb033410f54dbafadd4b4ad5ecf, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 4b4b57d648c6b3345952c640e5599d21, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 8dd590bb7a3f66e46a3b2c08023b2af1, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: f6b7d84faf3f2e24590394e6228d3417, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 003aa5abacf93a94089bd8c2ef28fff1, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 1b64cc9091420f94e8595fbf90572fb1, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 6aa89f48868b7ce49b0a21e880fcb68a, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 1
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 895f49fedd63f054ea4d2f556f489cc2, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 908e6fcd8dd3f87488b1b50bcc86c317, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 904a1931bad37cb4bb207243fad46fc7, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: cb9c605c1baa93248953148b9c6beca4, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 6275f303c21c06a45b259585d0bd5ce1, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 4b9c1d6918c16cf4ab07098aa01ef840, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: be7658528d067aa4ab612584504b3060, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 723f33a93b83587428bff95cf9299112, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: c914542f9b4cf5e4088485f33429109f, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0
+  - clip: {fileID: 8300000, guid: 89969e178cd0c5d4a9e5b6539690e301, type: 3}
+    outputGroup: {fileID: 0}
+    volume: 0.5
+    playOnAwake: 0
+    loop: 0

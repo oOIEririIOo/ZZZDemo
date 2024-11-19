@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2e683839f808cc24e8ae38ecc6b854c9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Models/Armature_Idle.prefab
+  uploadId: 576273

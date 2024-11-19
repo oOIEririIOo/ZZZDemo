@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5e3d9a7ff2942f04690ed84e91afc3fb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Materials/URP/Grid.mat
+  uploadId: 576273

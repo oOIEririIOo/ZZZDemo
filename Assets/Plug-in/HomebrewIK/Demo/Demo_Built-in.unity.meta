@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 359731496c3947546baa9f9cbb86e699
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Demo_Built-in.unity
+  uploadId: 576273

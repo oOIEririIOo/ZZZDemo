@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1830a4e4c1176a4282f6938ac95d856, type: 3}
+  m_Name: Corin Skill Config
+  m_EditorClassIdentifier: 
+  currentNormalAttackIndex: 1
+  normalAttackDamageMultiple:
+  - 10.000003
+  - 20
+  - 3
+  - 10.000003
+  - 7
+  currentBranchIndex: 1
+  BranchDamageMultiple:
+  - 10
+  currentBranchSP: 28000000

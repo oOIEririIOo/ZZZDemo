@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d0fecf940d715bb4f990a296e1f44d1c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Demo_URP.unity
+  uploadId: 576273

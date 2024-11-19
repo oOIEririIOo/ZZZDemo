@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5f319d4ec094d948908dbce5664c, type: 3}
+  m_Name: Zombie Progress
+  m_EditorClassIdentifier: 
+  talkerName: Older
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 0}
+    text: "\u53EF\u4EE5\u4F7F\u7528\u589E\u76CA\u6280\u80FD\u66F4\u597D\u7684\u5B8C\u6210\u4EFB\u52A1\u3002"
+    quest: {fileID: 0}
+    options: []

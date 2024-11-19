@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49470351f6cf3df46b46b30d7d1b2a45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Materials/URP/M_Armature_Legs.mat
+  uploadId: 576273

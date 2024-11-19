@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3317f183484f9649b446e4ee2769085
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220358
+  packageName: Homebrew Foot IK
+  packageVersion: 1.6
+  assetPath: Assets/HomebrewIK/Demo/Materials/URP/M_Armature_Body.mat
+  uploadId: 576273

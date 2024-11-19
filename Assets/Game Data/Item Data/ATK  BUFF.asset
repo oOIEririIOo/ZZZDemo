@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe9e68a337cc5947b2b7c7ee655c7ec, type: 3}
+  m_Name: ATK  BUFF
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemName: ATBBUFF
+  itemIcon: {fileID: 307401304, guid: 24a6c0d08d0c0884eaa25698bec0c472, type: 3}
+  itemAmount: 1
+  description: "\u4E00\u5B9A\u65F6\u95F4\u5185\u589E\u52A0\u653B\u51FB\u529B"
+  stackable: 0
+  useableData: {fileID: 0}
+  buffData: {fileID: 11400000, guid: ee59922b02611eb42bd9ef20c1b2b9e8, type: 2}
