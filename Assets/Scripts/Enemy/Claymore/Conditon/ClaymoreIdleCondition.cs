@@ -12,6 +12,10 @@ public class ClaymoreIdleCondition : FSMCondition
 
     public override TaskStatus OnUpdate()
     {
-        return base.OnUpdate();
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            return  TaskStatus.Success;
+        }
+        return TaskStatus.Failure;
     }
 }

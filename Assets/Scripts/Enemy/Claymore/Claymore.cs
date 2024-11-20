@@ -9,7 +9,7 @@ using BehaviorDesigner.Runtime;
 public class Claymore : MonoBehaviour, IHurt
 {
     public CharacterStats characterStats;
-    public Transform target;
+    public Transform player;
     //动画控制器
     public Animator animator;
     //动画信息
@@ -18,6 +18,7 @@ public class Claymore : MonoBehaviour, IHurt
     public float rotationSpeed = 8f;
 
     public NavMeshAgent agent;
+
 
     //武器列表
     public WeaponController[] weapons;
@@ -32,20 +33,46 @@ public class Claymore : MonoBehaviour, IHurt
 
     private void Awake()
     {
-        target = null;
+        player = null;
         characterStats = GetComponent<CharacterStats>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         tree = GetComponent<BehaviorTree>();
     }
 
+    private void Update()
+    {
+        agent.nextPosition = new Vector3(animator.rootPosition.x, animator.rootPosition.y+1, animator.rootPosition.z);
+        player = PlayerController.INSTANCE.playerModel.transform;
+    }
+
+    public void LookToVector3(Vector3 target)
+    {
+        if (target == null)
+        {
+            return;
+        }
+        //计算方向
+        Vector3 direction = (target - transform.position).normalized;
+        //模型面朝目标
+        Quaternion targetQua = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        float angles = Mathf.Abs(targetQua.eulerAngles.y - transform.eulerAngles.y);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetQua, Time.deltaTime * rotationSpeed);
+    }
+
     public void PlayAnimation(string animationName, float fixedTransitionDuration = 0.25f)
     {
-        if( ! animator.GetCurrentAnimatorStateInfo(0).IsName(animationName))
-        {
+
             animator.CrossFadeInFixedTime(animationName, fixedTransitionDuration);
-        }
+   
         
+    }
+
+    public float NormalizedTime()
+    {
+        //刷新动画状态信息
+        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime;
     }
 
     public bool IsAnimationEnd()

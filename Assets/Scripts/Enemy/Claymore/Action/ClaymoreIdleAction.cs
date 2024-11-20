@@ -15,7 +15,9 @@ public class ClaymoreIdleAction : FSMAction
     public override void OnStart()
     {
         base.OnStart();
+        //enemyController.PlayAnimation("New State");
         enemyController.PlayAnimation("Idle",0.2f);
+        enemyController.animator.Update(0f);
 
     }
 
@@ -34,6 +36,5 @@ public class ClaymoreIdleAction : FSMAction
     public override void OnEnd()
     {
         base.OnEnd();
-        enemyController.PlayAnimation("New State");
     }
 }

@@ -15,12 +15,14 @@ public class ClaymoreWaitAction : FSMAction
     {
         base.OnStart();
         enemyController.PlayAnimation("Walk_L");
+        enemyController.animator.Update(0f);
+        enemyController.animator.speed = 1f;
 
     }
 
     public override TaskStatus OnUpdate()
     {
-
+        enemyController.LookToVector3(enemyController.player.position);
         if (enemyController.IsAnimationEnd())
         {
             return TaskStatus.Success;
@@ -33,6 +35,5 @@ public class ClaymoreWaitAction : FSMAction
     public override void OnEnd()
     {
         base.OnEnd();
-        enemyController.PlayAnimation("New State");
     }
 }
