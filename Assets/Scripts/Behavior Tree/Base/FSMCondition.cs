@@ -3,10 +3,10 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class FSMCondition : Conditional
 {
-    protected Claymore enemyController;
+    protected EnemyController enemyController;
     public override void OnAwake()
     {
         base.OnAwake();
-        enemyController = GetComponent<Claymore>();
+        enemyController = GetComponent<EnemyController>();
     }
 }

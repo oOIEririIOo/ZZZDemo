@@ -17,15 +17,17 @@ public class ClaymoreAttackAction : FSMAction
         base.OnStart();
         enemyController.PlayAnimation("Attack_"+ attackIndex, 0.2f);
         enemyController.animator.Update(0f);
+        enemyController.isAttacking = true;
     }
 
     public override TaskStatus OnUpdate()
     {
+        /*
         if(enemyController.NormalizedTime()<0.4f)
         {
-            enemyController.LookToVector3(enemyController.player.position);
+            enemyController.LookToVector3(enemyController.player.position,3.5f);
         }
-
+        */
         if (enemyController.IsAnimationEnd())
         {
             return TaskStatus.Success;
@@ -38,5 +40,6 @@ public class ClaymoreAttackAction : FSMAction
     public override void OnEnd()
     {
         base.OnEnd();
+        enemyController.isAttacking = false;
     }
 }

@@ -49,6 +49,7 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         //检测碰撞目标在敌人标签里
         if (enemyTagList.Contains(other.tag))
         {
@@ -59,28 +60,20 @@ public class WeaponController : MonoBehaviour
                 //记录攻击到的敌人
                 enemyHurtList.Add(enemy);
                 #region 受击
-                //触发命中事件（上级处理受击）
-                onHitAction.Invoke(enemy);
+                //触发发动攻击那一方的命中事件（上级处理受击）
+                onHitAction.Invoke(enemy);        
                 #endregion 
+                /*
                 //other.GetComponent<CharacterStats>().TakeDamage(characterStats.skillConfig); 
-                /*
-                if(other.TryGetComponent<EnemyTest>(out EnemyTest enemyTest))
-                {
-                    enemyTest.HurtEvent(PlayerController.INSTANCE.playerModel.characterStats.skillConfig.currentAttackInfo.damageDir,
-                        PlayerController.INSTANCE.playerModel.characterStats.skillConfig.currentAttackInfo.hitType);
-                }
-                /*
-                Vector3 location = this.transform.position;
-                Vector3 closestPoint = other.ClosestPoint(location);//获取碰撞位置
-                Vector3 forword = characterStats.gameObject.transform.forward;
-                VFXPoolManager.INSTANCE.SpawnHitVfx(other.GetComponent<CharacterStats>().characterName, PlayerController.INSTANCE.playerModel.characterStats.skillConfig.currentAttackInfo, closestPoint,forword);
                 */
             }
             else if (enemy == null)
             {
                 Debug.Log($"该受击对象{other.name}不包含受击接口");
             }
+        
         }
+        
     }
 
 

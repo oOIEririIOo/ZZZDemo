@@ -837,7 +837,42 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.13597734
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.14447592
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.169294
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6548052
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -866,7 +901,98 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.14730877
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.16997167
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.17280453
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19263457
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.27478755
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.29461753
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.29745042
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.30878186
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.3937677
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.43342775
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4362606
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.45892352
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8349458
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -953,7 +1079,70 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.18130311
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.33711046
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.33994335
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.3597734
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.40509915
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.41926345
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4220963
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.43342775
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6952799
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -982,7 +1171,70 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.1529745
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.1756374
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.17847025
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19546743
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.26062322
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.305949
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.305949
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.31728047
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.75205404
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1011,7 +1263,42 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.09348442
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11048158
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11614731
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.13597733
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7294312
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1030,17 +1317,80 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.014164306
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.12747875
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.12747875
+        functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.13314448
+        functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.15014164
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.2266289
+        functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.24362606
+        functionName: StopHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7706335
+        functionName: ChangeAttackBool
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1050,7 +1400,7 @@ ModelImporter:
       takeName: Monster_Claymore_Ani_Walk_F_Start
       internalID: 1971940718693403307
       firstFrame: 0
-      lastFrame: 412
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1166,7 +1516,7 @@ ModelImporter:
       takeName: Monster_Claymore_Ani_Run_Loop
       internalID: -6438084308327595210
       firstFrame: 0
-      lastFrame: 412
+      lastFrame: 53
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

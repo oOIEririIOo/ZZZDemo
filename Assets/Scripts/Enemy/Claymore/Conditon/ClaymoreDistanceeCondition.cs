@@ -19,7 +19,7 @@ public class ClaymoreDistanceeCondition : FSMCondition
     }
     public override TaskStatus OnUpdate()
     {
-        if (Vector3.Distance(enemyController.transform.position, enemyController.player.position) <= maxDistance && Vector3.Distance(enemyController.transform.position, enemyController.player.position) >= minDistance)
+        if (enemyController.GetDistance() <= maxDistance && enemyController.GetDistance() >= minDistance)
         {
             return TaskStatus.Success;
         }

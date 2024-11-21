@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyTest : MonoBehaviour,IHurt
 {
-    public Animator anim;
+    public Animator animator;
     private DamageDir damageTrans;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -104,6 +104,6 @@ public class EnemyTest : MonoBehaviour,IHurt
 
     public void PlayAnimation(string animationName, float fixedTransitionDuration = 0.05f)
     {
-        anim.CrossFadeInFixedTime(animationName, fixedTransitionDuration);
+        animator.CrossFadeInFixedTime(animationName, fixedTransitionDuration);
     }
 }

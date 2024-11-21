@@ -68,7 +68,7 @@ public class PlayerModel : MonoBehaviour, IHurt
     /// <summary>
     /// 命中事件
     /// </summary>
-    private void OnHit(IHurt enemy)
+    private void OnHit(IHurt enemy)//攻击敌方时触发
     {
         string modelName;
         //TODO: Debug.Log(((Component)enemy).name);
@@ -78,12 +78,16 @@ public class PlayerModel : MonoBehaviour, IHurt
         modelName = modelName.Replace("(Clone)", "");
         AudioManager.INSTANCE.PlayAudio(modelName+"攻击受击音"+ skillConfig.currentNormalAttackIndex);
         
-        if (currentEnemy.TryGetComponent<EnemyTest>(out EnemyTest enemyTest))
+
+        //传递攻击类型
+        if (currentEnemy.TryGetComponent<EnemyController>(out EnemyController enemyController))
         {
-            enemyTest.HurtEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.damageDir,
+            enemyController.HurtEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.damageDir,
                 weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitType);
         }
-        
+
+
+        //产生hit特效
         Vector3 location = weapons[currentWeaponIndex].transform.position;
         Vector3 closestPoint = currentEnemy.GetComponent<Collider>().ClosestPoint(location);//获取碰撞位置
         Vector3 forword = characterStats.gameObject.transform.forward;

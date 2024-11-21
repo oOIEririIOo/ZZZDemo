@@ -18,7 +18,7 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
 
    private Animator GetCurrentEnemyAnimator(EnemyTest enemy)
     {
-        return enemy.anim;
+        return enemy.animator;
     }
     private Animator GetCurrentCharacterAnimator()
     {

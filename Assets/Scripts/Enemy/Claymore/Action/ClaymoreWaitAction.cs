@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ClaymoreWaitAction : FSMAction
 {
+
+    public float chaseDistance;
     public override void OnAwake()
     {
         base.OnAwake();
@@ -14,16 +16,21 @@ public class ClaymoreWaitAction : FSMAction
     public override void OnStart()
     {
         base.OnStart();
-        enemyController.PlayAnimation("Walk_L");
+        int redomIndex;
+        redomIndex = Random.Range(0,2);
+        if(redomIndex == 0)
+        {
+            enemyController.PlayAnimation("Walk_L");
+        }
+        else enemyController.PlayAnimation("Walk_R");
         enemyController.animator.Update(0f);
-        enemyController.animator.speed = 1f;
-
+        
     }
 
     public override TaskStatus OnUpdate()
     {
         enemyController.LookToVector3(enemyController.player.position);
-        if (enemyController.IsAnimationEnd())
+        if (enemyController.IsAnimationEnd() || enemyController.GetDistance() >= chaseDistance)
         {
             return TaskStatus.Success;
         }

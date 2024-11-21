@@ -3,12 +3,22 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class FSMAction : Action
 {
-    protected Claymore enemyController;
+    protected EnemyController enemyController;
 
     public override void OnAwake()
     {
         base.OnAwake();
-        enemyController = GetComponent<Claymore>();
+        enemyController = GetComponent<EnemyController>();
+    }
+
+    public override void OnStart()
+    {
+        base.OnStart();
+    }
+
+    public override void OnFixedUpdate()
+    {
+        base.OnFixedUpdate();
     }
 
     public override void OnEnd()
