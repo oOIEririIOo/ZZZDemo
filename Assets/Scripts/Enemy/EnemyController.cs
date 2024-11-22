@@ -76,11 +76,21 @@ public class EnemyController : MonoBehaviour, IHurt
         else damageTrans = DamageDir.Front;
         
         animator.SetTrigger("Shake");
-        if( ! isAttacking)
+        if(!isAttacking)
         {
             hurtTrigger = true;
             HurtAnimation(dir, hitType);
         }
+        else
+        {
+            if(hitType != HitType.Light && hitType!=HitType.VeryLight)
+            {
+                hurtTrigger = true;
+                HurtAnimation(dir, hitType);
+            }
+        }
+                    
+        //‘⁄CharaStats÷–º∆À„…À∫¶
     }
 
     public void HurtAnimation(DamageDir dir, HitType hitType)
@@ -92,6 +102,9 @@ public class EnemyController : MonoBehaviour, IHurt
             case DamageDir.Front:
                 switch (hitType)
                 {
+                    case HitType.VeryLight:
+                        PlayAnimation("Shake", 0f);
+                        break;
                     case HitType.Light:
                         //if( ! isAttacking)
                         //{
@@ -125,6 +138,9 @@ public class EnemyController : MonoBehaviour, IHurt
             case DamageDir.Back:
                 switch (hitType)
                 {
+                    case HitType.VeryLight:
+                        PlayAnimation("Shake", 0f);
+                        break;
                     case HitType.Light:
                         switch (dir)
                         {

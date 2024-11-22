@@ -163,7 +163,7 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
 
     public void SpawnHitVfx(CharacterNameList characterName,AttackInfo attackInfo,Vector3 spawnPos,Vector3 forward,int index)
     {
-        string effectName = attackInfo.hitVFX[index].VFXPrefab.gameObject.name;
+        string effectName = attackInfo.hitInfo[attackInfo.hitIndex].hitVFX.VFXPrefab.gameObject.name;
 
         if (!effectPool.ContainsKey(characterName))
         {
@@ -173,13 +173,13 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
         if (!effectPool[characterName].ContainsKey(effectName))
         {
             effectPool[characterName].Add(effectName, new Queue<GameObject>());
-            attackInfo.hitVFX[index].parentPos = null;
-            attackInfo.hitVFX[index].spawnPos = null;
+            attackInfo.hitInfo[attackInfo.hitIndex].hitVFX.parentPos = null;
+            attackInfo.hitInfo[attackInfo.hitIndex].hitVFX.spawnPos = null;
         }
 
         if (effectPool[characterName][effectName].Count == 0)
         {
-            GameObject go = Instantiate(attackInfo.hitVFX[index].VFXPrefab);
+            GameObject go = Instantiate(attackInfo.hitInfo[attackInfo.hitIndex].hitVFX.VFXPrefab);
             //初始化特效
             if (!go.TryGetComponent<VFXItem>(out var vFXItem))
             {

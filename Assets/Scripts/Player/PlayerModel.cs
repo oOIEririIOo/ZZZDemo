@@ -38,6 +38,7 @@ public class PlayerModel : MonoBehaviour, IHurt
 
     private int currentWeaponIndex;
     public  int currentVFXIndex = 0;
+    //public int hitBoxIndex;
 
     private void Awake()
     {
@@ -68,7 +69,7 @@ public class PlayerModel : MonoBehaviour, IHurt
     /// <summary>
     /// 命中事件
     /// </summary>
-    private void OnHit(IHurt enemy)//攻击敌方时触发
+    private void OnHit(IHurt enemy)//攻击命中敌方时触发
     {
         string modelName;
         //TODO: Debug.Log(((Component)enemy).name);
@@ -82,8 +83,8 @@ public class PlayerModel : MonoBehaviour, IHurt
         //传递攻击类型
         if (currentEnemy.TryGetComponent<EnemyController>(out EnemyController enemyController))
         {
-            enemyController.HurtEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.damageDir,
-                weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitType);
+            enemyController.HurtEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].damageDir,
+                weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType);
         }
 
 
@@ -113,7 +114,8 @@ public class PlayerModel : MonoBehaviour, IHurt
     {
         weapons[weaponIndex].StartHit();
         currentWeaponIndex = weaponIndex;
-        //weapons[weaponIndex].
+        characterStats.skillConfig.currentAttackInfo.hitIndex++;
+        //hitBoxIndex++;
     }
 
     public void SetVFXIndex(int index)

@@ -30,6 +30,10 @@ public class SkillConfig : ScriptableObject
 [System.Serializable]
 public class AttackInfo
 {
+    public HitInfo[] hitInfo;
+    public int hitIndex;
+    public int SP;
+    /*
     public DamageType damageType;
     public float attackDamageMultiple;
     public int hitCont;
@@ -37,12 +41,24 @@ public class AttackInfo
     public HitType hitType;
     public DamageDir damageDir;
     public int SP;
+    */
     //还有击打失衡值，韧性值
+}
+
+[System.Serializable]
+public class HitInfo
+{
+    public DamageType damageType;
+    public float attackDamageMultiple;
+    public EffectItem hitVFX;
+    public HitType hitType;
+    public DamageDir damageDir;
+    
 }
 
 public enum HitType
 {
-    Light,Haven,Fly
+    Light,Haven,Fly,VeryLight
 }
 public enum DamageDir
 {

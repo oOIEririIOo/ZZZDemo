@@ -24,7 +24,7 @@ public class UnagiNormalAttackState : UnagiStateBase
         enterNextAttack = false;
         isLock = false;
         isContinuePlay = true;
-
+        
         LookToEnemy();
 
         //²¥·Å¶¯»­
@@ -34,6 +34,7 @@ public class UnagiNormalAttackState : UnagiStateBase
         modelName = modelName.Replace("(Clone)", "");
         AudioManager.INSTANCE.PlayAudio(modelName + "¹¥»÷" + playerModel.characterStats.skillConfig.currentNormalAttackIndex);
         playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.normalAttack[playerModel.characterStats.skillConfig.currentNormalAttackIndex-1];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
     }
 
     public override void Update()

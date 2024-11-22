@@ -14,7 +14,7 @@ public class BuffData_SO : ScriptableObject
     {
         for (int i = 0; i < user.normalAttack.Length; i++)
         {
-            user.normalAttack[i].attackDamageMultiple *= ATKmultiple;
+            //user.normalAttack[i].attackDamageMultiple *= ATKmultiple;
         }
         userData.CurrentDefence *= DEFmultiple;
     }
@@ -23,7 +23,7 @@ public class BuffData_SO : ScriptableObject
     {
         for (int i = 0; i < user.normalAttack.Length; i++)
         {
-            user.normalAttack[i].attackDamageMultiple /= ATKmultiple;
+            //user.normalAttack[i].attackDamageMultiple /= ATKmultiple;
         }
         userData.CurrentDefence /= DEFmultiple;
     }

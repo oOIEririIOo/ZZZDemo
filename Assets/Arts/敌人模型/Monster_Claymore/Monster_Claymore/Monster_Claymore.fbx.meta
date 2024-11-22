@@ -17,7 +17,10 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: Event ChangeAttackBool has a time (5.008761) outside
+      the clip's valid range (0.000000..4.183333). It will never be firedEvent ChangeAttackBool
+      has a time (5.291684) outside the clip's valid range (0.000000..4.750000).
+      It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -866,7 +869,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.6548052
+      - time: 0.19790863
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
@@ -986,7 +989,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8349458
+      - time: 0.475032
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
@@ -1136,7 +1139,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.6952799
+      - time: 0.44743508
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
@@ -1228,7 +1231,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.75205404
+      - time: 0.34903678
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
@@ -1292,7 +1295,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7294312
+      - time: 0.14968984
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
@@ -1384,7 +1387,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7706335
+      - time: 0.2555473
         functionName: ChangeAttackBool
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}

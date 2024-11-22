@@ -69,7 +69,7 @@ public class CharacterStats : MonoBehaviour
     #region Κά»χ
     public void TakeDamage(SkillConfig attacker,AttackInfo attackInfo)
     {
-        float damage = attackInfo.attackDamageMultiple * (1 - CurrentDefence * 0.01f);
+        float damage = attackInfo.hitInfo[attackInfo.hitIndex].attackDamageMultiple * (1 - CurrentDefence * 0.01f);
         //float damage = attacker.normalAttack[attacker.currentNormalAttackIndex - 1].attackDamageMultiple * (1 - CurrentDefence*0.01f);
         CurrentHealth = Mathf.Max(CurrentHealth - damage, 0);
         //TODO:Uppdate UI
@@ -111,7 +111,7 @@ public class CharacterStats : MonoBehaviour
         AttackInfo[] attackMultiple = attacker.normalAttack;
         for (int i = 0; i < attacker.normalAttack.Length; i++)
         {
-            attacker.normalAttack[i].attackDamageMultiple *= ATKmultiple;
+            //attacker.normalAttack[i].attackDamageMultiple *= ATKmultiple;
         }
     }
     #endregion

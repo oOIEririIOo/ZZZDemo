@@ -22,6 +22,9 @@ public class UnagiHavenAttackState : UnagiStateBase
         enterNextAttack = false;
         isLock = false;
         isContinuePlay = true;
+        playerModel.characterStats.skillConfig.currentBranchIndex = 4;
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[playerModel.characterStats.skillConfig.currentBranchIndex - 1];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
     }
 
     public override void Update()

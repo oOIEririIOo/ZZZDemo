@@ -9,6 +9,7 @@ public class UnagiBranchStartState : UnagiStateBase
         base.Enter();
         //ÅÐ¶Ïsp
         playerController.PlayAnimation("Branch_1_Start", 0f);
+        
     }
 
     public override void Update()
