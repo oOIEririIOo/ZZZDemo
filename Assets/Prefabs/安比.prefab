@@ -1684,6 +1684,7 @@ MonoBehaviour:
   onTakeDemage:
     m_PersistentCalls:
       m_Calls: []
+  hitIndex: 0
 --- !u!65 &2815153428098627823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2031,7 +2032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cbb76390bc9ca41be337750d70b414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 0
   animator: {fileID: 0}
   currentState: 0
   gravity: -9.8
@@ -2042,8 +2042,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 8780632802500172383}
   characterStats: {fileID: 0}
-  spStates: 
   switchState: {fileID: 4541279593557149971}
+  currentVFXIndex: 0
   foot: 0
 --- !u!114 &-4529488729543014835
 MonoBehaviour:
@@ -2061,6 +2061,7 @@ MonoBehaviour:
   templateData: {fileID: 11400000, guid: b0ea9ae430f255f439b2d4a8e0efc349, type: 2}
   skillConfig: {fileID: 0}
   templateSkillConfig: {fileID: 11400000, guid: 881d75baf7ec15b45b52a82a59762902, type: 2}
+  characterName: 1
 --- !u!114 &4541279593557149971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,6 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerModel: {fileID: 0}
+  characterStats: {fileID: 0}
   evadeTimer: 1
   evadeCnt: 0
 --- !u!1 &3018194689497178122

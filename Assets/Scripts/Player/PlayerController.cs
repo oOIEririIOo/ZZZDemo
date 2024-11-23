@@ -43,7 +43,9 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     [HideInInspector]public List<PlayerModel> controllableModels;
 
     //当前角色编号
-    private int currentModelIndex;
+    public int currentModelIndex;
+
+    public Dictionary<CharacterNameList, int> characterDic;
 
     //敌人标签列表
     public List<string> enemyTagList;
@@ -54,11 +56,14 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     //角色信息
     public List<GameObject> characterInfo;
 
+    public GameObject[] vfxPos;
+
     public bool mouseOpen = false;
     public bool mousePressed = false;
     public bool branchPressed = false;
     public bool branchTap = false;
     public bool branchHold = false;
+    public bool isDodge;
 
     protected private override void Awake()
     {
@@ -67,6 +72,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
         stateMachine = new StateMachine(this);
         inputSystem = new InputSystem();
         controllableModels = new List<PlayerModel>();
+        characterDic = new Dictionary<CharacterNameList, int>();
 
         #region 生成角色模型
         for (int i = 0;i<playerConfig.models.Length;i++)
@@ -77,7 +83,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
             //初始化角色模型
             controllableModels[i].Init(enemyTagList);
             characterInfo.Add(controllableModels[i].gameObject);
-
+            
         }
         #endregion
 
@@ -148,6 +154,10 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
         };
         #endregion
         */
+        for (int i = 0; i < playerConfig.models.Length; i++)
+        {
+            characterDic.Add(playerConfig.models[i].GetComponent<CharacterStats>().characterName, i);
+        }
     }
     private void Start()
     {

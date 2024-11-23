@@ -4,7 +4,7 @@ using UnityEngine;
 using static VFXItemData;
 
 public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
-{
+{ 
     [System.Serializable]
     public class effectData
     {
@@ -53,7 +53,19 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                     if (effectDates[i].effectItemData.effectItems[j].applyParentPos)
                     {
                         //设置父级点
-                        go.transform.parent = effectDates[i].effectItemData.effectItems[j].parentPos;
+                        if(effectDates[i].effectItemData.effectItems[j].parentPos != null)
+                        {
+                            go.transform.parent = effectDates[i].effectItemData.effectItems[j].parentPos;
+                        }
+                        else
+                        {
+                            //go.transform.parent = PlayerController.INSTANCE.vfxPos[PlayerController.INSTANCE.currentModelIndex].transform;
+                            if(PlayerController.INSTANCE.characterDic.TryGetValue(effectDates[i].style,out int index))
+                            {
+                                go.transform.parent = PlayerController.INSTANCE.vfxPos[index].transform;
+                            }
+                            
+                        }
                     }
                     else
                     {
@@ -104,11 +116,21 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
             if (vfx.applyParentPos)
             {
                 //设置父级点
-                if (vfx.applyParentPos && vfx.parentPos != null)
+                if (vfx.applyParentPos)
                 {
-                    go.transform.parent = vfx.parentPos;
-                    go.transform.localPosition = Vector3.zero;
-                    go.transform.forward = vfx.parentPos.forward;
+                    if(vfx.parentPos != null)
+                    {
+                        go.transform.parent = vfx.parentPos;
+                        go.transform.localPosition = Vector3.zero;
+                        go.transform.forward = vfx.parentPos.forward;
+                    }
+                    else
+                    {
+                        go.transform.parent = PlayerController.INSTANCE.vfxPos[PlayerController.INSTANCE.currentModelIndex].transform;
+                        go.transform.localPosition = Vector3.zero;
+                        go.transform.forward = PlayerController.INSTANCE.vfxPos[PlayerController.INSTANCE.currentModelIndex].transform.forward;
+                    }
+                    
                 }  
             }
             else

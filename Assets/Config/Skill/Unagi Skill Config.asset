@@ -43,7 +43,7 @@ MonoBehaviour:
         effectRotation: {x: 0, y: 0, z: 0, w: 0}
         count: 0
       hitType: 0
-      damageDir: 0
+      damageDir: 2
     hitIndex: 0
     SP: 0
   - hitInfo:
@@ -242,6 +242,9 @@ MonoBehaviour:
   - hitInfo: []
     hitIndex: 0
     SP: 0
+  - hitInfo: []
+    hitIndex: 0
+    SP: 40
   - hitInfo: []
     hitIndex: 0
     SP: 40

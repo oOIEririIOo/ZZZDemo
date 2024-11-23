@@ -118,10 +118,6 @@ public class PlayerModel : MonoBehaviour, IHurt
         //hitBoxIndex++;
     }
 
-    public void SetVFXIndex(int index)
-    {
-        currentVFXIndex = index;
-    }
     /// <summary>
     /// πÿ±’…À∫¶ºÏ≤‚
     /// </summary>

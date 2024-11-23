@@ -18,7 +18,6 @@ public class ClaymoreHurtAction : FSMAction
 
         else
         {
-            Debug.Log("ishurt = false");
             return TaskStatus.Failure;
         }
     }

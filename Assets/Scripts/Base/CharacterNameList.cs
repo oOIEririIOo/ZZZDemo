@@ -5,5 +5,8 @@ using UnityEngine;
 public enum CharacterNameList
 {
     Unagi,
+    Anbi,
+    Nico,
+    Corin,
     Enemy,
 }
