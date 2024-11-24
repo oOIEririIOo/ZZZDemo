@@ -35,6 +35,11 @@ public class PlayerModel : MonoBehaviour, IHurt
     public CharacterStats characterStats;
     //切换状态脚本
     public SwitchState switchState;
+    //闪避触发器
+    public Collider dodgeColl;
+    //受伤类型
+    public DamageDir damageTrans;
+    public HitType hitType;
 
     private int currentWeaponIndex;
     public  int currentVFXIndex = 0;
@@ -83,8 +88,9 @@ public class PlayerModel : MonoBehaviour, IHurt
         //传递攻击类型
         if (currentEnemy.TryGetComponent<EnemyController>(out EnemyController enemyController))
         {
-            enemyController.HurtEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].damageDir,
-                weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType);
+            enemyController.HurtAnimationEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].damageDir,
+                weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType,
+                weapons[currentWeaponIndex].characterStats.GetComponent<PlayerModel>());
         }
 
 
@@ -92,18 +98,11 @@ public class PlayerModel : MonoBehaviour, IHurt
         Vector3 location = weapons[currentWeaponIndex].transform.position;
         Vector3 closestPoint = currentEnemy.GetComponent<Collider>().ClosestPoint(location);//获取碰撞位置
         Vector3 forword = characterStats.gameObject.transform.forward;
-        /*
-        VFXPoolManager.INSTANCE.SpawnHitVfx(currentEnemy.GetComponent<CharacterStats>().characterName, 
-                                                                        PlayerController.INSTANCE.playerModel.characterStats.skillConfig.currentAttackInfo, 
-                                                                        closestPoint, 
-                                                                        forword,
-                                                                        currentVFXIndex);
-        */
         VFXPoolManager.INSTANCE.SpawnHitVfx(currentEnemy.GetComponent<CharacterStats>().characterName,
                                                                         weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo,
                                                                         closestPoint,
-                                                                        forword,
-                                                                        currentVFXIndex);
+                                                                        forword);
+                                                                       
 
     }   
     
@@ -201,6 +200,39 @@ public class PlayerModel : MonoBehaviour, IHurt
         foot = ModelFoot.Right;
     }
     #endregion
+
+    public void HurtAnimationEvent(DamageDir dir, HitType hitType,EnemyController enemy)
+    {
+        if ((Mathf.Abs(ForwardAngle() - enemy.ForwardAngle())) <= 75f)
+        {
+            damageTrans = DamageDir.Back;
+        }
+        else damageTrans = DamageDir.Front;
+
+        //animator.SetTrigger("Hit_Shake");
+        HitAnimation();
+        //计算玩家和敌人的方向
+        Vector3 direction = (enemy.transform.position - transform.position).normalized;
+        switch(damageTrans)
+        {
+            case DamageDir.Front:
+                //玩家模型面朝敌人
+                transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                break;
+            case DamageDir.Back:
+                //玩家模型背朝敌人
+                transform.rotation = Quaternion.LookRotation(new Vector3(-direction.x, 0, -direction.z));
+                break;
+        }
+        
+        //在CharaStats中计算伤害
+    }
+
+    public void HitAnimation()
+    {
+        PlayerController.INSTANCE.SwitchState(PlayerState.Hit);
+    }
+
 
     public float ForwardAngle()
     {

@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour, IHurt
     //参数
     //动画信息
     private AnimatorStateInfo stateInfo;
+    public int currentWeaponIndex = 0;
     //转向速度
     public float rotationSpeed = 8f;
     private DamageDir damageTrans;
@@ -67,19 +68,34 @@ public class EnemyController : MonoBehaviour, IHurt
         HurtTimer();
     }
 
-    public void HurtEvent(DamageDir dir, HitType hitType)
+    public void HurtAnimationEvent(DamageDir dir, HitType hitType,PlayerModel player)
     {
-        if ((Mathf.Abs(PlayerController.INSTANCE.playerModel.ForwardAngle() - ForwardAngle())) <= 60f)
+        if ((Mathf.Abs(player.ForwardAngle() - ForwardAngle())) <= 70f)
         {
             damageTrans = DamageDir.Back;
         }
         else damageTrans = DamageDir.Front;
         
-        animator.SetTrigger("Shake");
+        animator.SetTrigger("Hit_Shake");
         if(!isAttacking)
         {
             hurtTrigger = true;
             HurtAnimation(dir, hitType);
+            #region 模型旋转
+            //计算玩家和敌人的方向
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            switch (damageTrans)
+            {
+                case DamageDir.Front:
+                    //敌人模型面朝玩家
+                    transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                    break;
+                case DamageDir.Back:
+                    //敌人模型背朝玩家
+                    transform.rotation = Quaternion.LookRotation(new Vector3(-direction.x, 0, -direction.z));
+                    break;
+            }
+            #endregion
         }
         else
         {
@@ -87,6 +103,21 @@ public class EnemyController : MonoBehaviour, IHurt
             {
                 hurtTrigger = true;
                 HurtAnimation(dir, hitType);
+                #region 模型旋转
+                //计算玩家和敌人的方向
+                Vector3 direction = (player.transform.position - transform.position).normalized;
+                switch (damageTrans)
+                {
+                    case DamageDir.Front:
+                        //敌人模型面朝玩家
+                        transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                        break;
+                    case DamageDir.Back:
+                        //敌人模型背朝玩家
+                        transform.rotation = Quaternion.LookRotation(new Vector3(-direction.x, 0, -direction.z));
+                        break;
+                }
+                #endregion
             }
         }
                     
@@ -103,7 +134,7 @@ public class EnemyController : MonoBehaviour, IHurt
                 switch (hitType)
                 {
                     case HitType.VeryLight:
-                        PlayAnimation("Shake", 0f);
+                        PlayAnimation("Hit_Shake", 0f);
                         break;
                     case HitType.Light:
                         //if( ! isAttacking)
@@ -139,7 +170,7 @@ public class EnemyController : MonoBehaviour, IHurt
                 switch (hitType)
                 {
                     case HitType.VeryLight:
-                        PlayAnimation("Shake", 0f);
+                        PlayAnimation("Hit_Shake", 0f);
                         break;
                     case HitType.Light:
                         switch (dir)
@@ -191,7 +222,24 @@ public class EnemyController : MonoBehaviour, IHurt
     //命中敌方时触发
     private void OnHit(IHurt enemy)
     {
+        var currentPlayer = (Component)enemy;
         //Debug.Log(((Component)enemy).name);
+        if (PlayerController.INSTANCE.isDodge)
+        {
+            Debug.Log("闪避成功");
+        }
+        else
+        {
+            Debug.Log("命中");
+            PlayerController.INSTANCE.playerModel.HurtAnimationEvent(characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].damageDir,
+               characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType, this);
+
+            //产生hit特效
+            Vector3 location = weapons[currentWeaponIndex].transform.position;
+            Vector3 closestPoint = currentPlayer.GetComponent<Collider>().ClosestPoint(location);//获取碰撞位置
+            Vector3 forword = characterStats.gameObject.transform.forward;
+            VFXPoolManager.INSTANCE.SpawnHitVfx(CharacterNameList.Enemy, characterStats.skillConfig.currentAttackInfo, closestPoint, forword);
+        }
     }
 
     //受击计时器，连续受击一定时间后开始发动攻击

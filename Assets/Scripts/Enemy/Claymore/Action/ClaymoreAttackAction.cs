@@ -18,6 +18,7 @@ public class ClaymoreAttackAction : FSMAction
         enemyController.PlayAnimation("Attack_"+ attackIndex, 0.2f);
         enemyController.animator.Update(0f);
         enemyController.isAttacking = true;
+        enemyController.characterStats.skillConfig.currentAttackInfo = enemyController.characterStats.skillConfig.normalAttack[attackIndex - 1];
     }
 
     public override TaskStatus OnUpdate()

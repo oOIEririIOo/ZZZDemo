@@ -13,6 +13,8 @@ public class UnagiEvadeState : UnagiStateBase
     {
         mainCamera = Camera.main;
         base.Enter();
+        playerController.isDodge = true;
+        playerController.characterInfo[playerController.currentModelIndex].GetComponent<PlayerModel>().dodgeColl.enabled = true;
         isPreInput = false;
         switch(playerModel.currentState)
         {
@@ -118,5 +120,12 @@ public class UnagiEvadeState : UnagiStateBase
             }
       
         #endregion
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        playerController.isDodge = false;
+        playerController.characterInfo[playerController.currentModelIndex].GetComponent<PlayerModel>().dodgeColl.enabled = false;
     }
 }

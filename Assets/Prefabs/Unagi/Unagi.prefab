@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224599610106754914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 895422883395161026}
   - component: {fileID: 7380290366715663306}
   - component: {fileID: 768391093758414188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NormalAttack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1333046282768128859}
   - component: {fileID: 1116986045995817509}
   - component: {fileID: 298727434788099147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NormalAttack4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1238,7 +1238,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1740,7 +1740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3077496274662897287}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2980622257520174243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2340493270672276028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_hilt2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3507,7 +3507,7 @@ GameObject:
   - component: {fileID: 3583887765818735541}
   - component: {fileID: 1771539309694909498}
   - component: {fileID: 5519712474553609240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3563,7 @@ BoxCollider:
     m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -3859,7 +3859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4643119041186439655}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10379,7 +10379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3071094111540061252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15519,7 +15519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7042416843880099591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bn_katana_burst04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15784,6 +15784,7 @@ GameObject:
   - component: {fileID: 7541839467196560311}
   - component: {fileID: 5286189254159894372}
   - component: {fileID: 7234290795013202060}
+  - component: {fileID: 2997508193839778062}
   m_Layer: 0
   m_Name: Unagi
   m_TagString: Player
@@ -15819,6 +15820,7 @@ Transform:
   - {fileID: 172682213511491113}
   - {fileID: 8887213722723870298}
   - {fileID: 6460394504289707958}
+  - {fileID: 4695456365836534010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9054911931259795766
@@ -15863,7 +15865,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.52
-  m_Radius: 0.16
+  m_Radius: 0.09
   m_SlopeLimit: 45
   m_StepOffset: 0.2
   m_SkinWidth: 0.0001
@@ -15896,6 +15898,9 @@ MonoBehaviour:
   - {fileID: 1116986045995817509}
   characterStats: {fileID: 0}
   switchState: {fileID: 7234290795013202060}
+  dodgeColl: {fileID: 2997508193839778062}
+  damageTrans: 0
+  hitType: 0
   currentVFXIndex: 0
   foot: 0
 --- !u!114 &7541839467196560311
@@ -15945,6 +15950,29 @@ MonoBehaviour:
   characterStats: {fileID: 0}
   evadeTimer: 1
   evadeCnt: 0
+--- !u!136 &2997508193839778062
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309689321543991454}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 2.75
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!1 &5369966512902871951
 GameObject:
   m_ObjectHideFlags: 0
@@ -15988,7 +16016,7 @@ GameObject:
   - component: {fileID: 2785683307572015655}
   - component: {fileID: 1402524900644377696}
   - component: {fileID: 4045923723526971033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NormalAttack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16041,7 +16069,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -16207,6 +16235,61 @@ Transform:
   - {fileID: 5424597472560398081}
   m_Father: {fileID: 3914891395749871530}
   m_LocalEulerAnglesHint: {x: -2.0535936, y: -13.409137, z: 4.6696715}
+--- !u!1 &5602867444635260618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4695456365836534010}
+  - component: {fileID: 4733197627539900836}
+  m_Layer: 0
+  m_Name: DodgeArea
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4695456365836534010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602867444635260618}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4904034588709615829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4733197627539900836
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602867444635260618}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!1 &5626148822396310241
 GameObject:
   m_ObjectHideFlags: 0
@@ -19129,7 +19212,7 @@ GameObject:
   - component: {fileID: 3315755476180106071}
   - component: {fileID: 7144046825897976120}
   - component: {fileID: 8441201572824149547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NormalAttack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19182,7 +19265,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0

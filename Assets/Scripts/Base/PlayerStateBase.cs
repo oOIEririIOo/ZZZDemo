@@ -13,6 +13,7 @@ public enum PlayerState
     Branch,Branch_End,SpBranch,SpBranch_End,
     BigSkillStart, BigSkill, BigSkillEnd, 
     SwitchInNormal,
+    Hit,
     Pause,
 
 

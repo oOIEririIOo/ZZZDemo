@@ -60,11 +60,11 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                         else
                         {
                             //go.transform.parent = PlayerController.INSTANCE.vfxPos[PlayerController.INSTANCE.currentModelIndex].transform;
-                            if(PlayerController.INSTANCE.characterDic.TryGetValue(effectDates[i].style,out int index))
+                            if (PlayerController.INSTANCE.characterDic.TryGetValue(effectDates[i].style, out int index))
                             {
                                 go.transform.parent = PlayerController.INSTANCE.vfxPos[index].transform;
                             }
-                            
+                            else Debug.Log("字典为空！也许该特效属于Enemy");
                         }
                     }
                     else
@@ -183,7 +183,7 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
         
     }
 
-    public void SpawnHitVfx(CharacterNameList characterName,AttackInfo attackInfo,Vector3 spawnPos,Vector3 forward,int index)
+    public void SpawnHitVfx(CharacterNameList characterName,AttackInfo attackInfo,Vector3 spawnPos,Vector3 forward)
     {
         string effectName = attackInfo.hitInfo[attackInfo.hitIndex].hitVFX.VFXPrefab.gameObject.name;
 

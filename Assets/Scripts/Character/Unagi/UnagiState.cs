@@ -75,6 +75,9 @@ public class UnagiState : SwitchState
             case PlayerState.Pause:
                 PlayerController.INSTANCE.stateMachine.EnterState<PlayerPauseState>();
                 break;
+            case PlayerState.Hit:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiHitState>(true);
+                break;
 
             //½ÇÉ«·ÖÖ§
             case PlayerState.Unagi_HavenAttack:

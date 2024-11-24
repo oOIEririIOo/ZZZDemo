@@ -16,7 +16,7 @@ public class UnagiIdleState : UnagiStateBase
                 playerController.PlayAnimation("Idle_AFK");
                 break;
         }
-
+        playerModel.animator.Update(0f);
     }
 
     public override void Update()
