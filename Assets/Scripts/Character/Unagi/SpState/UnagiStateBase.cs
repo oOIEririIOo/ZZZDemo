@@ -7,7 +7,6 @@ public class UnagiStateBase : PlayerStateBase
     public override void Enter()
     {
         base.Enter();
-        playerModel.animator.Update(0f);
     }
     public override void Exit()
     {

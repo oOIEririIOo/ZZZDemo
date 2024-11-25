@@ -38,12 +38,13 @@ public class UnagiState : SwitchState
                 break;
             case PlayerState.Evade_Front:
             case PlayerState.Evade_Back:
-                if (PlayerController.INSTANCE.evadeTimer != 1f) return;
-                    PlayerController.INSTANCE.stateMachine.EnterState<UnagiEvadeState>(true);
-                    PlayerController.INSTANCE.evadeCnt++;
                 if (PlayerController.INSTANCE.evadeCnt == 2)
-                    PlayerController.INSTANCE.evadeTimer -= 1f;
-                    break;
+                {
+                    return;
+                }     
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiEvadeState>(true);
+                PlayerController.INSTANCE.evadeCnt++;      
+                break;
             case PlayerState.Evade_Front_End:
             case PlayerState.Evade_Back_End:
                 PlayerController.INSTANCE.stateMachine.EnterState<UnagiEvadeEndState>();

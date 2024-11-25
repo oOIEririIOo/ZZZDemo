@@ -44,8 +44,8 @@ public class SceneController : SingleMonoBase<SceneController>
         {
             yield return StartCoroutine(fade.FadeOut(0.5f));
             GameManager.INSTANCE.NotifyObservers();
-            AllEnemyController.INSTANCE.GetComponent<AllEnemyController>().FindEnemy();
-            enemies = AllEnemyController.INSTANCE.enemies.gameObject;
+            //AllEnemyController.INSTANCE.GetComponent<AllEnemyController>().FindEnemy();
+            //enemies = AllEnemyController.INSTANCE.enemies.gameObject;
             enemies.SetActive(false);
             
 
@@ -71,8 +71,8 @@ public class SceneController : SingleMonoBase<SceneController>
             player.GetComponent<CharacterController>().enabled = true;
             SaveManager.INSTANCE.LoadPlayerData();
 
-            AllEnemyController.INSTANCE.GetComponent<AllEnemyController>().FindEnemy();
-            enemies = AllEnemyController.INSTANCE.enemies.gameObject;
+            //AllEnemyController.INSTANCE.GetComponent<AllEnemyController>().FindEnemy();
+            //enemies = AllEnemyController.INSTANCE.enemies.gameObject;
             enemies.SetActive(true);
 
             yield return StartCoroutine(fade.FadeIn(2f));

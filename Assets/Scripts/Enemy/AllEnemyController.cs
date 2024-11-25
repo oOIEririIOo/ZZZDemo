@@ -5,14 +5,25 @@ using UnityEngine;
 public class AllEnemyController : SingleMonoBase<AllEnemyController>
 {
 
-    public GameObject enemies;
+    public List<EnemyController> enemies;
     private protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
+        enemies = new List<EnemyController>();
     }
-    public void FindEnemy()
+
+    public List<EnemyController> GetAllEnemy()
     {
-        enemies = GameObject.FindGameObjectWithTag("Enemies");
+        return enemies;
+    }
+    public void AddEnemyList(EnemyController enemy)
+    {
+        enemies.Add(enemy);
+    }
+
+    public void RemoveEnemyList(EnemyController enemy)
+    {
+        enemies.Remove(enemy);
     }
 }

@@ -18,8 +18,12 @@ public class VFXItem : MonoBehaviour
         isInit = true;
         this.vfxName = effectName;
         this.characterName = characterName;
+        VFXManager.INSTANCE.AddVFX(particle, 1f);
     }
-
+    public void SetParent(Transform pos)
+    {
+        this.transform.parent = pos;
+    }
     private void OnEnable()
     {
         if (!isInit) return;
@@ -30,8 +34,7 @@ public class VFXItem : MonoBehaviour
             {
                 transform.position = VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos.position;
                 transform.forward = VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos.forward;
-            }
-            
+            }        
         }
         //TODO: 加入特效列表管理器方便慢放
     }

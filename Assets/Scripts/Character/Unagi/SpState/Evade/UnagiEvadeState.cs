@@ -16,7 +16,8 @@ public class UnagiEvadeState : UnagiStateBase
         playerController.isDodge = true;
         playerController.characterInfo[playerController.currentModelIndex].GetComponent<PlayerModel>().dodgeColl.enabled = true;
         isPreInput = false;
-        switch(playerModel.currentState)
+        playerController.evadeTimer = 0f;
+        switch (playerModel.currentState)
         {
             case PlayerState.Evade_Front:
                 playerController.PlayAnimation("Evade_Front",0.1f);

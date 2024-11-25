@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour, IHurt
         Init(enemyTagList);
         isLookToPlayer = false;
         hurtTimer = 0f;
+        AllEnemyController.INSTANCE.AddEnemyList(this);
     }
 
     private void Update()
@@ -227,6 +228,7 @@ public class EnemyController : MonoBehaviour, IHurt
         if (PlayerController.INSTANCE.isDodge)
         {
             Debug.Log("…¡±‹≥…π¶");
+            PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().PerfectDodgeEvent();
         }
         else
         {

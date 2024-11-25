@@ -28,7 +28,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     public StateMachine stateMachine;
 
     //ÉÁ±Ü¼ÆÊ±Æ÷
-    public float evadeTimer = 1f;
+    public float evadeTimer = 0.8f;
 
     //ÉÁ±Ü¼ÆÊýÆ÷
     public int evadeCnt = 0;
@@ -363,15 +363,27 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
         }
 
         //»Ö¸´ÉÁ±Ü¼ÆÊ±Æ÷
-        if(evadeTimer < 1f && evadeCnt == 2)
+        /*
+        if(evadeTimer < 0.8f && evadeCnt == 2)
         {
             evadeTimer += Time.deltaTime;
-            if(evadeTimer >1f)
+            if(evadeTimer >0.8f)
             {
-                evadeTimer = 1f;
+                evadeTimer = 0.8f;
                 evadeCnt = 0;
             }
         }
+        */
+        if(evadeCnt != 0)
+        {
+            evadeTimer += Time.deltaTime;
+            if (evadeTimer > 0.8f)
+            {
+                evadeTimer = 0.8f;
+                evadeCnt = 0;
+            }
+        }
+        
     }
     /*
     private void LockMouse()

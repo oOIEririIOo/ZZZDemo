@@ -159,6 +159,44 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
         }
     }
 
+    public void TryGetVFX(CharacterNameList characterName, string effectName,Transform pos)
+    {
+
+        if (effectPool[characterName][effectName].Count == 0)
+        {
+            var vfx = FindVFXInfo(characterName, effectName);
+            GameObject go = Instantiate(vfx.VFXPrefab);
+            //初始化特效
+            if (!go.TryGetComponent<VFXItem>(out var vFXItem))
+            {
+                vFXItem = go.AddComponent<VFXItem>();
+            }
+            vFXItem.Init(characterName, effectName);
+            go.transform.parent = pos;
+            vFXItem.transform.localPosition = Vector3.zero;
+            vFXItem.transform.forward = PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().transform.forward;
+            effectPool[characterName][effectName].Enqueue(go);
+
+        }
+
+        if (effectPool.ContainsKey(characterName) && effectPool[characterName].ContainsKey(effectName) && effectPool[characterName][effectName].Count > 0)
+        {
+            GameObject go = effectPool[characterName][effectName].Dequeue();
+            if (!go.TryGetComponent<VFXItem>(out var vFXItem))
+            {
+                vFXItem = go.AddComponent<VFXItem>();
+            }
+            vFXItem.SetParent(pos);
+            vFXItem.transform.localPosition = Vector3.zero;
+            vFXItem.transform.forward = PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().transform.forward;
+            go.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning(characterName + "类型" + effectName + "名字的" + "对象池不存在");
+        }
+    }
+
     public void Recycle(CharacterNameList characterName,string name, GameObject vfxGO)
     {
 

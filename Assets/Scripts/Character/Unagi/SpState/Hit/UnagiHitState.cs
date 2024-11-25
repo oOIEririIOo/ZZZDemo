@@ -43,11 +43,13 @@ public class UnagiHitState : UnagiStateBase
                 }
                 break;
         }
+        playerModel.animator.Update(0);
     }
 
     public override void Update()
     {
         base.Update();
+        
         if(NormalizedTime()>=0.6f)
         {
             #region ºÏ≤‚¥Û’–
@@ -96,6 +98,7 @@ public class UnagiHitState : UnagiStateBase
             }
             #endregion
         }
+        
         if (IsAnimationEnd())
         {
             playerController.SwitchState(PlayerState.Idle);

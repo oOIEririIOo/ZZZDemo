@@ -15902,6 +15902,7 @@ MonoBehaviour:
   damageTrans: 0
   hitType: 0
   currentVFXIndex: 0
+  dodgeEffPos: {fileID: 676341633597189839}
   foot: 0
 --- !u!114 &7541839467196560311
 MonoBehaviour:

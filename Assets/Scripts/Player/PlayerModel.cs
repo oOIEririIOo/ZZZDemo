@@ -45,6 +45,8 @@ public class PlayerModel : MonoBehaviour, IHurt
     public  int currentVFXIndex = 0;
     //public int hitBoxIndex;
 
+    public Transform dodgeEffPos;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -105,6 +107,12 @@ public class PlayerModel : MonoBehaviour, IHurt
                                                                        
 
     }   
+
+    public void PerfectDodgeEvent()
+    {
+        PlayVFX("DodgeEff", dodgeEffPos);
+        CameraHitFeel.INSTANCE.SlowMotion(0.1f, 0.25f);
+    }
     
     /// <summary>
     /// ø™∆Ù…À∫¶ºÏ≤‚
@@ -254,7 +262,12 @@ public class PlayerModel : MonoBehaviour, IHurt
         VFXPoolManager.INSTANCE.TryGetVFX(characterStats.characterName, VFXname);
     }
 
-    
+    public void PlayVFX(string VFXname,Transform pos)
+    {
+        VFXPoolManager.INSTANCE.TryGetVFX(characterStats.characterName, VFXname,pos);
+    }
+
+
     #region ∏˜÷÷“Ù∆µ
     public void LeftFootAudio()
     {
