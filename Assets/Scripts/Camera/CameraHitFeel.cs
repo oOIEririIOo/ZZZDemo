@@ -24,6 +24,8 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
     Coroutine RemoveColorCoroutine;
     private ColorAdjustments colorAdjustments;
 
+
+    //慢放
     public void SlowMotion(float time, float speedMult)
     {
         allEnemyAnimator = GetAllEnemyAnimator();
@@ -41,7 +43,21 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         RemoveColorCoroutine = StartCoroutine(RemoveColor(time));
     }
 
-    IEnumerator SlowMotionOnAnimation(float time, float speedMult)//慢放
+    //钝帧
+    public void PauseFrame(float time)
+    {
+        if (time == 0) {return; }
+        currentCharacterAnimator = GetCurrentCharacterAnimator();
+        if (PauseFrameCoroutine != null)
+        {
+            StopCoroutine(PauseFrameCoroutine);
+        }
+        PauseFrameCoroutine = StartCoroutine(PauseFrameOnAnimation(time));
+    }
+
+
+    //慢放协程
+    IEnumerator SlowMotionOnAnimation(float time, float speedMult)
     {
         float currentSpeed = speedMult;
         
@@ -68,6 +84,8 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
         //SetVolume(0f);
     }
+
+    //屏幕失色效果协程
     IEnumerator RemoveColor(float time)
     {
         float targetValue = -55f;
@@ -89,7 +107,24 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         SetVolume(0f);
     }
 
+    //钝帧协程
+    IEnumerator PauseFrameOnAnimation(float time)
+    {
+        currentCharacterAnimator.speed = 0f;
+        currentEnemyAnimator.speed = 0f;
+        //VFXManager.INSTANCE.PauseVFX();
+        yield return new WaitForSeconds(time);
+        //VFXManager.INSTANCE.ResetVXF();
+        currentCharacterAnimator.speed = 1f;
+        currentEnemyAnimator.speed = 1f;
+    }
 
+    
+    public void GetCurrentEnemyAnimation(EnemyController enemy)
+    {
+        currentEnemyAnimator = enemy.GetComponent<Animator>();
+    }
+    
     private List<Animator> GetAllEnemyAnimator()
     {
         List<EnemyController> enemies = AllEnemyController.INSTANCE.GetAllEnemy();
@@ -116,7 +151,13 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
             animator.speed = speedMult;
         }
     }
-
+    #region 震屏
+    public void CameraShake(float shakeForce)
+    {
+        if (shakeForce == 0) { return; }
+        cinemachineImpulseSource.GenerateImpulseWithForce(shakeForce);
+    }
+    #endregion
     private void SetVolume(float value)
     {
         //ClampedFloatParameter floatParameter = volume.GetComponent<ColorAdjustments>().saturation;

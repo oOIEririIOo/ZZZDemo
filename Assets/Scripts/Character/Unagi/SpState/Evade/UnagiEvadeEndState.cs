@@ -48,9 +48,19 @@ public class UnagiEvadeEndState : UnagiStateBase
         #region ¼ì²â¹¥»÷
         if (playerController.inputSystem.Player.Fire.triggered)
         {
-            //ÇÐ»»µ½ÆÕÍ¨¹¥»÷×´Ì¬
-            playerController.SwitchState(PlayerState.Attack_Rush);
-            return;
+            if(playerController.perfectDodge)
+            {
+                playerController.SwitchState(PlayerState.Counter);
+                playerController.perfectDodge = false;
+                return;
+            }
+            else
+            {
+                //ÇÐ»»µ½ÆÕÍ¨¹¥»÷×´Ì¬
+                playerController.SwitchState(PlayerState.Attack_Rush);
+                return;
+            }
+            
         }
         #endregion
 
@@ -85,5 +95,11 @@ public class UnagiEvadeEndState : UnagiStateBase
             playerController.SwitchState(PlayerState.Idle);
         }
         #endregion
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        playerController.perfectDodge = false;
     }
 }

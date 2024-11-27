@@ -44,6 +44,7 @@ public class UnagiHitState : UnagiStateBase
                 break;
         }
         playerModel.animator.Update(0);
+        playerModel.characterStats.skillConfig.currentNormalAttackIndex = 1;
     }
 
     public override void Update()

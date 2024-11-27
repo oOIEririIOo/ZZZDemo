@@ -10,6 +10,7 @@ public enum PlayerState
     Walk ,Run, RunEnd, TurnBack,TurnBack_End, 
     Evade_Front, Evade_Front_End, Evade_Back, Evade_Back_End,
     NormalAttack, NormalAttackEnd, Attack_Rush, Attack_Rush_End,
+    Counter,Counter_End,
     Branch,Branch_End,SpBranch,SpBranch_End,
     BigSkillStart, BigSkill, BigSkillEnd, 
     SwitchInNormal,
@@ -82,7 +83,7 @@ public class PlayerStateBase : StateBase
         //状态进入计时
         animationPlayTime += Time.deltaTime;
 
-        #region 检测角色切换(直接进行切换)
+        #region 检测角色切换
         if(playerModel.currentState != PlayerState.BigSkillStart && playerModel.currentState != PlayerState.BigSkill 
             && (playerController.inputSystem.Player.SwitchDown.triggered || playerController.inputSystem.Player.SwitchUp.triggered))
         {

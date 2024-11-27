@@ -82,6 +82,7 @@ public class PlayerModel : MonoBehaviour, IHurt
         //TODO: Debug.Log(((Component)enemy).name);
         //Debug.Log(((Component)enemy).name);
         var currentEnemy = (Component)enemy;
+        
         modelName = gameObject.name;
         modelName = modelName.Replace("(Clone)", "");
         AudioManager.INSTANCE.PlayAudio(modelName+"攻击受击音"+ skillConfig.currentNormalAttackIndex);
@@ -94,7 +95,11 @@ public class PlayerModel : MonoBehaviour, IHurt
                 weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType,
                 weapons[currentWeaponIndex].characterStats.GetComponent<PlayerModel>());
         }
-
+        //传递敌人信息给镜头特效
+        CameraHitFeel.INSTANCE.GetCurrentEnemyAnimation(enemyController);
+        //钝帧
+        float pauseFrameTime = weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].pauseFrameTime;
+        CameraHitFeel.INSTANCE.PauseFrame(pauseFrameTime);
 
         //产生hit特效
         Vector3 location = weapons[currentWeaponIndex].transform.position;
@@ -105,7 +110,6 @@ public class PlayerModel : MonoBehaviour, IHurt
                                                                         closestPoint,
                                                                         forword);
                                                                        
-
     }   
 
     public void PerfectDodgeEvent()
@@ -190,6 +194,11 @@ public class PlayerModel : MonoBehaviour, IHurt
         return (stateInfo.normalizedTime >= 1.0f && !animator.IsInTransition(0));
 
         #endregion
+    }
+
+    public void CameraShakeOnAnim(float force)
+    {
+        CameraHitFeel.INSTANCE.CameraShake(force);
     }
 
     /// <summary>

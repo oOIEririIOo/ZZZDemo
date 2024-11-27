@@ -80,6 +80,14 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                     {
                         go.transform.position = effectDates[i].effectItemData.effectItems[j].spawnPos.position;
                     }
+                    else
+                    {
+                        if (PlayerController.INSTANCE.characterDic.TryGetValue(effectDates[i].style, out int index))
+                        {
+                            go.transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
+                        }
+                        else Debug.Log("字典为空！也许该特效属于Enemy");
+                    }
                     
                     //隐藏
                     go.SetActive(false);
@@ -143,6 +151,15 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                 go.transform.position = vfx.spawnPos.position;
                 //go.transform.localPosition = Vector3.zero;
                 go.transform.forward = vfx.spawnPos.forward;
+            }
+            else
+            {
+                if (PlayerController.INSTANCE.characterDic.TryGetValue(characterName, out int index))
+                {
+                    go.transform.parent = this.transform;
+                    go.transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
+                }
+                else Debug.Log("字典为空！也许该特效属于Enemy");
             }
             effectPool[characterName][effectName].Enqueue(go);
 

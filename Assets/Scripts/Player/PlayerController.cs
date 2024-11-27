@@ -63,7 +63,8 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     public bool branchPressed = false;
     public bool branchTap = false;
     public bool branchHold = false;
-    public bool isDodge;
+    public bool isDodge = false;
+    public bool perfectDodge = false;
 
     protected private override void Awake()
     {

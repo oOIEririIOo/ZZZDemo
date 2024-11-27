@@ -61,6 +61,12 @@ public class UnagiState : SwitchState
             case PlayerState.Attack_Rush_End:
                 PlayerController.INSTANCE.stateMachine.EnterState<UnagiAttackRushEndState>();
                 break;
+            case PlayerState.Counter:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiCounterState>();
+                break;
+            case PlayerState.Counter_End:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiCounterEndState>();
+                break;
             case PlayerState.BigSkillStart:
                 PlayerController.INSTANCE.stateMachine.EnterState<PlayerBigSkillStartState>();
                 break;

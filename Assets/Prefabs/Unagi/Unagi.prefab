@@ -848,10 +848,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1235,10 +1235,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1246,6 +1246,78 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.2405262, y: 1.9970763, z: 2.5447667}
   m_Center: {x: -0.11072087, y: 1.0102323, z: 1.4388486}
+--- !u!1 &774190611585733775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8567751809366313050}
+  - component: {fileID: 713891379800050483}
+  - component: {fileID: 3833408468821619157}
+  m_Layer: 9
+  m_Name: Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8567751809366313050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774190611585733775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6460394504289707958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &713891379800050483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774190611585733775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab31b152c25a7254ca7b8bcd9f22757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStats: {fileID: 7541839467196560311}
+  hitCollider: {fileID: 3833408468821619157}
+  onTakeDemage:
+    m_PersistentCalls:
+      m_Calls: []
+  hitIndex: 0
+--- !u!65 &3833408468821619157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774190611585733775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 768
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.8689625, y: 1.9970763, z: 2.142805}
+  m_Center: {x: 0.10267413, y: 1.0102323, z: 0.26995713}
 --- !u!1 &807724144166944347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +1930,7 @@ Transform:
   - {fileID: 2785683307572015655}
   - {fileID: 3315755476180106071}
   - {fileID: 1333046282768128859}
+  - {fileID: 8567751809366313050}
   m_Father: {fileID: 4904034588709615829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253997423319735090
@@ -15785,7 +15858,7 @@ GameObject:
   - component: {fileID: 5286189254159894372}
   - component: {fileID: 7234290795013202060}
   - component: {fileID: 2997508193839778062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unagi
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -15896,6 +15969,7 @@ MonoBehaviour:
   - {fileID: 1402524900644377696}
   - {fileID: 7144046825897976120}
   - {fileID: 1116986045995817509}
+  - {fileID: 713891379800050483}
   characterStats: {fileID: 0}
   switchState: {fileID: 7234290795013202060}
   dodgeColl: {fileID: 2997508193839778062}
@@ -16067,10 +16141,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -19263,10 +19337,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0

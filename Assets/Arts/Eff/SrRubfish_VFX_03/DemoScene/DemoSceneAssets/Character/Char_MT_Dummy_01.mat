@@ -137,7 +137,7 @@ Material:
     - _FX_FresnelImpact_Color: {r: 0, g: 0, b: 0, a: 0}
     - _FX_FresnelImpact_Color_Low: {r: 0, g: 0, b: 0, a: 0}
     - _FirstShadowPass: {r: 0.43, g: 0.73, b: 0, a: 0}
-    - _FresnelColor: {r: 0, g: 0, b: 0, a: 0}
+    - _FresnelColor: {r: 1, g: 0, b: 0, a: 0}
     - _LastShadow: {r: 0.15979886, g: 0.16411342, b: 0.1981132, a: 0}
     - _Main: {r: 1, g: 1, b: 1, a: 0}
     - _SecondShadowPass: {r: 0, g: 0.37, b: 0, a: 0}

@@ -8,6 +8,7 @@ public class VFXItem : MonoBehaviour
     public string vfxName;
     public CharacterNameList characterName;
     bool isInit = false;
+    private float timer;
     private void Awake()
     {
         particle = transform.GetComponent<ParticleSystem>(); 
@@ -19,6 +20,7 @@ public class VFXItem : MonoBehaviour
         this.vfxName = effectName;
         this.characterName = characterName;
         VFXManager.INSTANCE.AddVFX(particle, 1f);
+        
     }
     public void SetParent(Transform pos)
     {
@@ -27,6 +29,7 @@ public class VFXItem : MonoBehaviour
     private void OnEnable()
     {
         if (!isInit) return;
+        timer = 0f;
         particle.Play();
         if(VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName)!= null)
         {
@@ -34,15 +37,31 @@ public class VFXItem : MonoBehaviour
             {
                 transform.position = VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos.position;
                 transform.forward = VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos.forward;
-            }        
+            }
+            else
+            {
+                if (PlayerController.INSTANCE.characterDic.TryGetValue(characterName, out int index))
+                { 
+                    transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
+                }
+                else Debug.Log("字典为空！也许该特效属于Enemy");
+            }
         }
         //TODO: 加入特效列表管理器方便慢放
     }
 
     private void Update()
     {
-        if (!isInit) return;
+        timer += Time.deltaTime;
+        /*
+        //if (!isInit) return;
+        Debug.Log(particle.main.duration);
         if (!particle.isPlaying)
+        {
+            gameObject.SetActive(false);
+        }
+        */
+        if(timer >= particle.main.duration)
         {
             gameObject.SetActive(false);
         }

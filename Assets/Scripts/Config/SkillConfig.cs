@@ -53,7 +53,8 @@ public class HitInfo
     public EffectItem hitVFX;
     public HitType hitType;
     public DamageDir damageDir;
-    
+    public float pauseFrameTime;
+    public bool canInterrupt;
 }
 
 public enum HitType

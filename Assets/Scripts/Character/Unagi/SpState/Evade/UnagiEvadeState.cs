@@ -13,7 +13,9 @@ public class UnagiEvadeState : UnagiStateBase
     {
         mainCamera = Camera.main;
         base.Enter();
+
         playerController.isDodge = true;
+        playerController.perfectDodge = false;
         playerController.characterInfo[playerController.currentModelIndex].GetComponent<PlayerModel>().dodgeColl.enabled = true;
         isPreInput = false;
         playerController.evadeTimer = 0f;
@@ -97,8 +99,23 @@ public class UnagiEvadeState : UnagiStateBase
         #region ¼ì²â¹¥»÷
         if (playerController.inputSystem.Player.Fire.triggered && !playerController.mouseOpen)
         {
-            playerController.SwitchState(PlayerState.Attack_Rush);
-            return;
+            if (playerController.perfectDodge)
+            {
+                playerController.SwitchState(PlayerState.Counter);
+                playerController.perfectDodge = false;
+                return;
+            }
+            else
+            {
+                playerController.SwitchState(PlayerState.Counter);
+                playerController.perfectDodge = false;
+                return;
+                /*
+                playerController.SwitchState(PlayerState.Attack_Rush);
+                return;
+                */
+            }
+            
         }
 
         #endregion

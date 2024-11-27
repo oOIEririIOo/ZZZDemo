@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour, IHurt
         }
         else
         {
-            if(hitType != HitType.Light && hitType!=HitType.VeryLight)
+            if((hitType != HitType.Light && hitType!=HitType.VeryLight) || player.characterStats.skillConfig.currentAttackInfo.hitInfo[player.characterStats.skillConfig.currentAttackInfo.hitIndex].canInterrupt)
             {
                 hurtTrigger = true;
                 HurtAnimation(dir, hitType);
@@ -229,6 +229,7 @@ public class EnemyController : MonoBehaviour, IHurt
         {
             Debug.Log("…¡±‹≥…π¶");
             PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().PerfectDodgeEvent();
+            PlayerController.INSTANCE.perfectDodge = true;
         }
         else
         {

@@ -130,7 +130,7 @@ Material:
     - _QueueOffset: 0
     - _RenderQueueType: 3
     - _ShadowAmmount: 1
-    - _SoftParticle: 1.54
+    - _SoftParticle: 0.9
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
@@ -175,8 +175,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HighColor: {r: 0.8349056, g: 0.9458653, b: 1, a: 0}
-    - _MainColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _HighColor: {r: 0.8156863, g: 0.9458652, b: 1, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _MinMaxSmoothStepDissolve: {r: 0, g: 0.2, b: 0, a: 0}
     - _NoiseColor_Offset: {r: 1, g: 1, b: 0, a: 0}
     - _NoiseColor_Panning: {r: 0, g: 0, b: 0, a: 0}

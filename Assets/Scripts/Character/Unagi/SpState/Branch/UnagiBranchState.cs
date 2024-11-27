@@ -45,6 +45,13 @@ public class UnagiBranchState : UnagiStateBase
 
         if (IsAnimationEnd())
         {
+            #region ¼ì²âÖØ»÷
+            if (playerController.mousePressed)
+            {
+                playerController.SwitchState(PlayerState.Unagi_HavenAttack);
+                return;
+            }
+            #endregion
             switch (playerModel.currentState)
             {
                 case PlayerState.Branch:

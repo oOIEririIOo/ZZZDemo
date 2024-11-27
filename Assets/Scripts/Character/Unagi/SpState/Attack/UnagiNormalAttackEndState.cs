@@ -79,7 +79,6 @@ public class UnagiNormalAttackEndState : UnagiStateBase
         #region 检测动画结束
         if (IsAnimationEnd())
         {
-
             // 切换待机状态
             //当前攻击段数归零
             playerModel.characterStats.skillConfig.currentNormalAttackIndex = 1;
