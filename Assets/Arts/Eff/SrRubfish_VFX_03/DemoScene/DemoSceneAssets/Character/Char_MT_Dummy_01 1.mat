@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 1999
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: edecac6938401a849b122381d144300c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3841f8ecc4c5244429f88d028ad7ddc4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -118,7 +118,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: -1
     - _ReceiveShadows: 1
     - _ShadowStrenght: 0.075
     - _Smoothness: 0
@@ -133,11 +133,11 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeShadowColor: {r: 0.5283019, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FX_FresnelImpact_Color: {r: 0, g: 0, b: 0, a: 0}
     - _FX_FresnelImpact_Color_Low: {r: 0, g: 0, b: 0, a: 0}
     - _FirstShadowPass: {r: 0.43, g: 0.73, b: 0, a: 0}
-    - _FresnelColor: {r: 0.74902016, g: 0, b: 0, a: 0}
+    - _FresnelColor: {r: 1.4980403, g: 0.9062123, b: 0, a: 0}
     - _LastShadow: {r: 0.15979886, g: 0.16411342, b: 0.1981132, a: 0}
     - _Main: {r: 1, g: 1, b: 1, a: 0}
     - _SecondShadowPass: {r: 0, g: 0.37, b: 0, a: 0}

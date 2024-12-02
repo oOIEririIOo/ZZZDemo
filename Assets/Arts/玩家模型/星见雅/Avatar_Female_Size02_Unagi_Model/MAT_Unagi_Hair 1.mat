@@ -234,7 +234,7 @@ Material:
     - _OcclusionRemapEnd: 1
     - _OcclusionRemapStart: 1
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.4
+    - _OutlineWidth: 0.6
     - _OutlineZOffset: 0.038
     - _OutlineZOffsetMaskRemapEnd: 1
     - _OutlineZOffsetMaskRemapStart: 0.064

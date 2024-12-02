@@ -18,6 +18,7 @@ public class UnagiAttackRushState : UnagiStateBase
         mainCamera = Camera.main;
         enterNextAttack = false;
         isLock = false;
+        isContinuePlay = true;
         playerController.PlayAnimation("Attack_Rush");
     }
 

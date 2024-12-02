@@ -30,8 +30,10 @@ public class VFXItem : MonoBehaviour
     {
         if (!isInit) return;
         timer = 0f;
+        particle.Simulate(0f);
         particle.Play();
-        if(VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName)!= null)
+        
+        if (VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName)!= null)
         {
             if(VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos != null)
             {
@@ -43,6 +45,7 @@ public class VFXItem : MonoBehaviour
                 if (PlayerController.INSTANCE.characterDic.TryGetValue(characterName, out int index))
                 { 
                     transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
+                    transform.forward = PlayerController.INSTANCE.vfxPos[index].transform.forward;
                 }
                 else Debug.Log("字典为空！也许该特效属于Enemy");
             }
@@ -61,6 +64,7 @@ public class VFXItem : MonoBehaviour
             gameObject.SetActive(false);
         }
         */
+       
         if(timer >= particle.main.duration)
         {
             gameObject.SetActive(false);
@@ -72,9 +76,21 @@ public class VFXItem : MonoBehaviour
     private void OnDisable()
     {
         //VFXManager.INSTANCE.Recycle(vfxName, gameObject);
+        particle.Stop();
+        gameObject.SetActive(false);
         VFXPoolManager.INSTANCE.Recycle(characterName, vfxName, gameObject);
         //TODO: 移除特效列表管理器方便慢放
     }
+    public void FindChild()
+    {
+        var allChild = GetComponentsInChildren<Transform>();
+        foreach (Transform child in allChild)
+        {
+            Debug.Log(child.name);
+        }
+    }
+
+    
 }
 
 public enum VFXType

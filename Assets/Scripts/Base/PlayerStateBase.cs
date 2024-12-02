@@ -13,12 +13,13 @@ public enum PlayerState
     Counter,Counter_End,
     Branch,Branch_End,SpBranch,SpBranch_End,
     BigSkillStart, BigSkill, BigSkillEnd, 
-    SwitchInNormal,
+    SwitchInNormal,Parry,ParryEnd,
     Hit,
     Pause,
 
 
-    Unagi_HavenAttack,Unagi_HavenAttackEnd,Unagi_BranchStart,Unagi_HoldBranch,Unagi_HoldBranchEnd
+    Unagi_HavenAttack,Unagi_HavenAttackEnd,Unagi_BranchStart,Unagi_HoldBranch,Unagi_HoldBranchEnd,
+    Anbi_PerfectAttack,Anbi_PerfectAttack_End,Anbi_PerfectBranch, Anbi_PerfectBranch_End, Anbi_PerfectSPBranch, Anbi_PerfectSPBranch_End
 }
 
 public class PlayerStateBase : StateBase

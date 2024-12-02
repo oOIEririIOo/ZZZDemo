@@ -659,8 +659,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: 52c909e971bbddf48a4f2bff47a34399, type: 2}
   - {fileID: 2100000, guid: ee0db0348cb6f044db9ba19ce2c5331c, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1316,7 +1318,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.8689625, y: 1.9970763, z: 2.142805}
+  m_Size: {x: 2.83, y: 2.2, z: 3.31}
   m_Center: {x: 0.10267413, y: 1.0102323, z: 0.26995713}
 --- !u!1 &807724144166944347
 GameObject:
@@ -1590,7 +1592,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: 2d96e86ba89f9d843a84301e14c1c4d9, type: 2}
+  - {fileID: 2100000, guid: 438ceb3d9dde4ac4ab8f10533bf04cd4, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2974,8 +2979,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: 52c909e971bbddf48a4f2bff47a34399, type: 2}
   - {fileID: 2100000, guid: ee0db0348cb6f044db9ba19ce2c5331c, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3696,8 +3703,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: 52c909e971bbddf48a4f2bff47a34399, type: 2}
   - {fileID: 2100000, guid: ee0db0348cb6f044db9ba19ce2c5331c, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4234,8 +4243,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: c6c5bf04084ba6645b7faec21454bf9c, type: 2}
   - {fileID: 2100000, guid: 057f6f90f38ad044b9704904518cb1ec, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4359,8 +4370,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: a8b0a6bd005dca444a8e9be029ef4909, type: 2}
   - {fileID: 2100000, guid: f7c32269edfe8b445afc74248417c24c, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9608,8 +9621,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 6ac59024b630b974ab16877800a95de8, type: 2}
   - {fileID: 2100000, guid: 52c909e971bbddf48a4f2bff47a34399, type: 2}
   - {fileID: 2100000, guid: ee0db0348cb6f044db9ba19ce2c5331c, type: 2}
+  - {fileID: 2100000, guid: 87102cc52f66dd447871e10cad376de1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15973,10 +15988,20 @@ MonoBehaviour:
   characterStats: {fileID: 0}
   switchState: {fileID: 7234290795013202060}
   dodgeColl: {fileID: 2997508193839778062}
+  meshRenderer:
+  - {fileID: 1728689702800997486}
+  - {fileID: 8097018097249381912}
+  - {fileID: 9016432066832821927}
+  - {fileID: 3256926039051850397}
+  - {fileID: 4147687665297993287}
+  - {fileID: 7809342505259718165}
+  - {fileID: 6380859377814096290}
   damageTrans: 0
   hitType: 0
   currentVFXIndex: 0
   dodgeEffPos: {fileID: 676341633597189839}
+  parryTiming: 0
+  parryTarget: {fileID: 0}
   foot: 0
 --- !u!114 &7541839467196560311
 MonoBehaviour:

@@ -35,6 +35,7 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
             if (!effectPool.ContainsKey(effectDates[i].style))
             {
                 effectPool.Add(effectDates[i].style, new Dictionary<string, Queue<GameObject>>());
+                //Debug.Log("已经创建" + effectDates[i].style + "特效字典，该字典特效数："+ effectDates[i].effectItemData.effectItems.Count);
             }
 
             for (int j = 0; j < effectDates[i].effectItemData.effectItems.Count; j++)//循环每个特效类型中的多个项目
@@ -95,6 +96,7 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                     if (!effectPool[effectDates[i].style].ContainsKey(effectDates[i].effectItemData.effectItems[j].VFXName))
                     {
                         effectPool[effectDates[i].style].Add(effectDates[i].effectItemData.effectItems[j].VFXName, new Queue<GameObject>());
+                        //Debug.Log(effectDates[i].effectItemData.effectItems[j].VFXName + "已放入" + effectDates[i].effectItemData + "字典");
                     }
                     effectPool[effectDates[i].style][effectDates[i].effectItemData.effectItems[j].VFXName].Enqueue(go);
                 }

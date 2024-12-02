@@ -17,10 +17,7 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: Event ChangeAttackBool has a time (5.008761) outside
-      the clip's valid range (0.000000..4.183333). It will never be firedEvent ChangeAttackBool
-      has a time (5.291684) outside the clip's valid range (0.000000..4.750000).
-      It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -848,6 +845,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.043326534
+        functionName: ParryAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.13597734
         functionName: LookToPlayerStop
         data: 
@@ -857,6 +861,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.14447592
         functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.15240642
+        functionName: ParryAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0
@@ -905,6 +916,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.0875572
+        functionName: ParryAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.14730877
         functionName: LookToPlayerStart
         data: 
@@ -921,6 +939,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.17280453
         functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.18333425
+        functionName: ParryAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0
@@ -1090,6 +1115,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.28612703
+        functionName: ParryAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.3368984
+        functionName: ParryAttackEnd
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.33711046
         functionName: StartHit
         data: 
@@ -1175,8 +1214,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.1529745
+      - time: 0.10142811
         functionName: LookToPlayerStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11307128
+        functionName: ParryAttackStart
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0
@@ -1191,6 +1237,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.17847025
         functionName: StartHit
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19112961
+        functionName: ParryAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0
@@ -1267,6 +1320,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.0659408
+        functionName: ParryAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.09348442
         functionName: LookToPlayerStart
         data: 
@@ -1283,6 +1343,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.11614731
         functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.122608736
+        functionName: ParryAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0
@@ -1345,6 +1412,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.089233145
+        functionName: ParryAttackStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.12747875
         functionName: StartHit
         data: 
@@ -1361,6 +1435,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.13314448
         functionName: LookToPlayerStop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.13452782
+        functionName: ParryAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
         floatParameter: 0

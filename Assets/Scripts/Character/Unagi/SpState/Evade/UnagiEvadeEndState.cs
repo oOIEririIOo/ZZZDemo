@@ -15,10 +15,10 @@ public class UnagiEvadeEndState : UnagiStateBase
         switch(playerModel.currentState)
         {
             case PlayerState.Evade_Front_End:
-                playerController.PlayAnimation("Evade_Front_End");
+                playerController.PlayAnimation("Evade_Front_End",0.1f);
                 break;
             case PlayerState.Evade_Back_End:
-                playerController.PlayAnimation("Evade_Back_End");
+                playerController.PlayAnimation("Evade_Back_End",0.1f);
                 break;
         }
         #endregion
@@ -40,7 +40,7 @@ public class UnagiEvadeEndState : UnagiStateBase
         #region ¼ì²â¼¼ÄÜ
         if (playerController.inputSystem.Player.Branch.triggered)
         {
-            playerController.SwitchState(PlayerState.Unagi_BranchStart);
+            playerController.SwitchState(PlayerState.Branch);
             return;
         }
         #endregion

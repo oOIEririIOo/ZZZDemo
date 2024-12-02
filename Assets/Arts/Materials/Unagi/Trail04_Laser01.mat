@@ -138,7 +138,7 @@ Material:
     - _ZWriteMode: 0
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 3.6886048, g: 3.6886048, b: 3.6886048, a: 1}
+    - _BaseColor: {r: 3.688605, g: 3.688605, b: 3.688605, a: 1}
     - _CoreColor: {r: 1, g: 1, b: 1, a: 0}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveMaskChannel: {r: 0, g: 1, b: 0, a: 0}

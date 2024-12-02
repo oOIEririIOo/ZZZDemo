@@ -9,6 +9,7 @@ public class UnagiBranchState : UnagiStateBase
         base.Enter();
         playerController.branchTap = false;
         playerController.branchHold = false;
+        isContinuePlay = true;
         //ÅÐ¶Ïsp
         switch(playerModel.currentState)
         {

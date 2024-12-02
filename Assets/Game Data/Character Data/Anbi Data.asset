@@ -16,3 +16,5 @@ MonoBehaviour:
   currentHealth: 100
   baseDefence: 5
   currentDefence: 5
+  maxSP: 100
+  currentSP: 0

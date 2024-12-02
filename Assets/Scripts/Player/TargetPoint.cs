@@ -15,5 +15,7 @@ public class TargetPoint : MonoBehaviour
     {
         Vector3 playerPos = PlayerController.INSTANCE.playerModel.transform.position;
         transform.position = new Vector3(playerPos.x,playerPos.y+Height,playerPos.z);
+        Vector3 playerForward = PlayerController.INSTANCE.playerModel.transform.forward;
+        transform.forward = new Vector3(playerForward.x, playerForward.y, playerForward.z);
     }
 }

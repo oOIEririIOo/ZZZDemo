@@ -26,13 +26,7 @@ public class UnagiCounterEndState : UnagiStateBase
         #region ¼ì²â¹¥»÷×´Ì¬
         if (playerController.inputSystem.Player.Fire.triggered && !playerController.mouseOpen)
         {
-
-            //ÀÛ¼Ó¹¥»÷¶ÎÊý
-            playerModel.characterStats.skillConfig.currentNormalAttackIndex++;
-            if (playerModel.characterStats.skillConfig.currentNormalAttackIndex > playerModel.skillConfig.normalAttack.Length)
-            {
-                playerModel.characterStats.skillConfig.currentNormalAttackIndex = 1;
-            }
+            playerModel.characterStats.skillConfig.currentNormalAttackIndex = 1;
             //ÇÐ»»µ½ÆÕÍ¨¹¥»÷×´Ì¬
             playerController.SwitchState(PlayerState.NormalAttack);
             return;

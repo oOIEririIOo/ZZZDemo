@@ -37,6 +37,8 @@ public class PlayerModel : MonoBehaviour, IHurt
     public SwitchState switchState;
     //闪避触发器
     public Collider dodgeColl;
+    //材质
+    public SkinnedMeshRenderer[] meshRenderer;
     //受伤类型
     public DamageDir damageTrans;
     public HitType hitType;
@@ -46,6 +48,11 @@ public class PlayerModel : MonoBehaviour, IHurt
     //public int hitBoxIndex;
 
     public Transform dodgeEffPos;
+    public bool parryTiming;
+    public EnemyController parryTarget;
+
+    private Coroutine OutLineBlue;
+    private Coroutine OutLineOrange;
 
     private void Awake()
     {
@@ -58,6 +65,7 @@ public class PlayerModel : MonoBehaviour, IHurt
     {
         characterStats.CurrentHealth = characterStats.MaxHealth;
         characterStats.CurrentDefence = characterStats.BaseDefence;
+        characterStats.CurrentSP = characterStats.MaxSP;
     }
 
     /// <summary>
@@ -103,18 +111,23 @@ public class PlayerModel : MonoBehaviour, IHurt
 
         //产生hit特效
         Vector3 location = weapons[currentWeaponIndex].transform.position;
-        Vector3 closestPoint = currentEnemy.GetComponent<Collider>().ClosestPoint(location);//获取碰撞位置
+        Vector3 closestPoint = currentEnemy.GetComponent<Collider>().bounds.ClosestPoint(location);//获取碰撞位置
         Vector3 forword = characterStats.gameObject.transform.forward;
         VFXPoolManager.INSTANCE.SpawnHitVfx(currentEnemy.GetComponent<CharacterStats>().characterName,
                                                                         weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo,
                                                                         closestPoint,
-                                                                        forword);
-                                                                       
+                                                                        forword);                                                        
     }   
 
     public void PerfectDodgeEvent()
     {
         PlayVFX("DodgeEff", dodgeEffPos);
+        
+        if(OutLineBlue != null)
+        {
+            StopCoroutine(OutLineBlue);
+        }
+        OutLineBlue = StartCoroutine(OutLineBlueIE(1.5f, 1.6f));
         CameraHitFeel.INSTANCE.SlowMotion(0.1f, 0.25f);
     }
     
@@ -147,6 +160,7 @@ public class PlayerModel : MonoBehaviour, IHurt
         MonoManager.INSTANCE.RemoveUpdateAction(OnExit);
 
         #region 设置角色出场位置
+        /*
         //计算右方向向量
         Vector3 rightDirection = rot * Vector3.right;
         pos += rightDirection * 0.8f;
@@ -154,13 +168,37 @@ public class PlayerModel : MonoBehaviour, IHurt
         //计算方向向量
         Vector3 backDirection = rot * Vector3.back;
         pos += backDirection;
-
+        */
         characterController.enabled = false;
         //characterController.Move(pos - transform.position);
         transform.SetPositionAndRotation(pos, rot);
         characterController.enabled = true;
         transform.rotation = rot;
         #endregion
+        OutLineBlack();
+    }
+
+    
+
+    public void GetParryTarget(EnemyController enemy)
+    {
+        parryTarget = enemy;
+    }
+
+    public void ParryEvent()
+    {
+        parryTarget.beParring = true;
+        CameraHitFeel.INSTANCE.SlowMotion(0.35f, 0.01f);
+        if (OutLineOrange != null)
+        {
+            StopCoroutine(OutLineOrange);
+        }
+        OutLineOrange = StartCoroutine(OutLineOrangeIE(1.5f, 1.6f));
+        PlayVFX("ParryEff");
+        CameraShakeOnAnim(2f);
+        Debug.Log("ParryEvent");
+        AllEnemyController.INSTANCE.ClearParryList();
+        
     }
 
     public void ExitNormal()
@@ -298,4 +336,111 @@ public class PlayerModel : MonoBehaviour, IHurt
         AudioManager.INSTANCE.PlayAudio("闪避声2");
     }
     #endregion
+
+    private void OutLineBlack()
+    {
+        foreach (var mR in meshRenderer)
+        {
+            foreach (var name in mR.materials)
+            {
+                if (name.name == "OutLineBlue (Instance)" || name.name == "OutLineOrange (Instance)")
+                {
+                    name.SetFloat("_OutlineWidth", 0.6f);
+                }
+            }
+            //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+        }
+    }
+    IEnumerator OutLineBlueIE(float time,float index)
+    {
+        float currentIndex = index;
+        foreach (var mR in meshRenderer)
+        {
+            foreach(var name in mR.materials)
+            {
+                if(name.name == "OutLineBlue (Instance)")
+                {
+                    name.SetFloat("_OutlineWidth", currentIndex);
+                }
+            }
+            //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+        }
+        yield return new WaitForSeconds(time);
+        float minValue = 0.1f;
+        while (Mathf.Abs(currentIndex - 0.6f) > minValue)
+        {
+            currentIndex = Mathf.Lerp(currentIndex, 0.6f, Time.deltaTime * 2.5f);
+            foreach (var mR in meshRenderer)
+            {
+                foreach (var name in mR.materials)
+                {
+                    if (name.name == "OutLineBlue (Instance)")
+                    {
+                        name.SetFloat("_OutlineWidth", currentIndex);
+                    }
+                }
+                //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+            }
+            yield return null;
+        }
+        
+        currentIndex = 0.6f;
+        foreach (var mR in meshRenderer)
+        {
+            foreach (var name in mR.materials)
+            {
+                if (name.name == "OutLineBlue (Instance)")
+                {
+                    name.SetFloat("_OutlineWidth", currentIndex);
+                }
+            }
+            //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+        }
+    }
+    IEnumerator OutLineOrangeIE(float time, float index)
+    {
+        float currentIndex = index;
+        foreach (var mR in meshRenderer)
+        {
+            foreach (var name in mR.materials)
+            {
+                if (name.name == "OutLineOrange (Instance)")
+                {
+                    name.SetFloat("_OutlineWidth", currentIndex);
+                }
+            }
+            //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+        }
+        yield return new WaitForSeconds(time);
+        float minValue = 0.1f;
+        while (Mathf.Abs(currentIndex - 0.6f) > minValue)
+        {
+            currentIndex = Mathf.Lerp(currentIndex, 0.6f, Time.deltaTime * 2.5f);
+            foreach (var mR in meshRenderer)
+            {
+                foreach (var name in mR.materials)
+                {
+                    if (name.name == "OutLineOrange (Instance)")
+                    {
+                        name.SetFloat("_OutlineWidth", currentIndex);
+                    }
+                }
+                //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+            }
+            yield return null;
+        }
+
+        currentIndex = 0.6f;
+        foreach (var mR in meshRenderer)
+        {
+            foreach (var name in mR.materials)
+            {
+                if (name.name == "OutLineOrange (Instance)")
+                {
+                    name.SetFloat("_OutlineWidth", currentIndex);
+                }
+            }
+            //mt.materials[0].SetFloat("_OutlineWidth", currentIndex);
+        }
+    }
 }

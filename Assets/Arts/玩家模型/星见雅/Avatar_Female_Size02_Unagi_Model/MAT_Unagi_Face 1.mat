@@ -21,17 +21,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Unagi_Face 1
-  m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f2c8216f97326fd4baf6a7828f7c29be, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 1998
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -185,13 +184,13 @@ Material:
     - _AdditionalLightIgnoreCelShade: 1
     - _AdditionalLightShadows: 1
     - _AdditionalLightsEnabled: 1
-    - _AdditionalLightsMidPoint: 0.737
-    - _AdditionalLightsSmothness: 0.454
+    - _AdditionalLightsMidPoint: 0.929
+    - _AdditionalLightsSmothness: 0.374
     - _AdditionalLightsSpecular: 0
     - _AdditionalShadowsPower: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Alpha_Clipping: 0.004
+    - _Alpha_Clipping: 0
     - _Blend: 0
     - _BlendMode: 0
     - _BlendModePreserveSpecular: 1
@@ -225,7 +224,6 @@ Material:
     - _GRADIENT_DIRECTION: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.4472136
-    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _Gradient_Enabled: 1
     - _Gradient_Multiplier: 1.19
@@ -235,21 +233,21 @@ Material:
     - _IsDay: 1
     - _IsFace: 0
     - _MAIN_LIGHT_SHADOWS: 1
-    - _MAIN_LIGHT_SHADOWS_CASCADE: 0
+    - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _MainLightIgnoreCelShade: 1
-    - _MainLightMidPoint: 0.515
-    - _MainLightSmoothness: 0.704
+    - _MainLightMidPoint: 0.124
+    - _MainLightSmoothness: 0.438
     - _MainLightSpecular: 0
-    - _MainShadowsPower: 0.5
+    - _MainShadowsPower: 0.154
     - _Metallic: 0
     - _MetallicIntensity: 1
     - _Mode: 0
     - _NonmetallicIntensity: 1
-    - _OcclusionPower: 1
+    - _OcclusionPower: 0
     - _OcclusionRemapEnd: 1
     - _OcclusionRemapStart: 1
     - _OcclusionStrength: 1
-    - _OutlineWidth: 1
+    - _OutlineWidth: 0
     - _OutlineZOffset: 0.038
     - _OutlineZOffsetMaskRemapEnd: 1
     - _OutlineZOffsetMaskRemapStart: 0.064
@@ -260,7 +258,7 @@ Material:
     - _Preview_Y: 0
     - _Preview_Z: 0
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: -2
     - _ReceiveShadowMappingAmount: 1
     - _ReceiveShadowMappingPosOffset: 0
     - _ReceiveShadows: 1
@@ -275,13 +273,10 @@ Material:
     - _SHADOWS_SOFT: 1
     - _ShadowOffset: 1.83
     - _ShadowSmoothness: 1.54
-    - _Shadow_Smoothness: 1
-    - _Shininess: 0
+    - _Shadow_Smoothness: 0.765
     - _Shrink_Size: 0
-    - _Smoothness: 0
-    - _SmoothnessSource: 0
+    - _Smoothness: 0.4472136
     - _SmoothnessTextureChannel: 0
-    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SpecularMapPower: 0
     - _SpecularMidPoint: 0.962
@@ -303,7 +298,7 @@ Material:
     - _VertAnimMode: 0
     - _Vertex_Color_Normlas: 0
     - _WorkflowMode: 1
-    - _X_Modifier: 0
+    - _X_Modifier: 0.467
     - _X_Offset: 0
     - _X_Pos_Multiplier: 10
     - _Y_Modifier: 0
@@ -312,22 +307,22 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
-    - _Z_Modifier: 0
+    - _Z_Modifier: 0.089
     - _Z_Offset: 0
     - _Z_Pos_Multiplier: 10
-    - _is_Face: 0
+    - _is_Face: 1
     m_Colors:
     - Color_23C9B10D: {r: 0.04561229, g: 0.14495295, b: 0.38679245, a: 0}
     - Color_A2AAE5B5: {r: 0.11372546, g: 0.62745106, b: 0.8352941, a: 0}
     - Vector2_C848BFFB: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _Ambient: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
     - _BaseMapTiling: {r: 1, g: 1, b: 0, a: 0}
     - _BaseParameter: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DissColor: {r: 1, g: 0, b: 0, a: 1}
     - _DissParameter: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.11013707, g: 0.11798016, b: 0.14150944, a: 1}
+    - _EmissionColor: {r: 0.44054827, g: 0.47192064, b: 0.5660378, a: 1}
     - _EmissionMapChannelMask: {r: 1, g: 1, b: 1, a: 0}
     - _FaceBlushColor: {r: 1, g: 1, b: 1, a: 1}
     - _FaceDirection: {r: 0, g: 0, b: 1, a: 0}
@@ -337,7 +332,7 @@ Material:
     - _IndirectLightMinColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskParameter: {r: 0, g: 0, b: 0, a: 0}
     - _OcclusionMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0.29681382, g: 0.36377025, b: 0.4339623, a: 1}
+    - _OutlineColor: {r: 1.7547169, g: 2.9706707, b: 4, a: 1}
     - _RimColor: {r: 1, g: 0, b: 0, a: 1}
     - _SecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SecParameter: {r: 0, g: 0, b: 0, a: 1}

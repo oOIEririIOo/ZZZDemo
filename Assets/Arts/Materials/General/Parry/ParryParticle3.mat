@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParryParticle3
+  m_Shader: {fileID: 4800000, guid: 1f941f528c51ecd40b3ad6cf305d4f85, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _USEDISSOLVE_ON
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: fd89a00e3569eea4d9ea094f239b2ac6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTexture2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: fd89a00e3569eea4d9ea094f239b2ac6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistoMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientShape:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: fd89a00e3569eea4d9ea094f239b2ac6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaBoldness: 1
+    - _AlphaCutoff: 0.5
+    - _Brightness: 2
+    - _CameraDirPush: 0
+    - _ColorRotation: 0
+    - _ColorRotation2: 0
+    - _CoreIntensity: 1
+    - _CorePower: 1
+    - _Cull: 2
+    - _CullMode: 0
+    - _CustomPanSwitch: 0
+    - _DepthFadeIntensity: 0
+    - _DifferentCoreColor: 0
+    - _Dissolve: 0
+    - _DissolveEdg: 0
+    - _DissolveHardness: 1
+    - _DissolveInt: 0.873
+    - _DissolveMaskInvert: 0
+    - _DissolveMaskRotation: 0
+    - _DissolvelU2: 0
+    - _Disto: 0
+    - _DistoMaskRotation: 0
+    - _Dst: 1
+    - _DstBlend: 1
+    - _GlowIntensity: 1
+    - _GradientMapDisplacement: 0.1
+    - _GradientShapeRotation: 0
+    - _InvertGradient: 0
+    - _MaskChannel: 0
+    - _MaskScale: 1
+    - _MeshVertexColor: 0
+    - _MixAlpha: 0
+    - _NoiseScale: 1
+    - _NoiseU2: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _SoftDistance: 0.5
+    - _Src: 1
+    - _SrcBlend: 1
+    - _Step: 0
+    - _TextureRotation: 0
+    - _TillingBase: 0
+    - _ValueStep: 0
+    - _ValueStepAdd: 0.1
+    - _ZTest: 2
+    - _ZTestMode: 4
+    - _ZWrite: 0
+    - _ZWriteMode: 0
+    - __dirty: 0
+    m_Colors:
+    - _BaseColor: {r: 2.426657, g: 1.436341, b: 1.018738, a: 1}
+    - _CoreColor: {r: 1, g: 0.27830186, b: 0.27830186, a: 1}
+    - _DissolveColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveMaskChannel: {r: 0, g: 1, b: 0, a: 0}
+    - _DissolveMaskPanSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _DistoMaskChannel: {r: 0, g: 1, b: 0, a: 0}
+    - _DistoMaskPanSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GradientShapeChannel: {r: 0, g: 1, b: 0, a: 0}
+    - _MainMaskFlow: {r: 0, g: 0, b: 0, a: 0}
+    - _NoiseDissFlow: {r: 0, g: 0, b: 0, a: 0}
+    - _TextureChannel: {r: 0, g: 1, b: 0, a: 0}
+    - _TexturePanSpeed: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

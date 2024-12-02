@@ -13,7 +13,7 @@ public class PlayerTurnBackState : PlayerStateBase
         base.Enter();
         
         mainCamera = Camera.main;
-        playerController.PlayAnimation("TurnBack", 0.15f);
+        playerController.PlayAnimation("TurnBack", 0.1f);
 
         
     }

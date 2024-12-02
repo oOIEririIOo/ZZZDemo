@@ -79,6 +79,12 @@ public class UnagiState : SwitchState
             case PlayerState.SwitchInNormal:
                 PlayerController.INSTANCE.stateMachine.EnterState<PlayerSwitchInNoramlState>();
                 break;
+            case PlayerState.Parry:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiParryState>();
+                break;
+            case PlayerState.ParryEnd:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiParryEndState>();
+                break;
             case PlayerState.Pause:
                 PlayerController.INSTANCE.stateMachine.EnterState<PlayerPauseState>();
                 break;
@@ -107,17 +113,6 @@ public class UnagiState : SwitchState
                 PlayerController.INSTANCE.stateMachine.EnterState<UnagiBranchEndState>();
                 break;
 
-        }
-        
-
-
-                        
-
-
-
-
-
-            
-        
+        }     
     }
 }

@@ -11,6 +11,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
+using static UnityEditor.PlayerSettings;
 
 /// <summary>
 /// 玩家控制器
@@ -39,6 +40,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     //玩家配置信息
     public PlayerConfig playerConfig;
 
+
     //配队
     [HideInInspector]public List<PlayerModel> controllableModels;
 
@@ -65,6 +67,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     public bool branchHold = false;
     public bool isDodge = false;
     public bool perfectDodge = false;
+    public bool isParry = false;
 
     protected private override void Awake()
     {
@@ -305,10 +308,32 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
         Quaternion prevRot = playerModel.transform.rotation;
         playerModel = nextmodel;
         #endregion
-        //进入下一个模型
-        playerModel.Enter(prevPos, prevRot);
-        //切换到入场状态
-        SwitchState(PlayerState.SwitchInNormal);
+        if(AllEnemyController.INSTANCE.CheckParryList() != 0)
+        {
+            var enemy = AllEnemyController.INSTANCE.PopParryList();
+            Vector3 parryPos = enemy.parryPoints[0].transform.position;
+            Quaternion parryRot = enemy.parryPoints[0].transform.rotation;
+            //进入下一个模型
+            playerModel.Enter(parryPos, parryRot);
+            playerModel.GetParryTarget(enemy);
+            //切换到入场状态
+            SwitchState(PlayerState.Parry);
+        }
+        else
+        {
+            //计算右方向向量
+            Vector3 rightDirection = prevRot * Vector3.right;
+            prevPos += rightDirection * 0.8f;
+
+            //计算方向向量
+            Vector3 backDirection = prevRot * Vector3.back;
+            prevPos += backDirection;
+            //进入下一个模型
+            playerModel.Enter(prevPos, prevRot);
+            //切换到入场状态
+            SwitchState(PlayerState.SwitchInNormal);
+        }
+        
     }
 
     /// <summary>
@@ -316,7 +341,7 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
     /// </summary>
     /// <param name="animationName">动画名称</param>
     /// <param name="fixedTransitionDuration">过渡时间</param>
-    public void PlayAnimation(string animationName,float fixedTransitionDuration = 0.25f)
+    public void PlayAnimation(string animationName,float fixedTransitionDuration = 0.1f)
     {
         playerModel.animator.CrossFadeInFixedTime(animationName, fixedTransitionDuration);
     }

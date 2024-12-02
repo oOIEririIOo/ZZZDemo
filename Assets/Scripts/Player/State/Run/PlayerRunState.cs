@@ -91,7 +91,7 @@ public class PlayerRunState : PlayerStateBase
             Quaternion targetQua = Quaternion.LookRotation(targetDic);
             //计算旋转角度
             float angles = Mathf.Abs(targetQua.eulerAngles.y - playerModel.transform.eulerAngles.y);
-            if(angles > 177.5 && angles <182.5)
+            if(angles > 177.5 && angles <182.5 && playerModel.currentState == PlayerState.Run)
             {
                 //切换到转身状态
                 playerController.SwitchState(PlayerState.TurnBack);

@@ -30,6 +30,7 @@ public class SkillConfig : ScriptableObject
 [System.Serializable]
 public class AttackInfo
 {
+    public string description;
     public HitInfo[] hitInfo;
     public int hitIndex;
     public int SP;

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentNormalAttackIndex: 1
   normalAttack:
-  - hitInfo:
+  - description: 
+    hitInfo:
     - damageType: 0
       attackDamageMultiple: 10
       hitVFX:
@@ -32,7 +33,8 @@ MonoBehaviour:
       canInterrupt: 0
     hitIndex: 0
     SP: 0
-  - hitInfo:
+  - description: 
+    hitInfo:
     - damageType: 0
       attackDamageMultiple: 0
       hitVFX:
@@ -50,7 +52,8 @@ MonoBehaviour:
       canInterrupt: 0
     hitIndex: 0
     SP: 0
-  - hitInfo:
+  - description: 
+    hitInfo:
     - damageType: 0
       attackDamageMultiple: 0
       hitVFX:
@@ -83,7 +86,8 @@ MonoBehaviour:
       canInterrupt: 0
     hitIndex: 0
     SP: 0
-  - hitInfo:
+  - description: 
+    hitInfo:
     - damageType: 1
       attackDamageMultiple: 10
       hitVFX:
@@ -161,7 +165,8 @@ MonoBehaviour:
       canInterrupt: 0
     hitIndex: 0
     SP: 0
-  - hitInfo:
+  - description: 
+    hitInfo:
     - damageType: 1
       attackDamageMultiple: 10
       hitVFX:
@@ -271,19 +276,24 @@ MonoBehaviour:
     SP: 0
   currentBranchIndex: 1
   branch:
-  - hitInfo: []
+  - description: "\u666E\u901A\u5206\u652F"
+    hitInfo: []
     hitIndex: 0
     SP: 0
-  - hitInfo: []
+  - description: "SP\u5206\u652F"
+    hitInfo: []
     hitIndex: 0
     SP: 40
-  - hitInfo: []
+  - description: "SP\u5206\u652F\u957F\u6309"
+    hitInfo: []
     hitIndex: 0
     SP: 40
-  - hitInfo: []
+  - description: "\u91CD\u51FB"
+    hitInfo: []
     hitIndex: 0
     SP: 40
-  - hitInfo:
+  - description: "\u95EA\u907F\u53CD\u51FB"
+    hitInfo:
     - damageType: 1
       attackDamageMultiple: 10
       hitVFX:
@@ -392,6 +402,7 @@ MonoBehaviour:
     hitIndex: 0
     SP: 0
   currentAttackInfo:
+    description: 
     hitInfo: []
     hitIndex: 0
     SP: 0

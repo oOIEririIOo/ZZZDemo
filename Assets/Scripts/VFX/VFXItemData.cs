@@ -15,7 +15,7 @@ public class VFXItemData : MonoBehaviour
         [field: SerializeField] public Transform spawnPos;
         [field: SerializeField] public Vector3 effectEulerAngle;
         [field: SerializeField] public Quaternion effectRotation;
-        [field: SerializeField] public int count;
+        [field: SerializeField] public int count = 1;
     }
 
     [SerializeField] public List<EffectItem> effectItems = new List<EffectItem>();

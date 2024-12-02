@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour, IHurt
     public Animator animator;
     public NavMeshAgent agent;
     public BehaviorTree tree;
+    public Material m;
+    public SkinnedMeshRenderer mR;
 
     //脚本
     public CharacterStats characterStats;
@@ -20,6 +22,9 @@ public class EnemyController : MonoBehaviour, IHurt
     public Transform player;
     //敌人标签列表
     public List<string> enemyTagList;
+    //弹反位置
+    public Transform[] parryPoints;
+    public Transform currentParryPoint;
     
 
     //参数
@@ -32,12 +37,14 @@ public class EnemyController : MonoBehaviour, IHurt
     //命中事件
     private Action<IHurt> onHitAction;
     public float hurtTimer;
+    public ParticleSystem parryAttackEff;
 
     //状态
     public bool isAttacking;
     public bool isHurt;
     public bool hurtTrigger;
     public bool isLookToPlayer;
+    public bool beParring;
 
 
     private void Awake()
@@ -55,6 +62,8 @@ public class EnemyController : MonoBehaviour, IHurt
         isLookToPlayer = false;
         hurtTimer = 0f;
         AllEnemyController.INSTANCE.AddEnemyList(this);
+        //mR.materials[2].SetFloat("_OutlineWidth", 1.3f);
+        //m.SetFloat("_OutlineWidth", 1.2f);
     }
 
     private void Update()
@@ -67,6 +76,7 @@ public class EnemyController : MonoBehaviour, IHurt
         }
         HurtTrigger();
         HurtTimer();
+        
     }
 
     public void HurtAnimationEvent(DamageDir dir, HitType hitType,PlayerModel player)
@@ -231,6 +241,10 @@ public class EnemyController : MonoBehaviour, IHurt
             PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().PerfectDodgeEvent();
             PlayerController.INSTANCE.perfectDodge = true;
         }
+        else if(PlayerController.INSTANCE.isParry)
+        {
+            return;
+        }
         else
         {
             Debug.Log("命中");
@@ -243,6 +257,12 @@ public class EnemyController : MonoBehaviour, IHurt
             Vector3 forword = characterStats.gameObject.transform.forward;
             VFXPoolManager.INSTANCE.SpawnHitVfx(CharacterNameList.Enemy, characterStats.skillConfig.currentAttackInfo, closestPoint, forword);
         }
+    }
+
+    public void BeParriedAttackStart(int index)
+    {
+        currentParryPoint = parryPoints[index];
+        AllEnemyController.INSTANCE.AddParryList(this);
     }
 
     //受击计时器，连续受击一定时间后开始发动攻击
@@ -315,6 +335,12 @@ public class EnemyController : MonoBehaviour, IHurt
         #endregion
     }
 
+    public void ParryAttackEff()
+    {
+        parryAttackEff.Simulate(0f);
+        parryAttackEff.Play();
+    }
+
     /// <summary>
     /// 开启伤害检测
     /// </summary>
@@ -343,6 +369,17 @@ public class EnemyController : MonoBehaviour, IHurt
     public void LookToPlayerStop()
     {
         isLookToPlayer = false;
+    }
+
+    public void ParryAttackStart()
+    {
+        ParryAttackEff();
+        AllEnemyController.INSTANCE.AddParryList(this);
+    }
+
+    public void ParryAttackEnd()
+    {
+        AllEnemyController.INSTANCE.RemoveParryList(this);
     }
 
     public void ChangeAttackBool()

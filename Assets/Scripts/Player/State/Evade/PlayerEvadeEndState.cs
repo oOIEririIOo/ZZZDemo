@@ -15,10 +15,10 @@ public class PlayerEvadeEndState : PlayerStateBase
         switch(playerModel.currentState)
         {
             case PlayerState.Evade_Front_End:
-                playerController.PlayAnimation("Evade_Front_End");
+                playerController.PlayAnimation("Evade_Front_End",0.1f);
                 break;
             case PlayerState.Evade_Back_End:
-                playerController.PlayAnimation("Evade_Back_End");
+                playerController.PlayAnimation("Evade_Back_End",0.1f);
                 break;
         }
         #endregion

@@ -12,10 +12,14 @@ public class VFXManager : SingleMonoBase<VFXManager>
     public void AddVFX(ParticleSystem particleSystem, float speedMult)
     {
         particleSystems.Add(particleSystem);
-        foreach (var particle in particleSystems)
+        foreach (var particleSystemParent in allParticleSystems)
         {
-            var main = particle.main;
-            main.simulationSpeed = SpeedMult;
+            var allParticleChild = particleSystemParent.GetComponentsInChildren<ParticleSystem>();
+            foreach (var particle in allParticleChild)
+            {
+                var main = particle.main;
+                main.simulationSpeed = speedMult;
+            }
         }
     }
 
@@ -23,26 +27,39 @@ public class VFXManager : SingleMonoBase<VFXManager>
 
     public void PauseVFX()
     {
-        foreach (var particleSystem in allParticleSystems)
+        foreach (var particleSystemParent in allParticleSystems)
         {
-            var main = particleSystem.main;
-            main.simulationSpeed = 0f;
+            var allParticleChild = particleSystemParent.GetComponentsInChildren<ParticleSystem>();
+            foreach (var particle in allParticleChild)
+            {
+                var main = particle.main;
+                main.simulationSpeed = 0f;
+            }
         }
     }
     public void SetVFXSpeed(float speedMult)
     {
-        foreach (var particleSystem in allParticleSystems)
+        foreach (var particleSystemParent in allParticleSystems)
         {
-            var main = particleSystem.main;
-            main.simulationSpeed = speedMult;
+            var allParticleChild = particleSystemParent.GetComponentsInChildren<ParticleSystem>();
+            foreach(var particle in allParticleChild)
+            {
+                var main = particle.main;
+                main.simulationSpeed = speedMult;
+            }      
         }
     }
     public void ResetVXF()
     {
-        foreach (var particleSystem in allParticleSystems)
+        foreach (var particleSystemParent in allParticleSystems)
         {
-            var main = particleSystem.main;
-            main.simulationSpeed = SpeedMult;
+            var allParticleChild = particleSystemParent.GetComponentsInChildren<ParticleSystem>();
+            foreach (var particle in allParticleChild)
+            {
+                var main = particle.main;
+                main.simulationSpeed = SpeedMult;
+            }
         }
     }
+
 }
