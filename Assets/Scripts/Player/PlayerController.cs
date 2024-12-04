@@ -60,6 +60,11 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
 
     public GameObject[] vfxPos;
 
+    public EnemyController parryTarget;
+    public EnemyController QTETarget;
+    public LayerMask everythingLayer;
+    public LayerMask nothingLayer;
+
     public bool mouseOpen = false;
     public bool mousePressed = false;
     public bool branchPressed = false;
@@ -276,39 +281,83 @@ public class PlayerController : SingleMonoBase<PlayerController>, IStateMachineO
         */
     }
 
+    public enum SwitichType
+    {
+        Normal,QTE,Special
+    }
+
     /// <summary>
     /// 切换角色
     /// </summary>
     /// <param name="isSPExit">是否为特殊退出</param>
-    public void SwitchNextModel(bool isSPExit)
+    public void SwitchNextModel(SwitichType switichType)
     {
+        int theModelIndex = currentModelIndex;
+        var type = switichType;
+        for (int i = 0; i <= controllableModels.Count; i++)
+        {
+            currentModelIndex++;
+            if (currentModelIndex >= controllableModels.Count)
+            {
+                currentModelIndex = 0;
+            }
+            if (controllableModels[currentModelIndex].isDead || controllableModels[currentModelIndex].cantSwitich)
+            {
+                continue;
+            }
+            else
+            {
+                if (currentModelIndex == theModelIndex) return;
+                else break;
+            }
+        }
         PlayerController.INSTANCE.playerModel.characterStats.skillConfig.currentNormalAttackIndex = 1;
         //刷新状态机
         stateMachine.Clear();
         //退出当前模型
-        if (isSPExit)
+        if (switichType == SwitichType.Special || playerModel.isQTE)
         {
+            playerModel.cantSwitich = true;
             playerModel.ExitSpecial();
         }
-        else
+        else if (switichType == SwitichType.Normal || switichType == SwitichType.QTE)
         {
             playerModel.ExitNormal();
         }
         
         
         #region 控制下一个模型
+        /*
         currentModelIndex++;
             if(currentModelIndex >= controllableModels.Count)
             {
                 currentModelIndex = 0;
             }
+        */
         PlayerModel nextmodel = controllableModels[currentModelIndex];
         nextmodel.gameObject.SetActive(true);
         Vector3 prevPos = playerModel.transform.position;
         Quaternion prevRot = playerModel.transform.rotation;
         playerModel = nextmodel;
         #endregion
-        if(AllEnemyController.INSTANCE.CheckParryList() != 0)
+        #region 变化UI
+        PlayerStatsUIManager.INSTANCE.SwitchCharacter();
+        #endregion
+        if(switichType == SwitichType.QTE)
+        {
+            //计算右方向向量
+            Vector3 rightDirection = prevRot * Vector3.right;
+            prevPos += rightDirection * 0.8f;
+
+            //计算方向向量
+            Vector3 backDirection = prevRot * Vector3.back;
+            prevPos += backDirection;
+            //进入下一个模型
+            playerModel.Enter(prevPos, prevRot);
+            //切换到入场状态
+            SwitchState(PlayerState.QTE);
+        }
+        else if (switichType != SwitichType.QTE && AllEnemyController.INSTANCE.CheckParryList() != 0)
         {
             var enemy = AllEnemyController.INSTANCE.PopParryList();
             Vector3 parryPos = enemy.parryPoints[0].transform.position;

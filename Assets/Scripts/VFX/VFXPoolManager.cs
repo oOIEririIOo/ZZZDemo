@@ -148,18 +148,19 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                 go.transform.parent = this.transform;
             }
 
-            if(vfx.spawnPos != null)
+            if(vfx.spawnPos != null && !vfx.applyParentPos)
             {
                 go.transform.position = vfx.spawnPos.position;
                 //go.transform.localPosition = Vector3.zero;
                 go.transform.forward = vfx.spawnPos.forward;
             }
-            else
+            else if(!vfx.applyParentPos)
             {
                 if (PlayerController.INSTANCE.characterDic.TryGetValue(characterName, out int index))
                 {
                     go.transform.parent = this.transform;
                     go.transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
+                    go.transform.forward = PlayerController.INSTANCE.vfxPos[index].transform.forward;
                 }
                 else Debug.Log("字典为空！也许该特效属于Enemy");
             }

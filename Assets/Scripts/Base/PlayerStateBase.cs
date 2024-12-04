@@ -12,6 +12,7 @@ public enum PlayerState
     NormalAttack, NormalAttackEnd, Attack_Rush, Attack_Rush_End,
     Counter,Counter_End,
     Branch,Branch_End,SpBranch,SpBranch_End,
+    QTE,QTE_End,
     BigSkillStart, BigSkill, BigSkillEnd, 
     SwitchInNormal,Parry,ParryEnd,
     Hit,
@@ -36,17 +37,19 @@ public class PlayerStateBase : StateBase
     protected float animationPlayTime = 0f;
     //是否切人后继续播放动画
     protected bool isContinuePlay;
+    protected bool useGravity = true;
 
 
     public override void Init(IStateMachineOwner owner)
     {
         playerController = (PlayerController)owner;
         playerModel = playerController.playerModel;
+        
     }
     public override void Enter()
     {
         animationPlayTime = 0f;
-        
+        useGravity = true;
     }
 
     public override void Exit()
@@ -74,7 +77,11 @@ public class PlayerStateBase : StateBase
     public override void Update()
     {
         //施加重力
-        playerModel.characterController.Move(new Vector3(0, playerModel.gravity * Time.deltaTime, 0));
+        if(useGravity)
+        {
+            playerModel.characterController.Move(new Vector3(0, playerModel.gravity * Time.deltaTime, 0));
+        }
+        
 
         if(playerController.mouseOpen)
         {
@@ -91,10 +98,10 @@ public class PlayerStateBase : StateBase
             if (isContinuePlay == false)
             {
                 //切换角色
-                playerController.SwitchNextModel(false);
+                playerController.SwitchNextModel(PlayerController.SwitichType.Normal);
             }
             else //切换角色
-                playerController.SwitchNextModel(true);
+                playerController.SwitchNextModel(PlayerController.SwitichType.Special);
         }
         #endregion
     }

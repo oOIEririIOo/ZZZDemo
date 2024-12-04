@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee19621e4c1652549a9b3bdb0159689c, type: 3}
   m_Name: Claymore Data
   m_EditorClassIdentifier: 
-  maxHealth: 5000
+  maxHealth: 600
   currentHealth: 0
   baseDefence: 5
   currentDefence: 0
   maxSP: 0
   currentSP: 0
+  maxStun: 100
+  currentStun: 0

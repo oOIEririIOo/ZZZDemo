@@ -3475,6 +3475,7 @@ Transform:
   - {fileID: 7279381628832489411}
   - {fileID: 5316217912089276538}
   - {fileID: 5122099511820670822}
+  - {fileID: 6636357595615891946}
   m_Father: {fileID: 4904034588709615829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3046096845631919561
@@ -15978,6 +15979,7 @@ MonoBehaviour:
   skillConfig: {fileID: 11400000, guid: 71f6b6ecaa7b188409d57ba68cfc18d8, type: 2}
   bigSkillStartShot: {fileID: 6268137502518158642}
   bigSkillShot: {fileID: 2907938723555687340}
+  QTECameraPoint: {fileID: 6636357595615891946}
   weapons:
   - {fileID: 1771539309694909498}
   - {fileID: 7380290366715663306}
@@ -15998,10 +16000,11 @@ MonoBehaviour:
   - {fileID: 6380859377814096290}
   damageTrans: 0
   hitType: 0
+  isDead: 0
+  cantSwitich: 0
   currentVFXIndex: 0
   dodgeEffPos: {fileID: 676341633597189839}
   parryTiming: 0
-  parryTarget: {fileID: 0}
   foot: 0
 --- !u!114 &7541839467196560311
 MonoBehaviour:
@@ -18031,6 +18034,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4193876748980221043}
   m_LocalEulerAnglesHint: {x: -90, y: -0.00000013101116, z: 0}
+--- !u!1 &7261291926105622783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6636357595615891946}
+  m_Layer: 0
+  m_Name: QTECamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6636357595615891946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261291926105622783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.16665092, y: 0.06611555, z: -0.011200413, w: 0.9837331}
+  m_LocalPosition: {x: -0.5, y: 2.63, z: -3.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8887213722723870298}
+  m_LocalEulerAnglesHint: {x: 19.23, y: 7.69, z: 0}
 --- !u!1 &7347786653518414830
 GameObject:
   m_ObjectHideFlags: 0

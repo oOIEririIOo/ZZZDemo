@@ -61,7 +61,7 @@ Material:
     - _ZTestMode: 4
     - _ZWriteMode: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.8603977, g: 0.8603977, b: 0.8603977, a: 1}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainMaskFlow: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseDissFlow: {r: 0, g: 0, b: 0, a: 0.1}

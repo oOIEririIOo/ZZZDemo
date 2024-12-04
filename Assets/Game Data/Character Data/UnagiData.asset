@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee19621e4c1652549a9b3bdb0159689c, type: 3}
   m_Name: UnagiData
   m_EditorClassIdentifier: 
+  icon: {fileID: 1940290057, guid: 0c82f64d9b07ff24c826396670352869, type: 3}
   maxHealth: 100
   currentHealth: 100
   baseDefence: 5
   currentDefence: 5
   maxSP: 100
-  currentSP: 100
+  currentSP: 20
+  maxStun: 0
+  currentStun: 0

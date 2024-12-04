@@ -22,6 +22,7 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
     Coroutine PauseFrameCoroutine;
     Coroutine SlowMotionCoroutine;
     Coroutine RemoveColorCoroutine;
+    Coroutine QTEStartCoroutinue;
     private ColorAdjustments colorAdjustments;
 
 
@@ -41,6 +42,57 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         if (RemoveColorCoroutine != null)
         { StopCoroutine(RemoveColorCoroutine); }
         RemoveColorCoroutine = StartCoroutine(RemoveColor(time));
+    }
+
+    //QTE慢放
+    public void QTEStart(float time,float speedMult)
+    {
+        QTEManager.INSTANCE.waitQTEInput = true;
+        if (QTEManager.INSTANCE.canQTE == false) QTEManager.INSTANCE.canQTE = true;
+        allEnemyAnimator = GetAllEnemyAnimator();
+        currentCharacterAnimator = GetCurrentCharacterAnimator();
+        PlayerController.INSTANCE.inputSystem.Player.Disable();//禁用玩家输入
+
+        if (currentCharacterAnimator == null || allEnemyAnimator == null)
+        {
+            Debug.LogWarning("Animator is null!");
+            return;
+        }
+        if (PauseFrameCoroutine != null)
+        {
+            StopCoroutine(PauseFrameCoroutine);
+        }
+        if (QTEStartCoroutinue != null)
+        { StopCoroutine(QTEStartCoroutinue); }
+        QTEStartCoroutinue = StartCoroutine(QTESlowMotion(time, speedMult));
+    }
+
+    public  void SwitichCharacterInQTE()
+    {
+        CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 3.2f;
+        CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.y = 0.28f;
+        if (QTEStartCoroutinue != null)
+        { StopCoroutine(QTEStartCoroutinue); }
+        float currentSpeed = 1f;
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+    }
+
+    //退出QTE
+    public void CancelQTE()
+    {
+        PlayerController.INSTANCE.inputSystem.Player.Enable();//开启玩家输入
+        PlayerController.INSTANCE.inputSystem.QTE.Disable();
+        //QTEManager.INSTANCE.CancelQTE();
+        CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 3.2f;
+        CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.y = 0.28f;
+        if (QTEStartCoroutinue != null)
+        { StopCoroutine(QTEStartCoroutinue); }
+        float currentSpeed = 1f;
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
     }
 
     //钝帧
@@ -105,6 +157,39 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
             yield return null;
         }
         SetVolume(0f);
+    }
+
+    //QTE协程
+    IEnumerator QTESlowMotion(float time, float speedMult)
+    {
+        float currentSpeed = speedMult;
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+        yield return new WaitForSeconds(1f);//一秒后开始可以切人
+        PlayerController.INSTANCE.inputSystem.QTE.Enable();
+        Debug.Log("可以输入");
+        yield return new WaitForSecondsRealtime(time-1f);
+        float minValue = 0.1f;
+        while (Mathf.Abs(currentSpeed - 1) > minValue)
+        {
+            currentSpeed = Mathf.Lerp(currentSpeed, 1, Time.deltaTime * slowMotionResetSpeed);
+            
+            currentCharacterAnimator.speed = currentSpeed;
+            SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+            VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+            
+            //Time.timeScale = currentSpeed;
+            yield return null;
+
+        }
+        currentSpeed = 1;
+        //Time.timeScale = currentSpeed;
+        
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+        QTEManager.INSTANCE.CancelQTE();
     }
 
     //钝帧协程

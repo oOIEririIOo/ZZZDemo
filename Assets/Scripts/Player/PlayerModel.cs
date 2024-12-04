@@ -1,7 +1,9 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 
@@ -27,6 +29,8 @@ public class PlayerModel : MonoBehaviour, IHurt
     public GameObject bigSkillStartShot;
     //大招镜头
     public GameObject bigSkillShot;
+    //QTE相机
+    public Transform QTECameraPoint;
     //动画信息
     private AnimatorStateInfo stateInfo;
     //武器列表
@@ -42,6 +46,10 @@ public class PlayerModel : MonoBehaviour, IHurt
     //受伤类型
     public DamageDir damageTrans;
     public HitType hitType;
+    //死亡bool
+    public bool isDead;
+    public bool cantSwitich;
+    public bool isQTE;
 
     private int currentWeaponIndex;
     public  int currentVFXIndex = 0;
@@ -49,7 +57,7 @@ public class PlayerModel : MonoBehaviour, IHurt
 
     public Transform dodgeEffPos;
     public bool parryTiming;
-    public EnemyController parryTarget;
+
 
     private Coroutine OutLineBlue;
     private Coroutine OutLineOrange;
@@ -59,13 +67,16 @@ public class PlayerModel : MonoBehaviour, IHurt
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         characterStats = GetComponent<CharacterStats>();
+        
     }
 
     private void Start()
     {
+        /*
         characterStats.CurrentHealth = characterStats.MaxHealth;
         characterStats.CurrentDefence = characterStats.BaseDefence;
         characterStats.CurrentSP = characterStats.MaxSP;
+        */
     }
 
     /// <summary>
@@ -116,8 +127,40 @@ public class PlayerModel : MonoBehaviour, IHurt
         VFXPoolManager.INSTANCE.SpawnHitVfx(currentEnemy.GetComponent<CharacterStats>().characterName,
                                                                         weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo,
                                                                         closestPoint,
-                                                                        forword);                                                        
+                                                                        forword);
+
+        characterStats.AddSP(2);
+        currentEnemy.GetComponent<CharacterStats>().TakeDamage(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
+        if(enemyController.isStun == false)
+            currentEnemy.GetComponent<CharacterStats>().AddStun(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
+
+
+        //每次攻击检查目标的失衡值，若失衡值满了开启连携
+        if ((characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].canQTE 
+            && enemyController.GetComponent<CharacterStats>().CurrentStun == enemyController.GetComponent<CharacterStats>().MaxStun && PlayerController.INSTANCE.QTETarget == null))
+        {
+            PlayerController.INSTANCE.QTETarget = enemyController;
+            QTEManager.INSTANCE.canQTE = true;
+            QTEStartEvent();
+        }
     }   
+
+    //QTEStart该函数有两个触发情况：一是可触发连携的攻击命中 二是连携动画事件触发
+    public void QTEStartEvent()
+    {
+        if(QTEManager.INSTANCE.QTECount == PlayerController.INSTANCE.controllableModels.Count)
+        {
+            QTEManager.INSTANCE.CancelQTE();
+        }
+        //enemyController.isStun = true;
+        if (QTEManager.INSTANCE.canQTE)
+        {
+            CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 1.5f;
+            CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.y = -0.5f;
+            CameraHitFeel.INSTANCE.QTEStart(5, 0.1f);
+        }
+        
+    }
 
     public void PerfectDodgeEvent()
     {
@@ -182,12 +225,13 @@ public class PlayerModel : MonoBehaviour, IHurt
 
     public void GetParryTarget(EnemyController enemy)
     {
-        parryTarget = enemy;
+        PlayerController.INSTANCE.parryTarget = enemy;
     }
 
     public void ParryEvent()
     {
-        parryTarget.beParring = true;
+        PlayerController.INSTANCE.parryTarget.beParring = true;
+        PlayerController.INSTANCE.parryTarget.GetComponent<CharacterStats>().AddStun(characterStats.skillConfig.currentAttackInfo, 20f);
         CameraHitFeel.INSTANCE.SlowMotion(0.35f, 0.01f);
         if (OutLineOrange != null)
         {
@@ -197,6 +241,7 @@ public class PlayerModel : MonoBehaviour, IHurt
         PlayVFX("ParryEff");
         CameraShakeOnAnim(2f);
         Debug.Log("ParryEvent");
+        
         AllEnemyController.INSTANCE.ClearParryList();
         
     }
@@ -218,6 +263,7 @@ public class PlayerModel : MonoBehaviour, IHurt
     {
         if(IsAnimationEnd())
         {
+            cantSwitich = false;
             gameObject.SetActive(false);
             MonoManager.INSTANCE.RemoveUpdateAction(OnExit);
         }

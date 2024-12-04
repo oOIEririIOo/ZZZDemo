@@ -26,5 +26,10 @@ public class FSMAction : Action
         base.OnEnd();
         //enemyController.PlayAnimation("New State");
         //enemyController.animator.speed = 0f;
+        for (int i = 0; i < enemyController.weapons.Length; i++)
+        {
+            enemyController.weapons[i].StopHit();
+        }
+        
     }
 }

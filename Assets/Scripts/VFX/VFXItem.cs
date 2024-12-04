@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class VFXItem : MonoBehaviour
     public string vfxName;
     public CharacterNameList characterName;
     bool isInit = false;
+    public float originalDuration;
     private float timer;
     private void Awake()
     {
@@ -32,9 +34,9 @@ public class VFXItem : MonoBehaviour
         timer = 0f;
         particle.Simulate(0f);
         particle.Play();
-        
         if (VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName)!= null)
         {
+            
             if(VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos != null)
             {
                 transform.position = VFXPoolManager.INSTANCE.FindVFXInfo(characterName, vfxName).spawnPos.position;
@@ -55,20 +57,20 @@ public class VFXItem : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        /*
-        //if (!isInit) return;
-        Debug.Log(particle.main.duration);
+        //timer += Time.deltaTime;
+        
+        if (!isInit) return;
         if (!particle.isPlaying)
         {
             gameObject.SetActive(false);
         }
-        */
-       
+        
+       /*
         if(timer >= particle.main.duration)
         {
             gameObject.SetActive(false);
         }
+       */
     }
 
 

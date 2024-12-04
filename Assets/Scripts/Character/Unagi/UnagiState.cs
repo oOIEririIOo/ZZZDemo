@@ -91,6 +91,12 @@ public class UnagiState : SwitchState
             case PlayerState.Hit:
                 PlayerController.INSTANCE.stateMachine.EnterState<UnagiHitState>(true);
                 break;
+            case PlayerState.QTE:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiQTEState>();
+                break;
+            case PlayerState.QTE_End:
+                PlayerController.INSTANCE.stateMachine.EnterState<UnagiQTEEndState>();
+                break;
 
             //½ÇÉ«·ÖÖ§
             case PlayerState.Unagi_HavenAttack:

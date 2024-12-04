@@ -4,11 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using JetBrains.Annotations;
+using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour
 {
 
     public event Action<float, float> UpdateHealthBarOnAttack;
+    public event Action<float, float> UpdateStunBarOnAttack;
 
     public CharacterData_SO characterData;
     public CharacterData_SO templateData;
@@ -64,19 +66,93 @@ public class CharacterStats : MonoBehaviour
         set { characterData.currentSP = value; }
     }
 
+    public float MaxStun
+    {
+        get { if (characterData != null) return characterData.maxStun; else return 0; }
+        set { characterData.maxStun = value; }
+    }
+
+    public float CurrentStun
+    {
+        get { if (characterData != null) return characterData.currentStun; else return 0; }
+        set { characterData.currentStun = value; }
+    }
+
+    public Sprite Icon
+    {
+        get { if (characterData != null) return characterData.icon; else return null; }
+        
+    }
+
     #endregion
 
     #region 受击
-    public void TakeDamage(SkillConfig attacker,AttackInfo attackInfo)
+    public void TakeDamage(AttackInfo attackInfo)
     {
         float damage = attackInfo.hitInfo[attackInfo.hitIndex].attackDamageMultiple * (1 - CurrentDefence * 0.01f);
         //float damage = attacker.normalAttack[attacker.currentNormalAttackIndex - 1].attackDamageMultiple * (1 - CurrentDefence*0.01f);
         CurrentHealth = Mathf.Max(CurrentHealth - damage, 0);
         //TODO:Uppdate UI
         UpdateHealthBarOnAttack?.Invoke(CurrentHealth,MaxHealth);
+        Debug.Log(this.gameObject.name+ "受到"+damage+"伤害");
         //TODO:受击特效
     }
     #endregion
+
+    #region 增加失衡值
+    public void AddStun(AttackInfo attackInfo)
+    {
+        float stun = attackInfo.hitInfo[attackInfo.hitIndex].stun;
+        CurrentStun = Mathf.Min(CurrentStun + stun, MaxStun);
+        UpdateStunBarOnAttack?.Invoke(CurrentStun, MaxStun);
+    }
+
+    public void AddStun(AttackInfo attackInfo,float index)//给弹反用的重载方法
+    {
+        float stun = index;
+        CurrentStun = Mathf.Min(CurrentStun + stun, MaxStun);
+        UpdateStunBarOnAttack?.Invoke(CurrentStun, MaxStun);
+    }
+    #endregion
+
+    #region 减少失衡值
+
+    Coroutine RemoveStunCoroutine;
+    public void RemoveStun()
+    {
+        if(RemoveStunCoroutine != null)
+        {
+            StopCoroutine(RemoveStunCoroutine);
+        }
+        RemoveStunCoroutine = StartCoroutine(RemoveStunEff());
+    }
+
+    IEnumerator RemoveStunEff()
+    {
+        while(CurrentStun >= 1f)
+        {
+            CurrentStun -= 2f;
+            UpdateStunBarOnAttack?.Invoke(CurrentStun, MaxStun);
+            yield return new WaitForSeconds(0.1f);
+        }
+        CurrentStun = 0f;
+        if(TryGetComponent<EnemyController>(out EnemyController enemyController))
+        {
+            enemyController.isStun = false;
+        }
+        UpdateStunBarOnAttack?.Invoke(CurrentStun, MaxStun);
+    }
+    #endregion
+
+    #region 增加SP
+    public void AddSP(float index)
+    {
+        CurrentSP = Mathf.Min(CurrentSP + index, MaxSP);
+        PlayerStatsUIManager.INSTANCE.UpdatePlayersUI();
+    }
+    #endregion
+
+    
 
     #region Apply Data Change
     public void ApplyHealth(int amount)
@@ -89,11 +165,13 @@ public class CharacterStats : MonoBehaviour
         {
             CurrentHealth = MaxHealth;
         }
+        PlayerStatsUIManager.INSTANCE.UpdatePlayersUI();
     }
 
     public void ApplySP(int amount)
     {
         CurrentSP -= amount;
+        PlayerStatsUIManager.INSTANCE.UpdatePlayersUI();
     }
 
     public void PlusSP(int amount)

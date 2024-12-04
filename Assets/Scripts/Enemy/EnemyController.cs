@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour, IHurt
     //弹反位置
     public Transform[] parryPoints;
     public Transform currentParryPoint;
+    //状态UI位置
+    public Transform statsUIpoint;
     
 
     //参数
@@ -39,12 +41,15 @@ public class EnemyController : MonoBehaviour, IHurt
     public float hurtTimer;
     public ParticleSystem parryAttackEff;
 
+
     //状态
     public bool isAttacking;
     public bool isHurt;
     public bool hurtTrigger;
     public bool isLookToPlayer;
     public bool beParring;
+    public bool isStun;
+    public bool isDead;
 
 
     private void Awake()
@@ -62,6 +67,9 @@ public class EnemyController : MonoBehaviour, IHurt
         isLookToPlayer = false;
         hurtTimer = 0f;
         AllEnemyController.INSTANCE.AddEnemyList(this);
+        characterStats.CurrentHealth = characterStats.MaxHealth;
+        characterStats.CurrentStun = 0f;
+        
         //mR.materials[2].SetFloat("_OutlineWidth", 1.3f);
         //m.SetFloat("_OutlineWidth", 1.2f);
     }
@@ -88,7 +96,7 @@ public class EnemyController : MonoBehaviour, IHurt
         else damageTrans = DamageDir.Front;
         
         animator.SetTrigger("Hit_Shake");
-        if(!isAttacking)
+        if(!isAttacking && !isStun)
         {
             hurtTrigger = true;
             HurtAnimation(dir, hitType);
@@ -112,23 +120,27 @@ public class EnemyController : MonoBehaviour, IHurt
         {
             if((hitType != HitType.Light && hitType!=HitType.VeryLight) || player.characterStats.skillConfig.currentAttackInfo.hitInfo[player.characterStats.skillConfig.currentAttackInfo.hitIndex].canInterrupt)
             {
-                hurtTrigger = true;
-                HurtAnimation(dir, hitType);
-                #region 模型旋转
-                //计算玩家和敌人的方向
-                Vector3 direction = (player.transform.position - transform.position).normalized;
-                switch (damageTrans)
+                if(!isStun)
                 {
-                    case DamageDir.Front:
-                        //敌人模型面朝玩家
-                        transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-                        break;
-                    case DamageDir.Back:
-                        //敌人模型背朝玩家
-                        transform.rotation = Quaternion.LookRotation(new Vector3(-direction.x, 0, -direction.z));
-                        break;
+                    hurtTrigger = true;
+                    HurtAnimation(dir, hitType);
+                    #region 模型旋转
+                    //计算玩家和敌人的方向
+                    Vector3 direction = (player.transform.position - transform.position).normalized;
+                    switch (damageTrans)
+                    {
+                        case DamageDir.Front:
+                            //敌人模型面朝玩家
+                            transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                            break;
+                        case DamageDir.Back:
+                            //敌人模型背朝玩家
+                            transform.rotation = Quaternion.LookRotation(new Vector3(-direction.x, 0, -direction.z));
+                            break;
+                    }
+                    #endregion
                 }
-                #endregion
+
             }
         }
                     
@@ -142,6 +154,13 @@ public class EnemyController : MonoBehaviour, IHurt
         switch (damageTrans)
         {
             case DamageDir.Front:
+                if(characterStats.CurrentHealth <=0)
+                {
+                    isDead = true;
+                    PlayAnimation("Death_Front", 0f);
+                    Destroy(this.gameObject, 1f);
+                    break;
+                }
                 switch (hitType)
                 {
                     case HitType.VeryLight:
@@ -178,6 +197,13 @@ public class EnemyController : MonoBehaviour, IHurt
                 }
                 break;
             case DamageDir.Back:
+                if (characterStats.CurrentHealth <= 0)
+                {
+                    isDead = true;
+                    PlayAnimation("Death_Back", 0f);
+                    Destroy(this.gameObject, 1f);
+                    break;
+                }
                 switch (hitType)
                 {
                     case HitType.VeryLight:
@@ -211,6 +237,7 @@ public class EnemyController : MonoBehaviour, IHurt
                 }
                 break;
         }
+        animator.Update(0f);
     }
 
     public float ForwardAngle()
@@ -241,7 +268,7 @@ public class EnemyController : MonoBehaviour, IHurt
             PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().PerfectDodgeEvent();
             PlayerController.INSTANCE.perfectDodge = true;
         }
-        else if(PlayerController.INSTANCE.isParry)
+        else if(PlayerController.INSTANCE.isParry || PlayerController.INSTANCE.playerModel.isQTE)
         {
             return;
         }
@@ -253,9 +280,11 @@ public class EnemyController : MonoBehaviour, IHurt
 
             //产生hit特效
             Vector3 location = weapons[currentWeaponIndex].transform.position;
-            Vector3 closestPoint = currentPlayer.GetComponent<Collider>().ClosestPoint(location);//获取碰撞位置
+            Vector3 closestPoint = currentPlayer.GetComponent<Collider>().bounds.ClosestPoint(location);//获取碰撞位置
             Vector3 forword = characterStats.gameObject.transform.forward;
             VFXPoolManager.INSTANCE.SpawnHitVfx(CharacterNameList.Enemy, characterStats.skillConfig.currentAttackInfo, closestPoint, forword);
+            currentPlayer.GetComponent<CharacterStats>().TakeDamage(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
+            PlayerStatsUIManager.INSTANCE.UpdatePlayersUI();
         }
     }
 

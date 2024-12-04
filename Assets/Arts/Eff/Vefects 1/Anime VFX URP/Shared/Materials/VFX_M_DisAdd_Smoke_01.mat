@@ -55,8 +55,8 @@ Material:
     - _SoftDistance: 0.5
     - _SrcBlend: 5
     - _TillingBase: 0
-    - _ZTestMode: 4
-    - _ZWriteMode: 0
+    - _ZTestMode: 8
+    - _ZWriteMode: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveColor: {r: 0, g: 0, b: 0, a: 1}

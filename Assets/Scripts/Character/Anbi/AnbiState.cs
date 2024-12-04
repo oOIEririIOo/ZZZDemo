@@ -106,7 +106,13 @@ public class AnbiState : SwitchState
                 case PlayerState.Pause:
                     PlayerController.INSTANCE.stateMachine.EnterState<PlayerPauseState>();
                     break;
-                default:
+            case PlayerState.QTE:
+                PlayerController.INSTANCE.stateMachine.EnterState<AnbiQTEState>();
+                break;
+            case PlayerState.QTE_End:
+                PlayerController.INSTANCE.stateMachine.EnterState<AnbiQTEEndState>();
+                break;
+            default:
                     Debug.Log("无法找到该状态：" + playerState);
                     break;
             }

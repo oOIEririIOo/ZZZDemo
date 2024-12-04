@@ -37,19 +37,19 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FX_MT_DissolveLens_02
-  m_Shader: {fileID: -6465566751694194690, guid: 81a925152c3a1724286eb724c3ab0f15, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1f941f528c51ecd40b3ad6cf305d4f85, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _USEDISSOLVE_ON
+  m_InvalidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
-    RenderType: Transparent
   disabledShaderPasses:
   - DistortionVectors
   - MOTIONVECTORS
@@ -65,6 +65,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 2800000, guid: a362304d750cafa458bdd68d57fc5862, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 37bc7e5664c51f74b9bf28dc028d0d16, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -83,6 +87,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: d79b922d67c3a74458f8fcb45b8c2cec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.25, y: 0}
     - _EmissiveColorMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -115,11 +123,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NoiseColor_Texture:
         m_Texture: {fileID: 2800000, guid: 4cdebfae44a828b4482ef2e31ca0f94b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseOpacity_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -209,7 +225,7 @@ Material:
     - _ConservativeDepthOffsetEnable: 0
     - _ConvetToNormalStrenght: 0
     - _Cull: 2
-    - _CullMode: 2
+    - _CullMode: 0
     - _CullModeForward: 2
     - _CustomDataForDissolve: 1
     - _CustomDataForLerp: 0
@@ -223,12 +239,16 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
+    - _DissolveEdg: 0
+    - _DissolveHardness: 1
+    - _DissolveInt: 0.098
+    - _DissolvelU2: 0
     - _DistortionEnable: 0
     - _DistortionOnly: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _EmissionSaturation: 2
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
@@ -255,12 +275,17 @@ Material:
     - _LerpAmmount: 1.41
     - _LinkDetailsWithBase: 1
     - _MainLightAffects: 0.5
+    - _MaskChannel: 0
+    - _MaskScale: 1
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
+    - _MixAlpha: 0
     - _NoiseEmissive: 0
     - _NoiseOpacity: 0
+    - _NoiseScale: 1
+    - _NoiseU2: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _NormalStrenght: 0
@@ -285,12 +310,13 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
+    - _SoftDistance: 0.5
     - _SoftParticle: 0
     - _SoftParticles: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
     - _SpecularOcclusionMode: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 4
@@ -308,6 +334,7 @@ Material:
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
+    - _TillingBase: 0
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -333,14 +360,17 @@ Material:
     - _ZTest: 8
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
+    - _ZTestMode: 4
     - _ZTestTransparent: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
+    - _ZWriteMode: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 2.493826, g: 2.493826, b: 2.493826, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
+    - _DissolveColor: {r: 0, g: 0, b: 0, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
@@ -350,10 +380,12 @@ Material:
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _LowColor: {r: 1, g: 0.23032942, b: 0, a: 0}
     - _MainColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+    - _MainMaskFlow: {r: 0, g: 0, b: 0, a: 0}
     - _MinMaxSmoothStepDissolve: {r: 0, g: 0.05, b: 0, a: 0}
     - _NoiseColor_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColor_Panning: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColor_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _NoiseDissFlow: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseHighColor: {r: 0.89056605, g: 1, b: 1, a: 1}
     - _NoiseLowColor: {r: 0.41144538, g: 0.41723543, b: 0.4339623, a: 0}
     - _NoiseOpacity_Offset: {r: 1, g: 1, b: 0, a: 0}

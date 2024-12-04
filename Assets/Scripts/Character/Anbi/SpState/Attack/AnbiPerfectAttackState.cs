@@ -32,7 +32,7 @@ public class AnbiPerfectAttackState : AnbiStateBase
         modelName = modelName.Replace("(Clone)", "");
         AudioManager.INSTANCE.PlayAudio(modelName + "¹¥»÷" + playerModel.characterStats.skillConfig.currentNormalAttackIndex);
         */
-        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[4];
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[4];//4-1
         playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
     }
 

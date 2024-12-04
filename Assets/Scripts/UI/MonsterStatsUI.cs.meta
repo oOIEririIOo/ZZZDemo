@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4572056bd26d950419444abce0502629
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - statsUIPrefab: {fileID: 4939993510471033451, guid: 5821bf2f11c0ccb4ba852eccf2e867c2, type: 3}
+  - HP: {instanceID: 0}
+  - HPRed: {instanceID: 0}
+  - UIbar: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

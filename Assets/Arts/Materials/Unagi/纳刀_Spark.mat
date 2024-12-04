@@ -136,9 +136,9 @@ Material:
     - _ValueStep: 0
     - _ValueStepAdd: 0.1
     - _ZTest: 2
-    - _ZTestMode: 4
+    - _ZTestMode: 8
     - _ZWrite: 0
-    - _ZWriteMode: 0
+    - _ZWriteMode: 1
     - __dirty: 0
     m_Colors:
     - _BaseColor: {r: 7.046588, g: 3.966425, b: 2.6923285, a: 1}

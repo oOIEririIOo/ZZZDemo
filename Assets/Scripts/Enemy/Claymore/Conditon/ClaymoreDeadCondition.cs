@@ -12,6 +12,10 @@ public class ClaymoreDeadCondition : FSMCondition
 
     public override TaskStatus OnUpdate()
     {
-        return TaskStatus.Failure;
+        if(enemyController.isDead)
+        {
+            return TaskStatus.Success;
+        }
+        else return TaskStatus.Failure;
     }
 }

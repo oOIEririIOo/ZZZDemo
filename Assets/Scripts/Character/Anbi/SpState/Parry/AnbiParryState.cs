@@ -11,7 +11,7 @@ public class AnbiParryState : AnbiStateBase
         playerController.isParry = true;
         playerController.PlayAnimation("Parry", 0.1f);
         //计算玩家和最近敌人的方向
-        Vector3 direction = (playerModel.parryTarget.transform.position - playerModel.transform.position).normalized;
+        Vector3 direction = (PlayerController.INSTANCE.parryTarget.transform.position - playerModel.transform.position).normalized;
         //玩家模型面朝敌人
         playerModel.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
     }
@@ -21,7 +21,7 @@ public class AnbiParryState : AnbiStateBase
         if (NormalizedTime() < 0.25f)
         {
             //计算玩家和最近敌人的方向
-            Vector3 direction = (playerModel.parryTarget.transform.position - playerModel.transform.position).normalized;
+            Vector3 direction = (PlayerController.INSTANCE.parryTarget.transform.position - playerModel.transform.position).normalized;
             //玩家模型面朝敌人
             playerModel.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         }
@@ -42,7 +42,7 @@ public class AnbiParryState : AnbiStateBase
     {
         base.Exit();
         playerController.isParry = false;
-        playerModel.parryTarget = null;
+        PlayerController.INSTANCE.parryTarget = null;
         CameraManager.INSTANCE.ResetFreeLookCamera();
     }
 }

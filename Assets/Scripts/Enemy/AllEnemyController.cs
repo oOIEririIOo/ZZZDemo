@@ -7,14 +7,15 @@ public class AllEnemyController : SingleMonoBase<AllEnemyController>
 {
 
     public List<EnemyController> enemies;
-    public Stack<EnemyController> parryStack;
     public List<EnemyController> parryList;
+    public List<EnemyController> stunedList;
     private protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
         enemies = new List<EnemyController>();
-        parryStack = new Stack<EnemyController>();
+        parryList = new List<EnemyController>();
+        stunedList = new List<EnemyController>();
     }
 
     public void AddParryList(EnemyController enemy)
@@ -50,7 +51,45 @@ public class AllEnemyController : SingleMonoBase<AllEnemyController>
         
     }
 
-        public List<EnemyController> GetAllEnemy()
+
+    public void AddStunedList(EnemyController enemy)
+    {
+        parryList.Add(enemy);
+    }
+
+
+
+
+
+    public void RemoveStunedList(EnemyController enemy)
+    {
+        if (stunedList.Contains(enemy))
+        {
+            stunedList.Remove(enemy);
+        }
+
+    }
+
+    public EnemyController GetStunedListFirst()
+    {
+        return stunedList.First();
+    }
+
+    public int CheckStunedList()
+    {
+        return stunedList.Count;
+    }
+
+    public void ClearStunedList()
+    {
+        if (stunedList.Count != 0)
+        {
+            stunedList.Clear();
+        }
+
+    }
+
+    public List<EnemyController> GetAllEnemy()
     {
         return enemies;
     }

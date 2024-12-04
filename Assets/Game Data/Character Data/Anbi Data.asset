@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee19621e4c1652549a9b3bdb0159689c, type: 3}
   m_Name: Anbi Data
   m_EditorClassIdentifier: 
+  icon: {fileID: 283098709, guid: a43062a6ee3db3041828217435d7eaa5, type: 3}
   maxHealth: 100
   currentHealth: 100
   baseDefence: 5
   currentDefence: 5
   maxSP: 100
-  currentSP: 0
+  currentSP: 20
+  maxStun: 0
+  currentStun: 0

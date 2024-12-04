@@ -29,14 +29,16 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 1
       canInterrupt: 0
     hitIndex: 0
     SP: 0
   - description: 
     hitInfo:
     - damageType: 0
-      attackDamageMultiple: 0
+      attackDamageMultiple: 10
       hitVFX:
         VFXName: 
         VFXPrefab: {fileID: 2877574769699054071, guid: 07ab7ef416f169a43889638e79065225, type: 3}
@@ -48,14 +50,16 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 2
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0
   - description: 
     hitInfo:
     - damageType: 0
-      attackDamageMultiple: 0
+      attackDamageMultiple: 10
       hitVFX:
         VFXName: 
         VFXPrefab: {fileID: 2877574769699054071, guid: b21f60e094d734b45959ab957eabc562, type: 3}
@@ -67,10 +71,12 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 0
-      attackDamageMultiple: 0
+      attackDamageMultiple: 10
       hitVFX:
         VFXName: 
         VFXPrefab: {fileID: 2877574769699054071, guid: 7e774ab3175d10547933251604b544ce, type: 3}
@@ -82,7 +88,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0
@@ -101,7 +109,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 0
       attackDamageMultiple: 10
@@ -116,7 +126,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 2
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -131,7 +143,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 1
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -146,7 +160,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -161,7 +177,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 2
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0
@@ -180,7 +198,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -195,7 +215,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -210,7 +232,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -225,7 +249,9 @@ MonoBehaviour:
         count: 0
       hitType: 0
       damageDir: 1
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -240,7 +266,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -255,7 +283,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 1
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -270,7 +300,9 @@ MonoBehaviour:
         count: 0
       hitType: 1
       damageDir: 0
+      stun: 5
       pauseFrameTime: 0
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0
@@ -304,10 +336,12 @@ MonoBehaviour:
         spawnPos: {fileID: 0}
         effectEulerAngle: {x: 0, y: 0, z: 0}
         effectRotation: {x: 0, y: 0, z: 0, w: 0}
-        count: 0
+        count: 5
       hitType: 3
       damageDir: 0
+      stun: 0
       pauseFrameTime: 0.1
+      canQTE: 0
       canInterrupt: 1
     - damageType: 1
       attackDamageMultiple: 10
@@ -322,7 +356,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 3
+      stun: 2
       pauseFrameTime: 0.02
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -337,7 +373,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 3
+      stun: 1
       pauseFrameTime: 0.01
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -352,7 +390,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 3
+      stun: 3
       pauseFrameTime: 0.02
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -367,7 +407,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 3
+      stun: 2
       pauseFrameTime: 0.01
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -382,7 +424,9 @@ MonoBehaviour:
         count: 0
       hitType: 3
       damageDir: 3
+      stun: 5
       pauseFrameTime: 0.04
+      canQTE: 0
       canInterrupt: 0
     - damageType: 1
       attackDamageMultiple: 10
@@ -397,7 +441,9 @@ MonoBehaviour:
         count: 0
       hitType: 1
       damageDir: 3
+      stun: 2
       pauseFrameTime: 0.01
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0

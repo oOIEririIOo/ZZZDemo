@@ -16,6 +16,8 @@ public class CameraManager : SingleMonoBase<CameraManager>
     public GameObject parryCameraLeft;
     //弹反相机右
     public GameObject parryCameraRight;
+    //QTE相机
+    public GameObject QTECamera;
 
     //自由相机组件
     public CinemachineVirtualCamera virtualCameraComponent;
@@ -25,17 +27,19 @@ public class CameraManager : SingleMonoBase<CameraManager>
         base.Awake();
         DontDestroyOnLoad(this);
     }
-    /*
+    
     private void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.P))
         {
-            
-                var x =( Vector3.Cross(PlayerController.INSTANCE.playerModel.transform.forward, virtualCamera.transform.position - PlayerController.INSTANCE.playerModel.transform.position).y);
+
+            virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 1f;
 
         }
+        */
     }
-    */
+    
     //启用弹反相机
     public void SwitichParryCamera()
     {
@@ -48,12 +52,24 @@ public class CameraManager : SingleMonoBase<CameraManager>
         else parryCameraRight.gameObject.SetActive(true);
     }
 
+    //启用QTE相机
+    public void OpenQTECamera()
+    {
+        cinemachineBrain.m_DefaultBlend = new Cinemachine.CinemachineBlendDefinition(Cinemachine.CinemachineBlendDefinition.Style.EaseInOut, 0.1f);
+        QTECamera.transform.position = PlayerController.INSTANCE.playerModel.QTECameraPoint.position;
+        QTECamera.transform.forward = PlayerController.INSTANCE.playerModel.QTECameraPoint.forward;
+        QTECamera.gameObject.SetActive(true);
+    }
+
     //重置自由相机视角
     public void ResetFreeLookCamera()
     {
-        cinemachineBrain.m_DefaultBlend = new Cinemachine.CinemachineBlendDefinition(Cinemachine.CinemachineBlendDefinition.Style.EaseInOut, 1.5f);
+        cinemachineBrain.m_DefaultBlend = new Cinemachine.CinemachineBlendDefinition(Cinemachine.CinemachineBlendDefinition.Style.EaseInOut, 1f);
         parryCameraLeft.gameObject.SetActive(false);
         parryCameraRight.gameObject.SetActive(false);
+        QTECamera.gameObject.SetActive(false);
 
     }
+
+
 }

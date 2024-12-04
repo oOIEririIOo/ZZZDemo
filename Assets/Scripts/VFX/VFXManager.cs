@@ -45,6 +45,7 @@ public class VFXManager : SingleMonoBase<VFXManager>
             foreach(var particle in allParticleChild)
             {
                 var main = particle.main;
+                //main.duration = 1 / speedMult;
                 main.simulationSpeed = speedMult;
             }      
         }
