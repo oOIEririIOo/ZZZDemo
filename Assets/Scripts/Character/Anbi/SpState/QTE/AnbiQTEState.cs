@@ -19,8 +19,7 @@ public class AnbiQTEState : AnbiStateBase
             playerModel.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             //PlayerController.INSTANCE.QTETarget = null;
         }
-        
-        
+        //´«Èëskillconfig
         playerController.PlayAnimation("QTE", 0.1f);
     }
 

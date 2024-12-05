@@ -12,8 +12,6 @@ public class EnemyController : MonoBehaviour, IHurt
     public Animator animator;
     public NavMeshAgent agent;
     public BehaviorTree tree;
-    public Material m;
-    public SkinnedMeshRenderer mR;
 
     //脚本
     public CharacterStats characterStats;
@@ -27,6 +25,8 @@ public class EnemyController : MonoBehaviour, IHurt
     public Transform currentParryPoint;
     //状态UI位置
     public Transform statsUIpoint;
+    //特效位置
+    public Transform vfxPoint;
     
 
     //参数
@@ -70,8 +70,7 @@ public class EnemyController : MonoBehaviour, IHurt
         characterStats.CurrentHealth = characterStats.MaxHealth;
         characterStats.CurrentStun = 0f;
         
-        //mR.materials[2].SetFloat("_OutlineWidth", 1.3f);
-        //m.SetFloat("_OutlineWidth", 1.2f);
+        
     }
 
     private void Update()
@@ -84,7 +83,6 @@ public class EnemyController : MonoBehaviour, IHurt
         }
         HurtTrigger();
         HurtTimer();
-        
     }
 
     public void HurtAnimationEvent(DamageDir dir, HitType hitType,PlayerModel player)
@@ -336,7 +334,10 @@ public class EnemyController : MonoBehaviour, IHurt
         transform.rotation = Quaternion.Slerp(transform.rotation, targetQua, Time.deltaTime * speed);
     }
 
-
+    public void TryGetVFX(string name)
+    {
+        VFXPoolManager.INSTANCE.TryGetVFXByEnemy(CharacterNameList.Enemy, name,vfxPoint);
+    }
 
     public float GetDistance()
     {

@@ -79,7 +79,8 @@ public class PlayerStateBase : StateBase
         //施加重力
         if(useGravity)
         {
-            playerModel.characterController.Move(new Vector3(0, playerModel.gravity * Time.deltaTime, 0));
+            if(playerModel.characterController.enabled)
+                playerModel.characterController.Move(new Vector3(0, playerModel.gravity * Time.deltaTime, 0));
         }
         
 

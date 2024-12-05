@@ -46,11 +46,14 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                 {
                     //创建实例,初始化特效对象
                     GameObject go = Instantiate(effectDates[i].effectItemData.effectItems[j].VFXPrefab);
+                   
                     if (!go.TryGetComponent<VFXItem>(out var vFXItem))
                     {
-                        vFXItem = go.AddComponent<VFXItem>();
+                        vFXItem = go.AddComponent<VFXItem>();    
                     }
-                    vFXItem.Init(effectDates[i].style, effectDates[i].effectItemData.effectItems[j].VFXName);
+                    vFXItem.Init(effectDates[i].style, effectDates[i].effectItemData.effectItems[j].VFXName);   
+                  
+
                     if (effectDates[i].effectItemData.effectItems[j].applyParentPos)
                     {
                         //设置父级点
@@ -65,7 +68,13 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                             {
                                 go.transform.parent = PlayerController.INSTANCE.vfxPos[index].transform;
                             }
-                            else Debug.Log("字典为空！也许该特效属于Enemy");
+                            else if(effectDates[i].style == CharacterNameList.Enemy)
+                            {
+                                go.transform.parent = this.transform;
+                                //Debug.Log("字典为空！也许该特效属于Enemy");
+                            }
+
+                            
                         }
                     }
                     else
@@ -87,7 +96,12 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
                         {
                             go.transform.position = PlayerController.INSTANCE.vfxPos[index].transform.position;
                         }
-                        else Debug.Log("字典为空！也许该特效属于Enemy");
+                        else if (effectDates[i].style == CharacterNameList.Enemy)
+                        {
+                            go.transform.parent = this.transform;
+                            //Debug.Log("字典为空！也许该特效属于Enemy");
+                        }
+                        
                     }
                     
                     //隐藏
@@ -210,6 +224,74 @@ public class VFXPoolManager : SingleMonoBase<VFXPoolManager>
             vFXItem.transform.localPosition = Vector3.zero;
             vFXItem.transform.forward = PlayerController.INSTANCE.characterInfo[PlayerController.INSTANCE.currentModelIndex].GetComponent<PlayerModel>().transform.forward;
             go.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning(characterName + "类型" + effectName + "名字的" + "对象池不存在");
+        }
+    }
+
+    public void TryGetVFXByEnemy(CharacterNameList characterName, string effectName,Transform pos)
+    {
+
+        if (effectPool[characterName][effectName].Count == 0)
+        {
+            var vfx = FindVFXInfo(characterName, effectName);
+            GameObject go = Instantiate(vfx.VFXPrefab);
+            //初始化特效
+            if (!go.TryGetComponent<VFXItem>(out var vFXItem))
+            {
+                vFXItem = go.AddComponent<VFXItem>();
+            }
+            vFXItem.Init(characterName, effectName);
+            if (vfx.applyParentPos)
+            {
+                //设置父级点
+                if (vfx.applyParentPos)
+                {
+                        go.transform.parent = pos;
+                        go.transform.localPosition = Vector3.zero;
+                        go.transform.forward = pos.forward;
+                }
+            }
+            else
+            {
+                go.transform.position = pos.position;
+                go.transform.forward = pos.forward;
+            }
+
+           
+            effectPool[characterName][effectName].Enqueue(go);
+
+        }
+
+        if (effectPool.ContainsKey(characterName) && effectPool[characterName].ContainsKey(effectName) && effectPool[characterName][effectName].Count > 0)
+        {
+            GameObject go = effectPool[characterName][effectName].Dequeue();
+            go.SetActive(true);
+            var vfx = FindVFXInfo(characterName, effectName);
+            //初始化特效
+            if (!go.TryGetComponent<VFXItem>(out var vFXItem))
+            {
+                vFXItem = go.AddComponent<VFXItem>();
+            }
+            vFXItem.Init(characterName, effectName);
+            if (vfx.applyParentPos)
+            {
+                //设置父级点
+                if (vfx.applyParentPos)
+                {
+                    go.transform.parent = pos;
+                    go.transform.localPosition = Vector3.zero;
+                    go.transform.forward = pos.forward;
+                }
+            }
+            else
+            {
+                go.transform.position = pos.position;
+                go.transform.forward = pos.forward;
+            }
+
         }
         else
         {

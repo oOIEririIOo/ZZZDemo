@@ -30,6 +30,7 @@ public class PlayerModel : MonoBehaviour, IHurt
     //大招镜头
     public GameObject bigSkillShot;
     //QTE相机
+    public Transform QTEStartCameraPoint;
     public Transform QTECameraPoint;
     //动画信息
     private AnimatorStateInfo stateInfo;
@@ -105,15 +106,21 @@ public class PlayerModel : MonoBehaviour, IHurt
         modelName = gameObject.name;
         modelName = modelName.Replace("(Clone)", "");
         AudioManager.INSTANCE.PlayAudio(modelName+"攻击受击音"+ skillConfig.currentNormalAttackIndex);
-        
 
         //传递攻击类型
         if (currentEnemy.TryGetComponent<EnemyController>(out EnemyController enemyController))
         {
+            characterStats.AddSP(2);
+            currentEnemy.GetComponent<CharacterStats>().TakeDamage(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
+            if (enemyController.isStun == false)
+                currentEnemy.GetComponent<CharacterStats>().AddStun(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
+
+
             enemyController.HurtAnimationEvent(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].damageDir,
                 weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo.hitInfo[characterStats.skillConfig.currentAttackInfo.hitIndex].hitType,
                 weapons[currentWeaponIndex].characterStats.GetComponent<PlayerModel>());
         }
+
         //传递敌人信息给镜头特效
         CameraHitFeel.INSTANCE.GetCurrentEnemyAnimation(enemyController);
         //钝帧
@@ -128,11 +135,6 @@ public class PlayerModel : MonoBehaviour, IHurt
                                                                         weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo,
                                                                         closestPoint,
                                                                         forword);
-
-        characterStats.AddSP(2);
-        currentEnemy.GetComponent<CharacterStats>().TakeDamage(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
-        if(enemyController.isStun == false)
-            currentEnemy.GetComponent<CharacterStats>().AddStun(weapons[currentWeaponIndex].characterStats.skillConfig.currentAttackInfo);
 
 
         //每次攻击检查目标的失衡值，若失衡值满了开启连携
@@ -155,6 +157,11 @@ public class PlayerModel : MonoBehaviour, IHurt
         //enemyController.isStun = true;
         if (QTEManager.INSTANCE.canQTE)
         {
+            CameraManager.INSTANCE.ResetFreeLookCamera();
+            if(QTEStartCameraPoint != null)
+            {
+                //切换相机
+            }
             CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 1.5f;
             CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.y = -0.5f;
             CameraHitFeel.INSTANCE.QTEStart(5, 0.1f);

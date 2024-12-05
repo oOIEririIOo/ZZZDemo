@@ -760,7 +760,7 @@ ModelImporter:
       takeName: Monster_Claymore_Ani_Death_Hit_Back
       internalID: -401260574974250722
       firstFrame: 0
-      lastFrame: 277
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -779,7 +779,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5267379
+        functionName: TryGetVFX
+        data: DeadEff
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -789,7 +796,7 @@ ModelImporter:
       takeName: Monster_Claymore_Ani_Death_Hit_Front
       internalID: -7101131114537627975
       firstFrame: 0
-      lastFrame: 277
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -808,7 +815,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.46256682
+        functionName: TryGetVFX
+        data: DeadEff
+        objectReferenceParameter: {fileID: 11500000, guid: c065fc630484d904d98d2f5950c8b7b5, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

@@ -1079,17 +1079,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Switich"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0b3ac98c-ca93-4ca6-9060-258cba31b19b"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Switich"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }

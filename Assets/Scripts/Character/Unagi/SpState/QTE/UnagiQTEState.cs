@@ -8,10 +8,7 @@ public class UnagiQTEState : UnagiStateBase
     {
         base.Enter();
         
-        if(playerModel.QTECameraPoint != null)
-        {
-            CameraManager.INSTANCE.OpenQTECamera();
-        }
+        
         useGravity = false;
         playerController.playerModel.isQTE = true;
         CameraHitFeel.INSTANCE.SwitichCharacterInQTE();
@@ -23,10 +20,15 @@ public class UnagiQTEState : UnagiStateBase
             playerModel.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             //PlayerController.INSTANCE.QTETarget = null;
         }
+        if (playerModel.QTECameraPoint != null)
+        {
+            CameraManager.INSTANCE.OpenQTECamera();
+        }
         playerController.playerModel.characterController.enabled = false;
         
-        playerController.playerModel.characterController.excludeLayers = playerController.everythingLayer;
-        
+        //playerController.playerModel.characterController.excludeLayers = playerController.everythingLayer;
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[6-1];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
         playerController.PlayAnimation("QTE", 0.1f);
     }
 
@@ -45,9 +47,9 @@ public class UnagiQTEState : UnagiStateBase
         CameraManager.INSTANCE.ResetFreeLookCamera();
         playerController.playerModel.characterController.enabled = true;
         playerController.playerModel.isQTE = false;
-        useGravity = true;
+        //useGravity = true;
         //playerController.playerModel.gravity = -9.8f;
-        playerController.playerModel.characterController.excludeLayers = playerController.nothingLayer;
+        //playerController.playerModel.characterController.excludeLayers = playerController.nothingLayer;
     }
 
 }

@@ -207,7 +207,7 @@ Material:
     - _CastShadows: 1
     - _CoatMask: 0
     - _ConvetToNormalStrenght: 0
-    - _Cull: 2
+    - _Cull: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _CustomDataForDissolve: 1

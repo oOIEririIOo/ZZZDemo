@@ -48,7 +48,7 @@ public class MonsterStatsUI : MonoBehaviour
    
     void Update()
     {
-        if(!enemyController.isHurt)
+        if(!enemyController.isHurt && UIbar != null)
         {
             if (updateRedCoroutinue != null)
             {

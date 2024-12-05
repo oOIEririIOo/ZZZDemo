@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1830a4e4c1176a4282f6938ac95d856, type: 3}
+  m_Name: GoblinMetro Skill Config
+  m_EditorClassIdentifier: 
+  currentNormalAttackIndex: 1
+  normalAttack:
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 1
+    hitIndex: 0
+    SP: 0
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 3
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 1
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 2
+    hitIndex: 0
+    SP: 0
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 3
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 2
+    hitIndex: 0
+    SP: 0
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 0
+    hitIndex: 0
+    SP: 0
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 3
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 1
+    hitIndex: 0
+    SP: 0
+  - hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 3
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 46235e2885540b445b77ab674e113614, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 1
+    hitIndex: 0
+    SP: 0
+  currentBranchIndex: 1
+  branch: []
+  currentAttackInfo:
+    hitInfo: []
+    hitIndex: 0
+    SP: 0

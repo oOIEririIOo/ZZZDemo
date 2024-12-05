@@ -23,6 +23,7 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
     Coroutine SlowMotionCoroutine;
     Coroutine RemoveColorCoroutine;
     Coroutine QTEStartCoroutinue;
+    Coroutine SwitichCharacterInQTECoroutinue;
     private ColorAdjustments colorAdjustments;
 
 
@@ -71,12 +72,21 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
     {
         CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = 3.2f;
         CameraManager.INSTANCE.virtualCameraComponent.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.y = 0.28f;
+        
         if (QTEStartCoroutinue != null)
         { StopCoroutine(QTEStartCoroutinue); }
+        
         float currentSpeed = 1f;
         currentCharacterAnimator.speed = currentSpeed;
         SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
         VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+        allEnemyAnimator = GetAllEnemyAnimator();
+        currentCharacterAnimator = GetCurrentCharacterAnimator();
+        if (SwitichCharacterInQTECoroutinue != null)
+        {
+            StopCoroutine(SwitichCharacterInQTECoroutinue);
+        }
+        SwitichCharacterInQTECoroutinue = StartCoroutine(SwitichCharacterInQTESlowMotion(1f, 0.5f));
     }
 
     //退出QTE
@@ -169,7 +179,7 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         yield return new WaitForSeconds(1f);//一秒后开始可以切人
         PlayerController.INSTANCE.inputSystem.QTE.Enable();
         Debug.Log("可以输入");
-        yield return new WaitForSecondsRealtime(time-1f);
+        yield return new WaitForSeconds(time-1f);
         float minValue = 0.1f;
         while (Mathf.Abs(currentSpeed - 1) > minValue)
         {
@@ -190,6 +200,34 @@ public class CameraHitFeel : SingleMonoBase<CameraHitFeel>
         SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
         VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
         QTEManager.INSTANCE.CancelQTE();
+    }
+
+    IEnumerator SwitichCharacterInQTESlowMotion(float time, float speedMult)
+    {
+        float currentSpeed = speedMult;
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+        yield return new WaitForSeconds(time);
+        float minValue = 0.1f;
+        while (Mathf.Abs(currentSpeed - 1) > minValue)
+        {
+            currentSpeed = Mathf.Lerp(currentSpeed, 1, Time.deltaTime * slowMotionResetSpeed*3f);
+
+            currentCharacterAnimator.speed = currentSpeed;
+            SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+            VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
+
+            //Time.timeScale = currentSpeed;
+            yield return null;
+
+        }
+        currentSpeed = 1;
+        //Time.timeScale = currentSpeed;
+
+        currentCharacterAnimator.speed = currentSpeed;
+        SetAllEnemyAnimationSpeed(allEnemyAnimator, currentSpeed);
+        VFXManager.INSTANCE.SetVFXSpeed(currentSpeed);
     }
 
     //钝帧协程
