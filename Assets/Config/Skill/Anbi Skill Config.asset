@@ -31,7 +31,7 @@ MonoBehaviour:
       damageDir: 1
       stun: 10
       pauseFrameTime: 0.05
-      canQTE: 1
+      canQTE: 0
       canInterrupt: 0
     hitIndex: 0
     SP: 0
@@ -203,19 +203,257 @@ MonoBehaviour:
   currentBranchIndex: 1
   branch:
   - description: "\u666E\u901A\u5206\u652F1\u666E\u901A\u89E6\u53D1"
-    hitInfo: []
+    hitInfo:
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 4
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 4
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: b7306adc3f4ed224bb74737cb365d129, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 2
+      stun: 4
+      pauseFrameTime: 0.1
+      canQTE: 1
+      canInterrupt: 0
     hitIndex: 0
     SP: 0
   - description: "\u666E\u901A\u5206\u652F1\u5B8C\u7F8E\u89E6\u53D1"
-    hitInfo: []
+    hitInfo:
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 9f07b6e295bfbc54387ccedea777e697, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 1
+      canInterrupt: 0
     hitIndex: 0
     SP: 0
   - description: "SP\u5206\u652F\u666E\u901A\u89E6\u53D1"
-    hitInfo: []
+    hitInfo:
+    - damageType: 3
+      attackDamageMultiple: 0
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 1d1ea39501d14e841a11903f4cd86e59, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 3
+      stun: 2
+      pauseFrameTime: 0
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 0
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: a880844e8f6dc1f429d4d69b2da89a7a, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 3
+      pauseFrameTime: 0.05
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 0
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 9f07b6e295bfbc54387ccedea777e697, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 3
+      pauseFrameTime: 0.05
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 0
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: f2bbaa51117c89944b86237113129ea9, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 2
+      stun: 3
+      pauseFrameTime: 0.1
+      canQTE: 1
+      canInterrupt: 0
     hitIndex: 0
     SP: 40
   - description: "SP\u5206\u652F\u5B8C\u7F8E\u89E6\u53D1"
-    hitInfo: []
+    hitInfo:
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 8bc3f350fc41f614a9aceea88c60298e, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 3
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 514b7f33f33d0a44c9d8451b8fd8f11d, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 514b7f33f33d0a44c9d8451b8fd8f11d, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 1
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 514b7f33f33d0a44c9d8451b8fd8f11d, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 5
+      pauseFrameTime: 0.1
+      canQTE: 0
+      canInterrupt: 0
     hitIndex: 0
     SP: 0
   - description: "\u666E\u901A\u653B\u51FB\u7B2C\u56DB\u6BB5\u5B8C\u7F8E\u89E6\u53D1"
@@ -304,6 +542,133 @@ MonoBehaviour:
       stun: 8
       pauseFrameTime: 0.12
       canQTE: 0
+      canInterrupt: 0
+    hitIndex: 0
+    SP: 0
+  - description: QTE
+    hitInfo:
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: bc097d68face4ba46b343991f7f64b4a, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 1
+      stun: 6
+      pauseFrameTime: 0.05
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: bc097d68face4ba46b343991f7f64b4a, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 1
+      stun: 6
+      pauseFrameTime: 0
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 7
+      pauseFrameTime: 0.05
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 2
+      stun: 7
+      pauseFrameTime: 0
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 3
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: 36458a0820c34dc4dba4d21544ca15bb, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 1
+      damageDir: 2
+      stun: 8
+      pauseFrameTime: 0.12
+      canQTE: 0
+      canInterrupt: 0
+    hitIndex: 0
+    SP: 0
+  - description: "\u51B2\u523A\u653B\u51FB"
+    hitInfo:
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: bc097d68face4ba46b343991f7f64b4a, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 3
+      damageDir: 1
+      stun: 6
+      pauseFrameTime: 0.05
+      canQTE: 0
+      canInterrupt: 0
+    - damageType: 0
+      attackDamageMultiple: 10
+      hitVFX:
+        VFXName: 
+        VFXPrefab: {fileID: 2877574769699054071, guid: bc097d68face4ba46b343991f7f64b4a, type: 3}
+        applyParentPos: 0
+        parentPos: {fileID: 0}
+        spawnPos: {fileID: 0}
+        effectEulerAngle: {x: 0, y: 0, z: 0}
+        effectRotation: {x: 0, y: 0, z: 0, w: 0}
+        count: 0
+      hitType: 0
+      damageDir: 0
+      stun: 6
+      pauseFrameTime: 0.1
+      canQTE: 1
       canInterrupt: 0
     hitIndex: 0
     SP: 0

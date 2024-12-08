@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnbiPerfectBranchState : AnbiStateBase
 {
+    bool isLock;
     public override void Enter()
     {
         base.Enter();
@@ -19,13 +20,13 @@ public class AnbiPerfectBranchState : AnbiStateBase
         else
         {
             playerModel.currentState = PlayerState.Anbi_PerfectBranch;
-            playerModel.characterStats.skillConfig.currentBranchIndex = 3;
+            playerModel.characterStats.skillConfig.currentBranchIndex = 2;
             playerController.PlayAnimation("Branch_1_Perfect", 0f);
         }
 
         playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[playerModel.characterStats.skillConfig.currentBranchIndex - 1];
         playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
-
+        LookToEnemy();
     }
 
     public override void Update()
@@ -69,5 +70,41 @@ public class AnbiPerfectBranchState : AnbiStateBase
         {
             anbiState.perfectTiming = false;
         }
+    }
+    private void LookToEnemy()
+    {
+        #region 锁定最近敌人
+        GameObject targetEnemy = null;//目标敌人
+        //初始化最近敌人的距离
+        float minDistance = Mathf.Infinity;
+        //遍历所有敌人标签
+        foreach (string tag in playerController.enemyTagList)
+        {
+            //获取标签下的所有敌人
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject enemy in enemies)
+            {
+
+                //计算敌人距离
+                float distance = Vector3.Distance(playerModel.transform.position, enemy.transform.position);
+                //比较
+                if (distance < minDistance)
+                {
+                    targetEnemy = enemy;
+                    minDistance = distance;
+                }
+            }
+        }
+        //如果距离够短再进行转向
+        if (targetEnemy != null && minDistance <= 7f)
+        {
+            isLock = true;
+            //计算玩家和最近敌人的方向
+            Vector3 direction = (targetEnemy.transform.position - playerModel.transform.position).normalized;
+            //玩家模型面朝敌人
+            playerModel.transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        }
+
+        #endregion
     }
 }

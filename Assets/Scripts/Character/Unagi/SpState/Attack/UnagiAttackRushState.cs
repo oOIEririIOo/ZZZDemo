@@ -20,6 +20,9 @@ public class UnagiAttackRushState : UnagiStateBase
         isLock = false;
         isContinuePlay = true;
         playerController.PlayAnimation("Attack_Rush");
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[7 - 1];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
+        LookToEnemy();
     }
 
     public override void Update()
@@ -41,12 +44,6 @@ public class UnagiAttackRushState : UnagiStateBase
         }
         #endregion
 
-        #region 时刻面对敌人
-        if (isLock)
-        {
-            LookToEnemy();
-        }
-        #endregion
 
         #region 监听闪避
         if (playerController.inputMoveVec2 != Vector2.zero && playerController.inputSystem.Player.Evade.triggered)

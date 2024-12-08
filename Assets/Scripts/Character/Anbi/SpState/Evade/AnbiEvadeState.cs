@@ -107,7 +107,7 @@ public class AnbiEvadeState : AnbiStateBase
             }
             else
             {
-                playerController.SwitchState(PlayerState.Counter);
+                playerController.SwitchState(PlayerState.Attack_Rush);
                 playerController.perfectDodge = false;
                 return;
                 /*

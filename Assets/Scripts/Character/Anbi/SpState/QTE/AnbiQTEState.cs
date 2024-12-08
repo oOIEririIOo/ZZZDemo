@@ -21,6 +21,8 @@ public class AnbiQTEState : AnbiStateBase
         }
         //´«Èëskillconfig
         playerController.PlayAnimation("QTE", 0.1f);
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[6 - 1];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
     }
 
     public override void Update()

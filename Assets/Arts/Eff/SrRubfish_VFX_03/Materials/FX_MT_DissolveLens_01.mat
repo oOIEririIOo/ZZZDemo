@@ -269,7 +269,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _PreLerp: 1.5
+    - _PreLerp: 2.68
     - _PreNoiseLerp: 1
     - _QueueControl: 1
     - _QueueOffset: 0
@@ -347,7 +347,7 @@ Material:
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _LowColor: {r: 1, g: 0.23032942, b: 0, a: 0}
-    - _MainColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+    - _MainColor: {r: 1, g: 0, b: 0.11183071, a: 0}
     - _MinMaxSmoothStepDissolve: {r: 0, g: 0.05, b: 0, a: 0}
     - _NoiseColor_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColor_Panning: {r: 0, g: 0, b: 0, a: 0}

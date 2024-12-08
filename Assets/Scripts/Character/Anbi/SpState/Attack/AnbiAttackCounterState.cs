@@ -19,6 +19,9 @@ public class AnbiAttackCounterState : AnbiStateBase
         enterNextAttack = false;
         isLock = false;
         playerController.PlayAnimation("Attack_Counter");
+        playerModel.characterStats.skillConfig.currentAttackInfo = playerModel.characterStats.skillConfig.branch[6];
+        playerController.playerModel.characterStats.skillConfig.currentAttackInfo.hitIndex = -1;
+        LookToEnemy();
     }
 
     public override void Update()
